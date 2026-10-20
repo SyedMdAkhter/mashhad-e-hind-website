@@ -13,6 +13,9 @@ MAP_QUERY = "Panj+Peer+Mazar+Mashhad-e-Hind+Samana+Punjab"
 MAP_EMBED = f"https://maps.google.com/maps?q={MAP_QUERY}&output=embed"
 MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 
+# Address the site is served from. Change this when a custom domain is set up.
+SITE_URL = "https://mashhad-e-hind-website.pages.dev"
+
 PAGES = ["index", "history", "timings", "events", "contact", "location"]
 
 LANGS = {
@@ -26,15 +29,15 @@ LANGS = {
         "footer": "Mashhad-e-Hind · Samana, Patiala district, Punjab, India. "
                   "Text marked in yellow is awaiting confirmation by the shrine committee.",
     },
-    "ur": {
-        "dir": "rtl", "prefix": "ur/", "label": "اردو",
-        "fonts": "Noto+Nastaliq+Urdu:wght@400;700",
-        "site": "مشہدِ ہند، سمانہ",
-        "ph": "کمیٹی سے تصدیق باقی ہے",
-        "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
-        "skip": "مواد پر جائیں",
-        "footer": "مشہدِ ہند · سمانہ، ضلع پٹیالہ، پنجاب، بھارت۔ "
-                  "پیلے رنگ میں نشان زد عبارت کی تصدیق روضے کی کمیٹی سے ابھی باقی ہے۔",
+    "hi": {
+        "dir": "ltr", "prefix": "hi/", "label": "हिन्दी",
+        "fonts": "Noto+Sans+Devanagari:wght@400;700",
+        "site": "मशहद-ए-हिंद, समाना",
+        "ph": "कमेटी द्वारा पुष्टि बाकी है",
+        "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "संपर्क", "स्थान"],
+        "skip": "सामग्री पर जाएँ",
+        "footer": "मशहद-ए-हिंद · समाना, ज़िला पटियाला, पंजाब, भारत। "
+                  "पीले रंग में दिखाए गए लेख की पुष्टि रौज़े की कमेटी द्वारा अभी बाकी है।",
     },
     "pa": {
         "dir": "ltr", "prefix": "pa/", "label": "ਪੰਜਾਬੀ",
@@ -45,6 +48,16 @@ LANGS = {
         "skip": "ਸਮੱਗਰੀ ਵੱਲ ਜਾਓ",
         "footer": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ · ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ। "
                   "ਪੀਲੇ ਰੰਗ ਵਿੱਚ ਦਰਸਾਈ ਲਿਖਤ ਦੀ ਪੁਸ਼ਟੀ ਰੌਜ਼ੇ ਦੀ ਕਮੇਟੀ ਵੱਲੋਂ ਹਾਲੇ ਬਾਕੀ ਹੈ।",
+    },
+    "ur": {
+        "dir": "rtl", "prefix": "ur/", "label": "اردو",
+        "fonts": "Noto+Nastaliq+Urdu:wght@400;700",
+        "site": "مشہدِ ہند، سمانہ",
+        "ph": "کمیٹی سے تصدیق باقی ہے",
+        "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
+        "skip": "مواد پر جائیں",
+        "footer": "مشہدِ ہند · سمانہ، ضلع پٹیالہ، پنجاب، بھارت۔ "
+                  "پیلے رنگ میں نشان زد عبارت کی تصدیق روضے کی کمیٹی سے ابھی باقی ہے۔",
     },
 }
 
@@ -62,8 +75,8 @@ def content(lang):
     P = lambda w: ph(lang, w)
     if lang == "en":
         return {
-            "index": ("Mashhad-e-Hind, Samana",
-                      "Mashhad-e-Hind (Panj Peer Mazar), the shrine of Imamzada Syed Mashhad Ali in Samana, Patiala district, Punjab.",
+            "index": ("Mashhad-e-Hind, Samana: official website",
+                      "Official website of Mashhad-e-Hind (Mashhad e Hind, Panj Peer Mazar), the shrine of Imamzada Syed Mashhad Ali in Samana, Patiala district, Punjab. History, timings, events, contact and directions.",
                       f"""
 <section class="hero">
   <img class="arch" src="assets/arch.svg" alt="">
@@ -73,7 +86,7 @@ def content(lang):
 </section>
 <section>
   <h2>Welcome</h2>
-  <p>Mashhad-e-Hind, known for generations as the Panj Peer Mazar, stands in the old town of Samana in Punjab. It is revered as the resting place of Imamzada Syed Mashhad Ali, of the family of the Holy Prophet Muhammad (peace be upon him and his family). Visitors of many faiths come here to offer their respects and prayers.</p>
+  <p>Mashhad-e-Hind (also written Mashhad e Hind or Mashad-e-Hind), known for generations as the Panj Peer Mazar, stands in the old town of Samana in Punjab. It is revered as the resting place of Imamzada Syed Mashhad Ali, of the family of the Holy Prophet Muhammad (peace be upon him and his family). Visitors of many faiths come here to offer their respects and prayers.</p>
   <p>A Persian inscription found at the shrine records that the building was raised in the month of Ramadan, 967 AH, in the fourth year of the reign of Emperor Akbar.</p>
   <p class="notice"><strong>Visiting today:</strong> {P("opening hours")} · <a href="timings.html">See all timings</a></p>
 </section>
@@ -188,8 +201,8 @@ def content(lang):
 
     if lang == "ur":
         return {
-            "index": ("مشہدِ ہند، سمانہ",
-                      "مشہدِ ہند (پنج پیر مزار)، امام زادہ سید مشہد علی کا روضہ، سمانہ، ضلع پٹیالہ، پنجاب۔",
+            "index": ("مشہدِ ہند، سمانہ: سرکاری ویب سائٹ",
+                      "مشہدِ ہند (پنج پیر مزار)، امام زادہ سید مشہد علی کا روضہ، سمانہ، ضلع پٹیالہ، پنجاب کی سرکاری ویب سائٹ۔",
                       f"""
 <section class="hero">
   <img class="arch" src="../assets/arch.svg" alt="">
@@ -312,10 +325,136 @@ def content(lang):
 """),
         }
 
+    if lang == "hi":
+        return {
+            "index": ("मशहद-ए-हिंद, समाना: आधिकारिक वेबसाइट",
+                      "मशहद-ए-हिंद (पंज पीर मज़ार), इमामज़ादा सैयद मशहद अली की दरगाह, समाना, ज़िला पटियाला, पंजाब की आधिकारिक वेबसाइट।",
+                      f"""
+<section class="hero">
+  <img class="arch" src="../assets/arch.svg" alt="">
+  <p class="eyebrow">समाना · ज़िला पटियाला · पंजाब</p>
+  <h1>मशहद-ए-हिंद</h1>
+  <p class="lede">इमामज़ादा सैयद मशहद अली का रौज़ा, जिन्हें हज़रत इमाम अली रज़ा (अलैहिस्सलाम) की औलाद में से माना जाता है।</p>
+</section>
+<section>
+  <h2>स्वागत है</h2>
+  <p>मशहद-ए-हिंद, जिसे पीढ़ियों से पंज पीर मज़ार के नाम से जाना जाता है, पंजाब के प्राचीन क़स्बे समाना में स्थित है। इसे इमामज़ादा सैयद मशहद अली की आरामगाह माना जाता है, जो हज़रत मुहम्मद साहब (सल्लल्लाहु अलैहि व आलिही व सल्लम) के ख़ानदान से संबंध रखते हैं। विभिन्न धर्मों के श्रद्धालु यहाँ श्रद्धा और दुआ के लिए आते हैं।</p>
+  <p>रौज़े से मिले एक फ़ारसी शिलालेख के अनुसार इस इमारत का निर्माण रमज़ान के महीने, 967 हिजरी में, बादशाह अकबर के शासन के चौथे वर्ष में हुआ।</p>
+  <p class="notice"><strong>आज की ज़ियारत:</strong> {P("खुलने का समय")} · <a href="timings.html">सभी समय देखें</a></p>
+</section>
+<section class="cards" aria-label="भाग">
+  <a class="card" href="history.html"><h3>इतिहास</h3><p>समाना क़स्बा, रौज़ा और उसका शिलालेख।</p></a>
+  <a class="card" href="timings.html"><h3>समय</h3><p>रौज़ा कब खुला रहता है, और नमाज़ के समय।</p></a>
+  <a class="card" href="events.html"><h3>कार्यक्रम</h3><p>साल भर की मजलिसें और अवसर।</p></a>
+  <a class="card" href="contact.html"><h3>संपर्क</h3><p>रौज़े की कमेटी से संपर्क।</p></a>
+  <a class="card" href="location.html"><h3>स्थान</h3><p>समाना का नक्शा और रास्ता।</p></a>
+</section>
+"""),
+            "history": ("इतिहास",
+                        "समाना और मशहद-ए-हिंद, इमामज़ादा सैयद मशहद अली के रौज़े का इतिहास।",
+                        f"""
+<p class="uncertain">यह इतिहास प्रकाशित विवरणों और स्थानीय परंपराओं से तैयार किया गया है। जहाँ स्रोत अलग-अलग हैं, वहाँ दोनों मत दिए गए हैं। रौज़े की कमेटी इस लेख की समीक्षा कर रही है।</p>
+
+<h2>समाना क़स्बा</h2>
+<p>समाना ज़िला पटियाला, पंजाब का एक प्राचीन क़स्बा और नगर परिषद है, जो पटियाला और पातड़ां के बीच स्टेट हाईवे 10 पर स्थित है। इस क्षेत्र का उल्लेख राजा जयपाल के समय के विवरणों में मिलता है, और मुहम्मद ग़ोरी की विजयों के बाद 1192 में इसे क़ुतुबुद्दीन ऐबक को सौंपा गया। बादशाह अकबर के समय <em>आईन-ए-अकबरी</em> में समाना को सरहिंद सरकार का एक परगना दर्ज किया गया है।</p>
+<p>सदियों तक समाना संतों और विद्वानों के क़स्बे के रूप में जाना जाता रहा, और 1947 तक यहाँ कई सैयद परिवार और शिया विद्वान बसे हुए थे। स्थानीय परंपरा के अनुसार क़स्बे का नाम समाना नाम की एक नेक बीबी के नाम पर है, जिनका संबंध इमामों के ख़ानदान से बताया जाता है; यह एक परंपरा है और पुराने स्रोतों में दर्ज नहीं है।</p>
+
+<h2>इमामज़ादा सैयद मशहद अली</h2>
+<p>यह रौज़ा इमामज़ादा सैयद मशहद अली की आरामगाह माना जाता है। परंपरा के अनुसार वे अब्बासी ख़लीफ़ा मामून के समय, जब इमामों के ख़ानदान पर कठिन समय था, ख़ुरासान के शहर मशहद से इस क्षेत्र में आए।</p>
+<p class="uncertain">उनकी वंशावली के बारे में विवरण अलग-अलग हैं। कुछ उन्हें हज़रत इमाम अली रज़ा (अलैहिस्सलाम) का पुत्र, कुछ इमाम की बाद की पीढ़ी से, और कुछ हज़रत इमाम मुहम्मद तक़ी (अलैहिस्सलाम) का पुत्र बताते हैं। {P("कमेटी बताई जाने वाली वंशावली की पुष्टि करे")}</p>
+
+<h2>रौज़ा और उसका शिलालेख</h2>
+<p>लंबे समय तक यह मज़ार केवल पंज पीर मज़ार के नाम से जाना जाता था। लाहौर हाई कोर्ट के जस्टिस शब्बर रिज़वी के सुझाव पर, जिनका परिवार विभाजन से पहले समाना में बसा था, जब रौज़े के अहाते की सफ़ाई की गई तो एक फ़ारसी शिलालेख सामने आया।</p>
+<p>बताए अनुसार इस शिलालेख में इस मज़ार को इमाम मशहद अली का मज़ार कहा गया है और दर्ज है कि यह इमारत अजरुद्दीन ख़ान मुग़ल, पुत्र बख़्श अल्लाह ख़ान, ने रमज़ान के महीने 967 हिजरी में, बादशाह अकबर के शासन के चौथे वर्ष में बनवाई। यह लगभग 1560 ई. बनता है; कुछ विवरणों में 1559 दर्ज है।</p>
+<p class="uncertain">बताया जाता है कि इस शिलालेख के पाठ की जाँच धार्मिक विद्वानों, इतिहासकारों और आए हुए अधिकारियों ने की। इसका कोई प्रकाशित विद्वत्तापूर्ण पाठ अभी तक नहीं मिला है। {P("कमेटी शिलालेख का पूरा पाठ, अनुवाद और तस्वीर शामिल करे")}</p>
+
+<h2>1947 के बाद</h2>
+<p>1947 के विभाजन के समय समाना के कई सैयद परिवार पाकिस्तान चले गए। रौज़ा अपनी जगह क़ायम रहा, और हाल के वर्षों में यह फिर से शिया और सुन्नी मुसलमानों और सिख श्रद्धालुओं के लिए ज़ियारतगाह बन गया है। मशहद-ए-हिंद में हर साल एक सालाना मजलिस होती है।</p>
+
+<h2>स्रोत</h2>
+<ul class="sources">
+  <li>विकिपीडिया, "Samana, India" (इतिहास भाग, आईन-ए-अकबरी की प्रविष्टि सहित)।</li>
+  <li>mashadehind.in, "About Samana"।</li>
+  <li>वी. एस. गिल, "Imami Shrine at Samana: Most Noteworthy and Neglected", हेरिटेज गुरु ब्लॉग, 2014।</li>
+  <li>समाना वासियों की मौखिक परंपराएँ।</li>
+</ul>
+"""),
+            "timings": ("समय",
+                        "मशहद-ए-हिंद, समाना में ज़ियारत और नमाज़ के समय।",
+                        f"""
+<p>सभी समय स्थानीय (भारतीय मानक समय) हैं। विशेष अवसरों पर आने से पहले कमेटी से पुष्टि कर लें।</p>
+<div class="table-scroll"><table>
+  <thead><tr><th>दिन</th><th>खुलने का समय</th></tr></thead>
+  <tbody>
+    <tr><td>प्रतिदिन</td><td>{P("जैसे सुबह 6 बजे से रात 9 बजे तक")}</td></tr>
+    <tr><td>गुरुवार शाम</td><td>{P("गुरुवार का कार्यक्रम, यदि हो")}</td></tr>
+    <tr><td>शुक्रवार</td><td>{P("जुमे की नमाज़ का समय")}</td></tr>
+  </tbody>
+</table></div>
+
+<h2>रोज़ाना नमाज़</h2>
+<p>{P("जमात के साथ नमाज़ के समय, यदि रौज़े पर होती हो")}</p>
+
+<h2>मुहर्रम और विशेष अवसर</h2>
+<p>{P("मुहर्रम और अन्य अवसरों पर बढ़ाए गए समय")}</p>
+
+<h2>ज़ियारत के आदाब</h2>
+<ul>
+  <li>कृपया सादे और मर्यादित वस्त्र पहनें और सिर ढकें।</li>
+  <li>रौज़े में प्रवेश करने से पहले जूते उतार दें।</li>
+  <li>मज़ार के पास शांति रखें और नमाज़ पढ़ने वालों का सम्मान करें।</li>
+  <li>{P("रौज़े के अंदर फ़ोटो खींचने के नियम")}</li>
+</ul>
+"""),
+            "events": ("कार्यक्रम",
+                       "मशहद-ए-हिंद, समाना में मजलिसें और अवसर।",
+                       f"""
+<p>इस्लामी तारीख़ें चंद्र कैलेंडर के अनुसार होती हैं, इसलिए अंग्रेज़ी तारीख़ें हर साल बदलती हैं। कमेटी सही तारीख़ों की घोषणा करेगी।</p>
+<div class="table-scroll"><table>
+  <thead><tr><th>अवसर</th><th>इस्लामी तारीख़</th><th>इस वर्ष</th></tr></thead>
+  <tbody>
+    <tr><td>मशहद-ए-हिंद की सालाना मजलिस</td><td>{P("तारीख़")}</td><td>{P("तारीख़ और वक्ता")}</td></tr>
+    <tr><td>मुहर्रम की मजलिसें</td><td>1 से 10 मुहर्रम</td><td>{P("कार्यक्रम")}</td></tr>
+    <tr><td>{P("रौज़े पर मनाए जाने वाले अन्य अवसर")}</td><td>{P("तारीख़")}</td><td>{P("तारीख़")}</td></tr>
+  </tbody>
+</table></div>
+<p>पिछली मजलिसों के कार्यक्रम रौज़े के सोशल मीडिया पेजों पर देखे जा सकते हैं। {P("आधिकारिक पेजों के लिंक")}</p>
+"""),
+            "contact": ("संपर्क",
+                        "मशहद-ए-हिंद, समाना की कमेटी से संपर्क।",
+                        f"""
+<p>ज़ियारत, कार्यक्रमों और जानकारी के लिए कृपया रौज़े की कमेटी से संपर्क करें।</p>
+<div class="table-scroll"><table>
+  <tbody>
+    <tr><th>कमेटी</th><td>{P("प्रबंधक कमेटी का नाम")}</td></tr>
+    <tr><th>फ़ोन</th><td>{P("फ़ोन नंबर")}</td></tr>
+    <tr><th>ईमेल</th><td>{P("ईमेल पता")}</td></tr>
+    <tr><th>पता</th><td>{P("पूरा डाक पता")}<br>समाना, ज़िला पटियाला, पंजाब {P("पिन कोड")}, भारत</td></tr>
+  </tbody>
+</table></div>
+<p>रास्ते के लिए <a href="location.html">स्थान</a> पेज देखें।</p>
+"""),
+            "location": ("स्थान",
+                         "समाना, ज़िला पटियाला, पंजाब में मशहद-ए-हिंद तक कैसे पहुँचें।",
+                         f"""
+<p>मशहद-ए-हिंद ज़िला पटियाला, पंजाब के क़स्बे समाना में स्थित है। समाना पटियाला और पातड़ां के बीच स्टेट हाईवे 10 पर है।</p>
+<iframe class="map" src="{MAP_EMBED}" title="समाना का नक्शा" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">गूगल मैप्स में खोलें</a> · {P("कमेटी नक्शे पर सही स्थान की पुष्टि करे")}</p>
+
+<h2>यहाँ कैसे पहुँचें</h2>
+<ul>
+  <li><strong>सड़क से:</strong> पटियाला से लगभग 27 किलोमीटर दक्षिण-पश्चिम में, स्टेट हाईवे 10 पर (अनुमानित)।</li>
+  <li><strong>रेल से:</strong> सबसे नज़दीकी बड़ा रेलवे स्टेशन पटियाला है।</li>
+  <li><strong>हवाई मार्ग से:</strong> सबसे नज़दीकी हवाई अड्डा चंडीगढ़ है, लगभग 95 किलोमीटर दूर (अनुमानित)।</li>
+  <li>{P("समाना के अंदर रास्ता, पहचान के स्थान और पार्किंग")}</li>
+</ul>
+"""),
+        }
+
     if lang == "pa":
         return {
-            "index": ("ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
-                      "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ (ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ), ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ ਦਾ ਰੌਜ਼ਾ, ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ।",
+            "index": ("ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ: ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ",
+                      "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ (ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ), ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ ਦਾ ਰੌਜ਼ਾ, ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ ਦੀ ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ।",
                       f"""
 <section class="hero">
   <img class="arch" src="../assets/arch.svg" alt="">
@@ -450,6 +589,49 @@ def href_to(page, from_lang, to_lang):
     return f"{up}{LANGS[to_lang]['prefix']}{page}.html"
 
 
+OG_LOCALE = {"en": "en_IN", "hi": "hi_IN", "pa": "pa_IN", "ur": "ur_IN"}
+
+
+def page_url(page, lang):
+    """Absolute address of a page, used by search engines."""
+    return f"{SITE_URL}/{LANGS[lang]['prefix']}{'' if page == 'index' else page + '.html'}"
+
+
+def json_ld(lang, desc):
+    """Structured data so search engines know this is the shrine's own site."""
+    import json
+    data = {
+        "@context": "https://schema.org",
+        "@type": ["PlaceOfWorship", "TouristAttraction"],
+        "name": "Mashhad-e-Hind",
+        "alternateName": ["Mashhad e Hind", "Mashad-e-Hind", "Panj Peer Mazar, Samana",
+                          "Roza-e-Imam Mashhad Ali", "मशहद-ए-हिंद", "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ", "مشہدِ ہند"],
+        "description": desc,
+        "url": page_url("index", lang),
+        "inLanguage": lang,
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Samana",
+            "addressRegion": "Punjab",
+            "addressCountry": "IN",
+        },
+    }
+    return f'<script type="application/ld+json">{json.dumps(data, ensure_ascii=False)}</script>'
+
+
+def sitemap():
+    urls = []
+    for page in PAGES:
+        for lang in LANGS:
+            alts = "".join(
+                f'\n    <xhtml:link rel="alternate" hreflang="{o}" href="{page_url(page, o)}"/>' for o in LANGS
+            )
+            urls.append(f"  <url>\n    <loc>{page_url(page, lang)}</loc>{alts}\n  </url>")
+    return ('<?xml version="1.0" encoding="UTF-8"?>\n'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+            'xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + "\n".join(urls) + "\n</urlset>\n")
+
+
 def render(lang, page, title, desc, body):
     L = LANGS[lang]
     up = "../" if L["prefix"] else ""
@@ -463,9 +645,18 @@ def render(lang, page, title, desc, body):
         for other in LANGS
     )
     alternates = "\n".join(
-        f'<link rel="alternate" hreflang="{other}" href="/{LANGS[other]["prefix"]}{"" if page == "index" else page + ".html"}">'
+        f'<link rel="alternate" hreflang="{other}" href="{page_url(page, other)}">'
         for other in LANGS
-    )
+    ) + f'\n<link rel="alternate" hreflang="x-default" href="{page_url(page, "en")}">'
+    seo = f"""<link rel="canonical" href="{page_url(page, lang)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{L['site']}">
+<meta property="og:title" content="{title}">
+<meta property="og:description" content="{desc}">
+<meta property="og:url" content="{page_url(page, lang)}">
+<meta property="og:locale" content="{OG_LOCALE[lang]}">"""
+    if page == "index":
+        seo += "\n" + json_ld(lang, desc)
     full_title = title if page == "index" else f"{title} · {L['site']}"
     heading = "" if page == "index" else f'<div class="page-title"><h1>{title}</h1></div>\n'
     return f"""<!doctype html>
@@ -475,6 +666,7 @@ def render(lang, page, title, desc, body):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{full_title}</title>
 <meta name="description" content="{desc}">
+{seo}
 {alternates}
 <link rel="icon" href="{up}assets/arch.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -514,7 +706,9 @@ def main():
         for page in PAGES:
             title, desc, body = pages[page]
             (outdir / f"{page}.html").write_text(render(lang, page, title, desc, body), encoding="utf-8")
-    print("Wrote", len(LANGS) * len(PAGES), "pages")
+    (ROOT / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
+    (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
+    print("Wrote", len(LANGS) * len(PAGES), "pages, sitemap.xml and robots.txt")
 
 
 if __name__ == "__main__":

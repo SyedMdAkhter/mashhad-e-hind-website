@@ -8,10 +8,11 @@ Mashhad Ali in Samana, Patiala district, Punjab. Plain HTML and CSS, no build st
 | Language | Folder | Notes |
 |---|---|---|
 | English | `/` | |
-| Urdu | `/ur/` | Right-to-left layout, Noto Nastaliq Urdu font |
+| Hindi | `/hi/` | Devanagari script, Noto Sans Devanagari font |
 | Punjabi | `/pa/` | Gurmukhi script, Noto Sans Gurmukhi font |
+| Urdu | `/ur/` | Right-to-left layout, Noto Nastaliq Urdu font |
 
-Each page links to the same page in the other two languages. The Urdu and Punjabi text
+Each page links to the same page in the other languages, in the order English, Hindi, Punjabi, Urdu. The Hindi, Punjabi and Urdu text
 was translated from the English and **should be reviewed by a native speaker** before
 the site goes live. A Punjabi Shahmukhi version (`/pnb/`) could be added later the same
 way, reusing the Urdu right-to-left styling.
@@ -19,7 +20,11 @@ way, reusing the Urdu right-to-left styling.
 ## Pages
 
 `index.html` (home), `history.html`, `timings.html`, `events.html`, `contact.html`,
-`location.html`, in each language folder, plus `404.html`.
+`location.html`, in each language folder, plus `404.html`, `sitemap.xml` and `robots.txt`.
+
+## Search engines
+
+Every page has a title, description, canonical address and links to its other-language versions. The home pages also carry structured data naming the shrine. `SITE_URL` in `tools/generate.py` sets the address used in all of these; change it and regenerate when a custom domain is set up. See `GOOGLE-SEARCH.md` for the steps only the site owner can take.
 
 ## Placeholders
 
@@ -32,7 +37,7 @@ committee needs to confirm.
 ## Editing
 
 Edit the `.html` files directly, or edit the content in `tools/generate.py` and run
-`python3 tools/generate.py` to rewrite all 18 pages at once (useful for changes to the
+`python3 tools/generate.py` to rewrite all 24 pages at once (useful for changes to the
 menu or footer). Cloudflare does not run this script; it only serves the HTML.
 
 ## Deploying to Cloudflare Pages
