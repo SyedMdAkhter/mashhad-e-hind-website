@@ -36,6 +36,7 @@
 }
 
 html[lang="ur"] { --font-body: "Noto Nastaliq Urdu", "Jameel Noori Nastaleeq", serif; --font-head: "Noto Nastaliq Urdu", serif; }
+html[lang="hi"] { --font-body: "Noto Sans Devanagari", "Mangal", sans-serif; --font-head: "Noto Sans Devanagari", sans-serif; }
 html[lang="pa"] { --font-body: "Noto Sans Gurmukhi", "Raavi", sans-serif; --font-head: "Noto Sans Gurmukhi", sans-serif; }
 
 * { box-sizing: border-box; }
