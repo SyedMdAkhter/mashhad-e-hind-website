@@ -3,11 +3,6 @@
 A static website for Mashhad-e-Hind (Panj Peer Mazar), the shrine of Imamzada Syed
 Mashhad Ali in Samana, Patiala district, Punjab. Plain HTML and CSS, no build step.
 
-## Branches
-
-- `preview` holds the full site while the committee reviews it. Cloudflare publishes it as a preview deployment.
-- `main` is the live site. Until launch it shows only a "coming soon" page. To launch, merge `preview` into `main`.
-
 ## Languages
 
 | Language | Folder | Notes |
