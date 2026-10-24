@@ -164,12 +164,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>Occasion</th><th>Islamic date</th><th>This year</th></tr></thead>
   <tbody>
-    <tr><td>Annual majlis (Salana Majlis) at Mashhad-e-Hind</td><td>{P("date")}</td><td>21–22 November 2026</td></tr>
-    <tr><td>Majalis of Muharram</td><td>1–10 Muharram</td><td>{P("programme")}</td></tr>
-    <tr><td>{P("Other observances held at the shrine")}</td><td>{P("date")}</td><td>{P("date")}</td></tr>
+    <tr><td>Annual majlis (Salana Majlis) at Mashhad-e-Hind</td><td>11–12 Jumada al-Thani 1448 AH</td><td>21–22 November 2026</td></tr>
   </tbody>
 </table></div>
-<p>Programmes of past majalis may be found on the shrine's social media pages. {P("links to official pages")}</p>
+<p>Programmes of past majalis may be found on the shrine's social media pages.</p>
 """),
             "contact": ("Contact",
                         "Contact the committee of Mashhad-e-Hind, Samana.",
@@ -288,12 +286,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>موقع</th><th>اسلامی تاریخ</th><th>اس سال</th></tr></thead>
   <tbody>
-    <tr><td>مشہدِ ہند کی سالانہ مجلس</td><td>{P("تاریخ")}</td><td>۲۱–۲۲ نومبر ۲۰۲۶ء</td></tr>
-    <tr><td>مجالسِ محرم</td><td>۱ تا ۱۰ محرم</td><td>{P("پروگرام")}</td></tr>
-    <tr><td>{P("روضے پر منائے جانے والے دیگر مواقع")}</td><td>{P("تاریخ")}</td><td>{P("تاریخ")}</td></tr>
+    <tr><td>مشہدِ ہند کی سالانہ مجلس</td><td>۱۱–۱۲ جمادی الثانی ۱۴۴۸ھ</td><td>۲۱–۲۲ نومبر ۲۰۲۶ء</td></tr>
   </tbody>
 </table></div>
-<p>گزشتہ مجالس کے پروگرام روضے کے سوشل میڈیا صفحات پر دیکھے جا سکتے ہیں۔ {P("سرکاری صفحات کے لنک")}</p>
+<p>گزشتہ مجالس کے پروگرام روضے کے سوشل میڈیا صفحات پر دیکھے جا سکتے ہیں۔</p>
 """),
             "contact": ("رابطہ",
                         "مشہدِ ہند، سمانہ کی کمیٹی سے رابطہ۔",
@@ -412,12 +408,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>अवसर</th><th>इस्लामी तारीख़</th><th>इस वर्ष</th></tr></thead>
   <tbody>
-    <tr><td>मशहद-ए-हिंद की सालाना मजलिस</td><td>{P("तारीख़")}</td><td>21–22 नवंबर 2026</td></tr>
-    <tr><td>मुहर्रम की मजलिसें</td><td>1 से 10 मुहर्रम</td><td>{P("कार्यक्रम")}</td></tr>
-    <tr><td>{P("रौज़े पर मनाए जाने वाले अन्य अवसर")}</td><td>{P("तारीख़")}</td><td>{P("तारीख़")}</td></tr>
+    <tr><td>मशहद-ए-हिंद की सालाना मजलिस</td><td>11–12 जमादी-उस-सानी 1448 हिजरी</td><td>21–22 नवंबर 2026</td></tr>
   </tbody>
 </table></div>
-<p>पिछली मजलिसों के कार्यक्रम रौज़े के सोशल मीडिया पेजों पर देखे जा सकते हैं। {P("आधिकारिक पेजों के लिंक")}</p>
+<p>पिछली मजलिसों के कार्यक्रम रौज़े के सोशल मीडिया पेजों पर देखे जा सकते हैं।</p>
 """),
             "contact": ("संपर्क",
                         "मशहद-ए-हिंद, समाना की कमेटी से संपर्क।",
@@ -536,12 +530,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>ਮੌਕਾ</th><th>ਇਸਲਾਮੀ ਤਰੀਕ</th><th>ਇਸ ਸਾਲ</th></tr></thead>
   <tbody>
-    <tr><td>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਸਾਲਾਨਾ ਮਜਲਿਸ</td><td>{P("ਤਰੀਕ")}</td><td>21–22 ਨਵੰਬਰ 2026</td></tr>
-    <tr><td>ਮੁਹੱਰਮ ਦੀਆਂ ਮਜਲਿਸਾਂ</td><td>1 ਤੋਂ 10 ਮੁਹੱਰਮ</td><td>{P("ਪ੍ਰੋਗਰਾਮ")}</td></tr>
-    <tr><td>{P("ਰੌਜ਼ੇ ਉੱਤੇ ਮਨਾਏ ਜਾਂਦੇ ਹੋਰ ਮੌਕੇ")}</td><td>{P("ਤਰੀਕ")}</td><td>{P("ਤਰੀਕ")}</td></tr>
+    <tr><td>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਸਾਲਾਨਾ ਮਜਲਿਸ</td><td>11–12 ਜਮਾਦੀ-ਉਸ-ਸਾਨੀ 1448 ਹਿਜਰੀ</td><td>21–22 ਨਵੰਬਰ 2026</td></tr>
   </tbody>
 </table></div>
-<p>ਪਿਛਲੀਆਂ ਮਜਲਿਸਾਂ ਦੇ ਪ੍ਰੋਗਰਾਮ ਰੌਜ਼ੇ ਦੇ ਸੋਸ਼ਲ ਮੀਡੀਆ ਪੰਨਿਆਂ ਉੱਤੇ ਵੇਖੇ ਜਾ ਸਕਦੇ ਹਨ। {P("ਅਧਿਕਾਰਤ ਪੰਨਿਆਂ ਦੇ ਲਿੰਕ")}</p>
+<p>ਪਿਛਲੀਆਂ ਮਜਲਿਸਾਂ ਦੇ ਪ੍ਰੋਗਰਾਮ ਰੌਜ਼ੇ ਦੇ ਸੋਸ਼ਲ ਮੀਡੀਆ ਪੰਨਿਆਂ ਉੱਤੇ ਵੇਖੇ ਜਾ ਸਕਦੇ ਹਨ।</p>
 """),
             "contact": ("ਸੰਪਰਕ",
                         "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦੀ ਕਮੇਟੀ ਨਾਲ ਸੰਪਰਕ।",
