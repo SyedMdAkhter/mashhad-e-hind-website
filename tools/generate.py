@@ -139,24 +139,23 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>Day</th><th>Opening hours</th></tr></thead>
   <tbody>
-    <tr><td>Daily</td><td>{P("e.g. 6:00 am – 9:00 pm")}</td></tr>
-    <tr><td>Thursday evening</td><td>{P("Thursday programme, if any")}</td></tr>
-    <tr><td>Friday</td><td>{P("Friday prayer time")}</td></tr>
+    <tr><td>Daily</td><td>6:00 AM – 9:00 PM</td></tr>
+    <tr><td>Thursday evening</td><td>6:00 AM – 9:00 PM</td></tr>
+    <tr><td>Friday</td><td>Friday prayer at the time of Zuhr</td></tr>
   </tbody>
 </table></div>
 
 <h2>Daily prayers</h2>
-<p>{P("Times of congregational prayers, if held at the shrine")}</p>
+<p>As per the local Shia prayer timings for Patiala.</p>
 
 <h2>During Muharram and special occasions</h2>
-<p>{P("Extended hours during Muharram and on other occasions")}</p>
+<p>The committee will announce any programme that is scheduled.</p>
 
 <h2>When visiting</h2>
 <ul>
   <li>Please dress modestly and cover your head.</li>
   <li>Remove your shoes before entering the shrine.</li>
   <li>Kindly keep silence near the grave and respect those at prayer.</li>
-  <li>{P("Rules on photography inside the shrine")}</li>
 </ul>
 """),
             "events": ("Events",
@@ -265,24 +264,23 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>دن</th><th>زیارت کے اوقات</th></tr></thead>
   <tbody>
-    <tr><td>روزانہ</td><td>{P("مثلاً صبح ۶ بجے سے رات ۹ بجے تک")}</td></tr>
-    <tr><td>جمعرات کی شام</td><td>{P("جمعرات کا پروگرام، اگر ہو")}</td></tr>
-    <tr><td>جمعہ</td><td>{P("نمازِ جمعہ کا وقت")}</td></tr>
+    <tr><td>روزانہ</td><td>صبح ۶ بجے سے رات ۹ بجے تک</td></tr>
+    <tr><td>جمعرات کی شام</td><td>صبح ۶ بجے سے رات ۹ بجے تک</td></tr>
+    <tr><td>جمعہ</td><td>نمازِ جمعہ ظہر کے وقت</td></tr>
   </tbody>
 </table></div>
 
 <h2>روزانہ نمازیں</h2>
-<p>{P("باجماعت نماز کے اوقات، اگر روضے پر ادا ہوتی ہو")}</p>
+<p>پٹیالہ کے مقامی شیعہ اوقاتِ نماز کے مطابق۔</p>
 
 <h2>محرم اور خاص مواقع</h2>
-<p>{P("محرم اور دیگر مواقع پر توسیع شدہ اوقات")}</p>
+<p>کوئی پروگرام طے ہونے پر کمیٹی اس کا اعلان کرے گی۔</p>
 
 <h2>زیارت کے آداب</h2>
 <ul>
   <li>براہِ کرم باوقار لباس پہنیں اور سر ڈھانپیں۔</li>
   <li>روضے میں داخل ہونے سے پہلے جوتے اتار دیں۔</li>
   <li>مزار کے قریب خاموشی رکھیں اور نماز پڑھنے والوں کا احترام کریں۔</li>
-  <li>{P("روضے کے اندر تصویر کشی کے قواعد")}</li>
 </ul>
 """),
             "events": ("تقریبات",
@@ -391,24 +389,23 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>दिन</th><th>खुलने का समय</th></tr></thead>
   <tbody>
-    <tr><td>प्रतिदिन</td><td>{P("जैसे सुबह 6 बजे से रात 9 बजे तक")}</td></tr>
-    <tr><td>गुरुवार शाम</td><td>{P("गुरुवार का कार्यक्रम, यदि हो")}</td></tr>
-    <tr><td>शुक्रवार</td><td>{P("जुमे की नमाज़ का समय")}</td></tr>
+    <tr><td>प्रतिदिन</td><td>सुबह 6 बजे से रात 9 बजे तक</td></tr>
+    <tr><td>गुरुवार शाम</td><td>सुबह 6 बजे से रात 9 बजे तक</td></tr>
+    <tr><td>शुक्रवार</td><td>जुमे की नमाज़ ज़ुहर के समय</td></tr>
   </tbody>
 </table></div>
 
 <h2>रोज़ाना नमाज़</h2>
-<p>{P("जमात के साथ नमाज़ के समय, यदि रौज़े पर होती हो")}</p>
+<p>पटियाला के स्थानीय शिया नमाज़ समय के अनुसार।</p>
 
 <h2>मुहर्रम और विशेष अवसर</h2>
-<p>{P("मुहर्रम और अन्य अवसरों पर बढ़ाए गए समय")}</p>
+<p>कोई कार्यक्रम तय होने पर कमेटी उसकी घोषणा करेगी।</p>
 
 <h2>ज़ियारत के आदाब</h2>
 <ul>
   <li>कृपया सादे और मर्यादित वस्त्र पहनें और सिर ढकें।</li>
   <li>रौज़े में प्रवेश करने से पहले जूते उतार दें।</li>
   <li>मज़ार के पास शांति रखें और नमाज़ पढ़ने वालों का सम्मान करें।</li>
-  <li>{P("रौज़े के अंदर फ़ोटो खींचने के नियम")}</li>
 </ul>
 """),
             "events": ("कार्यक्रम",
@@ -517,24 +514,23 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>ਦਿਨ</th><th>ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ</th></tr></thead>
   <tbody>
-    <tr><td>ਰੋਜ਼ਾਨਾ</td><td>{P("ਜਿਵੇਂ ਸਵੇਰੇ 6 ਵਜੇ ਤੋਂ ਰਾਤ 9 ਵਜੇ ਤੱਕ")}</td></tr>
-    <tr><td>ਵੀਰਵਾਰ ਸ਼ਾਮ</td><td>{P("ਵੀਰਵਾਰ ਦਾ ਪ੍ਰੋਗਰਾਮ, ਜੇ ਹੋਵੇ")}</td></tr>
-    <tr><td>ਸ਼ੁੱਕਰਵਾਰ</td><td>{P("ਜੁਮੇ ਦੀ ਨਮਾਜ਼ ਦਾ ਸਮਾਂ")}</td></tr>
+    <tr><td>ਰੋਜ਼ਾਨਾ</td><td>ਸਵੇਰੇ 6 ਵਜੇ ਤੋਂ ਰਾਤ 9 ਵਜੇ ਤੱਕ</td></tr>
+    <tr><td>ਵੀਰਵਾਰ ਸ਼ਾਮ</td><td>ਸਵੇਰੇ 6 ਵਜੇ ਤੋਂ ਰਾਤ 9 ਵਜੇ ਤੱਕ</td></tr>
+    <tr><td>ਸ਼ੁੱਕਰਵਾਰ</td><td>ਜੁਮੇ ਦੀ ਨਮਾਜ਼ ਜ਼ੁਹਰ ਦੇ ਵੇਲੇ</td></tr>
   </tbody>
 </table></div>
 
 <h2>ਰੋਜ਼ਾਨਾ ਨਮਾਜ਼</h2>
-<p>{P("ਜਮਾਤ ਨਾਲ ਨਮਾਜ਼ ਦੇ ਸਮੇਂ, ਜੇ ਰੌਜ਼ੇ ਉੱਤੇ ਹੁੰਦੀ ਹੋਵੇ")}</p>
+<p>ਪਟਿਆਲਾ ਦੇ ਸਥਾਨਕ ਸ਼ੀਆ ਨਮਾਜ਼ ਸਮਿਆਂ ਅਨੁਸਾਰ।</p>
 
 <h2>ਮੁਹੱਰਮ ਅਤੇ ਖ਼ਾਸ ਮੌਕੇ</h2>
-<p>{P("ਮੁਹੱਰਮ ਅਤੇ ਹੋਰ ਮੌਕਿਆਂ ਉੱਤੇ ਵਧਾਏ ਗਏ ਸਮੇਂ")}</p>
+<p>ਕੋਈ ਪ੍ਰੋਗਰਾਮ ਤੈਅ ਹੋਣ ਉੱਤੇ ਕਮੇਟੀ ਉਸ ਦਾ ਐਲਾਨ ਕਰੇਗੀ।</p>
 
 <h2>ਜ਼ਿਆਰਤ ਦੇ ਅਦਬ</h2>
 <ul>
   <li>ਕਿਰਪਾ ਕਰਕੇ ਸਾਦਾ ਅਤੇ ਮਰਿਆਦਾ ਵਾਲਾ ਪਹਿਰਾਵਾ ਪਾਓ ਅਤੇ ਸਿਰ ਢੱਕੋ।</li>
   <li>ਰੌਜ਼ੇ ਵਿੱਚ ਦਾਖ਼ਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਜੁੱਤੀਆਂ ਉਤਾਰ ਦਿਓ।</li>
   <li>ਮਜ਼ਾਰ ਦੇ ਨੇੜੇ ਚੁੱਪ ਰੱਖੋ ਅਤੇ ਨਮਾਜ਼ ਪੜ੍ਹਨ ਵਾਲਿਆਂ ਦਾ ਸਤਿਕਾਰ ਕਰੋ।</li>
-  <li>{P("ਰੌਜ਼ੇ ਦੇ ਅੰਦਰ ਤਸਵੀਰਾਂ ਖਿੱਚਣ ਦੇ ਨਿਯਮ")}</li>
 </ul>
 """),
             "events": ("ਸਮਾਗਮ",
@@ -662,25 +658,25 @@ def home_sections(lang):
 # Interface text used by the page shell, home hero and footer.
 UI = {
     "en": {"cta_visit": "Plan your visit", "cta_history": "Read the history",
-           "hours": "Opening hours", "hours_link": "See all timings",
+           "hours": "Opening hours", "hours_link": "Daily 6 AM – 9 PM",
            "next": "Next event", "next_text": "Annual majlis · 21–22 November 2026",
            "where": "Location", "where_text": "Samana, Patiala district, Punjab",
            "photo_alt": "Mashhad-e-Hind shrine, Samana", "quick": "Quick links",
            "country": "Samana, Patiala district, Punjab, India"},
     "hi": {"cta_visit": "ज़ियारत की योजना बनाएँ", "cta_history": "इतिहास पढ़ें",
-           "hours": "खुलने का समय", "hours_link": "सभी समय देखें",
+           "hours": "खुलने का समय", "hours_link": "प्रतिदिन सुबह 6 से रात 9 बजे",
            "next": "अगला कार्यक्रम", "next_text": "सालाना मजलिस · 21–22 नवंबर 2026",
            "where": "स्थान", "where_text": "समाना, ज़िला पटियाला, पंजाब",
            "photo_alt": "मशहद-ए-हिंद का रौज़ा, समाना", "quick": "त्वरित लिंक",
            "country": "समाना, ज़िला पटियाला, पंजाब, भारत"},
     "pa": {"cta_visit": "ਜ਼ਿਆਰਤ ਦੀ ਯੋਜਨਾ ਬਣਾਓ", "cta_history": "ਇਤਿਹਾਸ ਪੜ੍ਹੋ",
-           "hours": "ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ", "hours_link": "ਸਾਰੇ ਸਮੇਂ ਵੇਖੋ",
+           "hours": "ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ", "hours_link": "ਰੋਜ਼ਾਨਾ ਸਵੇਰੇ 6 ਤੋਂ ਰਾਤ 9 ਵਜੇ",
            "next": "ਅਗਲਾ ਸਮਾਗਮ", "next_text": "ਸਾਲਾਨਾ ਮਜਲਿਸ · 21–22 ਨਵੰਬਰ 2026",
            "where": "ਟਿਕਾਣਾ", "where_text": "ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ",
            "photo_alt": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦਾ ਰੌਜ਼ਾ, ਸਮਾਣਾ", "quick": "ਤੁਰੰਤ ਲਿੰਕ",
            "country": "ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ"},
     "ur": {"cta_visit": "زیارت کا منصوبہ بنائیں", "cta_history": "تاریخ پڑھیں",
-           "hours": "زیارت کے اوقات", "hours_link": "تمام اوقات دیکھیں",
+           "hours": "زیارت کے اوقات", "hours_link": "روزانہ صبح ۶ سے رات ۹ بجے",
            "next": "اگلی تقریب", "next_text": "سالانہ مجلس · ۲۱–۲۲ نومبر ۲۰۲۶ء",
            "where": "مقام", "where_text": "سمانہ، ضلع پٹیالہ، پنجاب",
            "photo_alt": "مشہدِ ہند کا روضہ، سمانہ", "quick": "فوری روابط",
@@ -828,6 +824,7 @@ def json_ld(lang, desc):
                           "Roza-e-Imam Mashhad Ali", "मशहद-ए-हिंद", "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ", "مشہدِ ہند"],
         "description": desc,
         "url": page_url("index", lang),
+        "openingHours": "Mo-Su 06:00-21:00",
         "inLanguage": lang,
         "address": {
             "@type": "PostalAddress",
