@@ -5,9 +5,12 @@ Optional convenience only: the committed .html files are what Cloudflare Pages
 serves, and they can be edited by hand. If you edit content here instead, run
 `python3 tools/generate.py` from the repository root to rewrite the pages.
 """
+import hashlib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# Changes whenever style.css changes, so browsers fetch the new file instead of a cached copy.
+CSS_VERSION = hashlib.sha1((ROOT / "assets" / "style.css").read_bytes()).hexdigest()[:8]
 
 MAP_QUERY = "Panj+Peer+Mazar+Mashhad-e-Hind+Samana+Punjab"
 MAP_EMBED = f"https://maps.google.com/maps?q={MAP_QUERY}&output=embed"
@@ -938,7 +941,7 @@ def render(lang, page, title, desc, body):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={fonts}&display=swap">
-<link rel="stylesheet" href="{up}assets/style.css">
+<link rel="stylesheet" href="{up}assets/style.css?v={CSS_VERSION}">
 </head>
 <body>
 <a class="skip" href="#main">{L['skip']}</a>
