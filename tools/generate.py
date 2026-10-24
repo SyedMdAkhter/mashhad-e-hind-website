@@ -877,7 +877,6 @@ def render(lang, page, title, desc, body):
 """
     fonts = L["fonts"] + ("&family=Amiri:wght@400;700" if page == "index" else "")
     import re
-    footer_note = re.split(r"[.।۔] ", L["footer"], maxsplit=1)[-1]
     label = dict(zip(PAGES, L["nav"]))
     quick = "".join(f'<li><a href="{p}.html">{label}</a></li>' for p, label in zip(PAGES, L["nav"]))
     return f"""<!doctype html>
@@ -933,7 +932,7 @@ def render(lang, page, title, desc, body):
     </div>
   </div>
   <div class="footer-bottom">
-    <div class="wrap">© 2026 {L['site']} · {footer_note}</div>
+    <div class="wrap">© 2026 {L['site']} · {L['authority']}</div>
   </div>
 </footer>
 </body>
