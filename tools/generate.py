@@ -24,6 +24,7 @@ LANGS = {
         "dir": "ltr", "prefix": "", "label": "English",
         "fonts": "Noto+Serif:wght@400;700",
         "site": "Dargah-e-Aliya Mashhad-e-Hind, Samana",
+        "menu": "Menu",
         "ph": "To be confirmed by the committee",
         "nav": ["Home", "History", "Timings", "Events", "Committee", "Contact", "Location"],
         "authority": "An undertaking of the Punjab Waqf Board",
@@ -35,6 +36,7 @@ LANGS = {
         "dir": "ltr", "prefix": "hi/", "label": "हिन्दी",
         "fonts": "Noto+Sans+Devanagari:wght@400;700",
         "site": "दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
+        "menu": "मेनू",
         "ph": "कमेटी द्वारा पुष्टि बाकी है",
         "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "कमेटी", "संपर्क", "स्थान"],
         "authority": "पंजाब वक़्फ़ बोर्ड के अधीन",
@@ -46,6 +48,7 @@ LANGS = {
         "dir": "ltr", "prefix": "pa/", "label": "ਪੰਜਾਬੀ",
         "fonts": "Noto+Sans+Gurmukhi:wght@400;700",
         "site": "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
+        "menu": "ਮੀਨੂ",
         "ph": "ਕਮੇਟੀ ਵੱਲੋਂ ਪੁਸ਼ਟੀ ਬਾਕੀ ਹੈ",
         "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਕਮੇਟੀ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
         "authority": "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਅਧੀਨ",
@@ -57,6 +60,7 @@ LANGS = {
         "dir": "rtl", "prefix": "ur/", "label": "اردو",
         "fonts": "Noto+Nastaliq+Urdu:wght@400;700",
         "site": "درگاہِ عالیہ مشہدِ ہند، سمانہ",
+        "menu": "مینو",
         "ph": "کمیٹی سے تصدیق باقی ہے",
         "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "کمیٹی", "رابطہ", "مقام"],
         "authority": "پنجاب وقف بورڈ کے زیرِ انتظام",
@@ -946,14 +950,16 @@ def render(lang, page, title, desc, body):
 </div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="emblem"><img src="{up}assets/arch.svg" alt=""></span><span class="brand-name">{L['site']}</span></a>
+    <a class="brand" href="index.html"><span class="emblem"><img src="{up}assets/arch.svg" alt=""></span><span class="brand-name">{' '.join(f'<span class="nw">{w}</span>' for w in L['site'].split())}</span></a>
   </div>
 </header>
 <nav class="main" aria-label="{L['nav'][0]}">
-  <ul>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>{L['menu']}</span></button>
+  <ul id="site-menu">
 {nav}
   </ul>
 </nav>
+<script>(function(){{var n=document.querySelector('nav.main'),b=n.querySelector('.menu-toggle');n.classList.add('js');b.addEventListener('click',function(){{b.setAttribute('aria-expanded',n.classList.toggle('open'))}})}})();</script>
 {top}<main id="main" class="wrap">
 {body.strip()}
 </main>

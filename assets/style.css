@@ -79,6 +79,8 @@ html[lang="ur"] h1, html[lang="ur"] h2, html[lang="ur"] h3 { line-height: 2; }
 .lang-switch a { color: #e8efe9; text-decoration: none; padding: .05rem .65rem; border: 1px solid rgba(226, 196, 124, .35); border-radius: 999px; line-height: 1.8; }
 .lang-switch a:hover { border-color: var(--gold-light); color: #fff; }
 .lang-switch a[aria-current="true"] { background: var(--gold); border-color: var(--gold); color: #1b1405; }
+@media (max-width: 699px) { .topbar-inner { justify-content: center; text-align: center; } .lang-switch { justify-content: center; } }
+.nw { white-space: nowrap; }
 
 /* ---------- Header ---------- */
 .site-header { background: var(--green-deep) var(--pattern); border-bottom: 1px solid rgba(226, 196, 124, .25); }
@@ -96,6 +98,15 @@ nav.main ul { list-style: none; margin: 0 auto; padding: 0 8px; max-width: 1120p
 nav.main a { display: block; color: #f4efe1; text-decoration: none; padding: .6rem .95rem; border-bottom: 3px solid transparent; margin-bottom: -2px; }
 nav.main a:hover { color: var(--gold-light); }
 nav.main a[aria-current="page"] { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+.menu-toggle { display: none; }
+@media (max-width: 699px) {
+  nav.main.js .menu-toggle { display: flex; align-items: center; justify-content: center; gap: .55rem; width: 100%; min-height: 48px; padding: .6rem 1rem; background: none; border: 0; color: #f4efe1; font: inherit; font-weight: 600; cursor: pointer; }
+  nav.main.js ul { display: none; }
+  nav.main.js.open ul { display: flex; flex-direction: column; padding: 0 0 .4rem; max-height: calc(100vh - 56px); overflow-y: auto; }
+  nav.main.js.open .menu-toggle { color: var(--gold-light); }
+  nav.main.js a { text-align: center; padding: .8rem 1rem; border-bottom: 0; border-top: 1px solid rgba(255, 255, 255, .1); margin: 0; }
+  nav.main.js a[aria-current="page"] { background: rgba(0, 0, 0, .18); }
+}
 
 /* ---------- Home hero ---------- */
 .hero { background: radial-gradient(ellipse at 70% 20%, rgba(184, 145, 63, .18), transparent 60%), var(--green-deep) var(--pattern); color: #f4efe1; padding: 3rem 0 3.5rem; }

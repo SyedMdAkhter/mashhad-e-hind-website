@@ -33,11 +33,12 @@
 </div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="emblem"><img src="../assets/arch.svg" alt=""></span><span class="brand-name">ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ</span></a>
+    <a class="brand" href="index.html"><span class="emblem"><img src="../assets/arch.svg" alt=""></span><span class="brand-name"><span class="nw">ਦਰਗਾਹ-ਏ-ਆਲੀਆ</span> <span class="nw">ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ,</span> <span class="nw">ਸਮਾਣਾ</span></span></a>
   </div>
 </header>
 <nav class="main" aria-label="ਮੁੱਖ ਪੰਨਾ">
-  <ul>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>ਮੀਨੂ</span></button>
+  <ul id="site-menu">
     <li><a href="index.html">ਮੁੱਖ ਪੰਨਾ</a></li>
     <li><a href="history.html">ਇਤਿਹਾਸ</a></li>
     <li><a href="timings.html">ਸਮਾਂ</a></li>
@@ -47,6 +48,7 @@
     <li><a href="location.html">ਟਿਕਾਣਾ</a></li>
   </ul>
 </nav>
+<script>(function(){var n=document.querySelector('nav.main'),b=n.querySelector('.menu-toggle');n.classList.add('js');b.addEventListener('click',function(){b.setAttribute('aria-expanded',n.classList.toggle('open'))})})();</script>
 <section class="page-banner">
   <div class="wrap">
     <p class="crumbs"><a href="index.html">ਮੁੱਖ ਪੰਨਾ</a> <span aria-hidden="true">/</span> ਸਮਾਗਮ</p>
