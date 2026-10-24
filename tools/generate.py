@@ -950,7 +950,7 @@ def render(lang, page, title, desc, body):
 </div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><span class="emblem"><img src="{up}assets/arch.svg" alt=""></span><span class="brand-name">{L['site']}</span></a>
+    <a class="brand" href="index.html"><span class="emblem"><img src="{up}assets/arch.svg" alt=""></span><span class="brand-name">{' '.join(f'<span class="nw">{w}</span>' for w in L['site'].split())}</span></a>
   </div>
 </header>
 <nav class="main" aria-label="{L['nav'][0]}">

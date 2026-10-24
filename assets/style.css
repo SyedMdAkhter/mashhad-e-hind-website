@@ -79,6 +79,8 @@ html[lang="ur"] h1, html[lang="ur"] h2, html[lang="ur"] h3 { line-height: 2; }
 .lang-switch a { color: #e8efe9; text-decoration: none; padding: .05rem .65rem; border: 1px solid rgba(226, 196, 124, .35); border-radius: 999px; line-height: 1.8; }
 .lang-switch a:hover { border-color: var(--gold-light); color: #fff; }
 .lang-switch a[aria-current="true"] { background: var(--gold); border-color: var(--gold); color: #1b1405; }
+@media (max-width: 699px) { .topbar-inner { justify-content: center; text-align: center; } .lang-switch { justify-content: center; } }
+.nw { white-space: nowrap; }
 
 /* ---------- Header ---------- */
 .site-header { background: var(--green-deep) var(--pattern); border-bottom: 1px solid rgba(226, 196, 124, .25); }
