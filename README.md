@@ -26,6 +26,10 @@ way, reusing the Urdu right-to-left styling.
 
 Every page has a title, description, canonical address and links to its other-language versions. The home pages also carry structured data naming the shrine. `SITE_URL` in `tools/generate.py` sets the address used in all of these; change it and regenerate when a custom domain is set up. See `GOOGLE-SEARCH.md` for the steps only the site owner can take.
 
+## News and the Chairman's message
+
+The home page shows the `NEWS` list and the Chairman's video from `tools/generate.py`. To add news, put the pictures in `assets/news/`, add an entry at the top of `NEWS` with its heading and text in each language, and regenerate. The video is `assets/media/chairman-message.mp4` with `chairman-message.jpg` as its cover; keep videos under 25 MB, Cloudflare Pages' per-file limit.
+
 ## Placeholders
 
 Anything not yet confirmed is shown in a yellow dashed box like

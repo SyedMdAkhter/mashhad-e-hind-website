@@ -15,16 +15,18 @@ MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 
 # Address the site is served from. Change this when a custom domain is set up.
 SITE_URL = "https://mashhad-e-hind-website.pages.dev"
+WAQF_URL = "https://waqf.punjab.gov.in/"
 
-PAGES = ["index", "history", "timings", "events", "contact", "location"]
+PAGES = ["index", "history", "timings", "events", "committee", "contact", "location"]
 
 LANGS = {
     "en": {
         "dir": "ltr", "prefix": "", "label": "English",
         "fonts": "Noto+Serif:wght@400;700",
-        "site": "Mashhad-e-Hind, Samana",
+        "site": "Dargah-e-Aliya Mashhad-e-Hind, Samana",
         "ph": "To be confirmed by the committee",
-        "nav": ["Home", "History", "Timings", "Events", "Contact", "Location"],
+        "nav": ["Home", "History", "Timings", "Events", "Committee", "Contact", "Location"],
+        "authority": "An undertaking of the Punjab Waqf Board",
         "skip": "Skip to content",
         "footer": "Mashhad-e-Hind · Samana, Patiala district, Punjab, India. "
                   "Text marked in yellow is awaiting confirmation by the shrine committee.",
@@ -32,9 +34,10 @@ LANGS = {
     "hi": {
         "dir": "ltr", "prefix": "hi/", "label": "हिन्दी",
         "fonts": "Noto+Sans+Devanagari:wght@400;700",
-        "site": "मशहद-ए-हिंद, समाना",
+        "site": "दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
         "ph": "कमेटी द्वारा पुष्टि बाकी है",
-        "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "संपर्क", "स्थान"],
+        "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "कमेटी", "संपर्क", "स्थान"],
+        "authority": "पंजाब वक़्फ़ बोर्ड के अधीन",
         "skip": "सामग्री पर जाएँ",
         "footer": "मशहद-ए-हिंद · समाना, ज़िला पटियाला, पंजाब, भारत। "
                   "पीले रंग में दिखाए गए लेख की पुष्टि रौज़े की कमेटी द्वारा अभी बाकी है।",
@@ -42,9 +45,10 @@ LANGS = {
     "pa": {
         "dir": "ltr", "prefix": "pa/", "label": "ਪੰਜਾਬੀ",
         "fonts": "Noto+Sans+Gurmukhi:wght@400;700",
-        "site": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
+        "site": "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
         "ph": "ਕਮੇਟੀ ਵੱਲੋਂ ਪੁਸ਼ਟੀ ਬਾਕੀ ਹੈ",
-        "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
+        "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਕਮੇਟੀ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
+        "authority": "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਅਧੀਨ",
         "skip": "ਸਮੱਗਰੀ ਵੱਲ ਜਾਓ",
         "footer": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ · ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ। "
                   "ਪੀਲੇ ਰੰਗ ਵਿੱਚ ਦਰਸਾਈ ਲਿਖਤ ਦੀ ਪੁਸ਼ਟੀ ਰੌਜ਼ੇ ਦੀ ਕਮੇਟੀ ਵੱਲੋਂ ਹਾਲੇ ਬਾਕੀ ਹੈ।",
@@ -52,9 +56,10 @@ LANGS = {
     "ur": {
         "dir": "rtl", "prefix": "ur/", "label": "اردو",
         "fonts": "Noto+Nastaliq+Urdu:wght@400;700",
-        "site": "مشہدِ ہند، سمانہ",
+        "site": "درگاہِ عالیہ مشہدِ ہند، سمانہ",
         "ph": "کمیٹی سے تصدیق باقی ہے",
-        "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
+        "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "کمیٹی", "رابطہ", "مقام"],
+        "authority": "پنجاب وقف بورڈ کے زیرِ انتظام",
         "skip": "مواد پر جائیں",
         "footer": "مشہدِ ہند · سمانہ، ضلع پٹیالہ، پنجاب، بھارت۔ "
                   "پیلے رنگ میں نشان زد عبارت کی تصدیق روضے کی کمیٹی سے ابھی باقی ہے۔",
@@ -75,7 +80,7 @@ def content(lang):
     P = lambda w: ph(lang, w)
     if lang == "en":
         return {
-            "index": ("Mashhad-e-Hind, Samana: official website",
+            "index": ("Dargah-e-Aliya Mashhad-e-Hind, Samana: official website",
                       "Official website of Mashhad-e-Hind (Mashhad e Hind, Panj Peer Mazar), the shrine of Imamzada Syed Mashhad Ali in Samana, Patiala district, Punjab. History, timings, events, contact and directions.",
                       f"""
 <section class="hero">
@@ -109,12 +114,12 @@ def content(lang):
 
 <h2>Imamzada Syed Mashhad Ali</h2>
 <p>The shrine is revered as the resting place of Imamzada Syed Mashhad Ali. According to tradition, he came to this region from Mashhad in Khorasan during a time of hardship for the family of the Imams under the Abbasid caliph al-Ma'mun.</p>
-<p class="uncertain">Accounts differ on his exact lineage. Some describe him as a son of Imam Ali al-Rida (peace be upon him), some as a later descendant of the Imam, and some as a son of Imam Muhammad al-Taqi (peace be upon him). {P("committee to confirm the lineage to be stated")}</p>
+<p class="uncertain">Accounts differ on his exact lineage. Some describe him as a son of Imam Ali al-Rida (peace be upon him), some as a later descendant of the Imam, and some as a son of Imam Muhammad al-Taqi (peace be upon him).</p>
 
 <h2>The shrine and its inscription</h2>
 <p>For a long time the tomb was known simply as the Panj Peer Mazar. When the shrine complex was being cleaned, at the suggestion of Justice Shabbar Rizvi of the Lahore High Court, whose family had lived in Samana before Partition, a Persian inscription came to light.</p>
 <p>As it has been reported, the inscription names the tomb as that of Imam Mashhad Ali and records that the building was raised by Ajruddin Khan Mughal, son of Bakhsh Allah Khan, in the month of Ramadan, 967 AH, in the fourth year of the reign of Emperor Akbar. This corresponds to about 1560 CE; some accounts give 1559.</p>
-<p class="uncertain">The reading of the inscription is reported to have been examined by religious scholars, historians and visiting officials. A published scholarly reading has not yet been found. {P("committee to add the full text and translation of the inscription, and a photograph")}</p>
+<p class="uncertain">The reading of the inscription is reported to have been examined by religious scholars, historians and visiting officials. A published scholarly reading has not yet been found.</p>
 
 <h2>Since 1947</h2>
 <p>At Partition in 1947 many Sayyid families of Samana left for Pakistan. The shrine remained, and in recent years it has again become a place of visitation for Shia and Sunni Muslims and for Sikh devotees. An annual majlis is held at Mashhad-e-Hind.</p>
@@ -134,24 +139,22 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>Day</th><th>Opening hours</th></tr></thead>
   <tbody>
-    <tr><td>Daily</td><td>{P("e.g. 6:00 am – 9:00 pm")}</td></tr>
-    <tr><td>Thursday evening</td><td>{P("Thursday programme, if any")}</td></tr>
-    <tr><td>Friday</td><td>{P("Friday prayer time")}</td></tr>
+    <tr><td>Daily</td><td>6:00 AM – 9:00 PM</td></tr>
+    <tr><td>Friday</td><td>Friday prayer at the time of Zuhr</td></tr>
   </tbody>
 </table></div>
 
 <h2>Daily prayers</h2>
-<p>{P("Times of congregational prayers, if held at the shrine")}</p>
+<p>As per the local Shia prayer timings for Patiala.</p>
 
 <h2>During Muharram and special occasions</h2>
-<p>{P("Extended hours during Muharram and on other occasions")}</p>
+<p>The committee will announce any programme that is scheduled.</p>
 
 <h2>When visiting</h2>
 <ul>
   <li>Please dress modestly and cover your head.</li>
   <li>Remove your shoes before entering the shrine.</li>
   <li>Kindly keep silence near the grave and respect those at prayer.</li>
-  <li>{P("Rules on photography inside the shrine")}</li>
 </ul>
 """),
             "events": ("Events",
@@ -161,12 +164,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>Occasion</th><th>Islamic date</th><th>This year</th></tr></thead>
   <tbody>
-    <tr><td>Annual majlis (Salana Majlis) at Mashhad-e-Hind</td><td>{P("date")}</td><td>{P("date and speakers")}</td></tr>
-    <tr><td>Majalis of Muharram</td><td>1–10 Muharram</td><td>{P("programme")}</td></tr>
-    <tr><td>{P("Other observances held at the shrine")}</td><td>{P("date")}</td><td>{P("date")}</td></tr>
+    <tr><td>Annual majlis (Salana Majlis) at Mashhad-e-Hind</td><td>11–12 Jumada al-Thani 1448 AH</td><td>21–22 November 2026</td></tr>
   </tbody>
 </table></div>
-<p>Programmes of past majalis may be found on the shrine's social media pages. {P("links to official pages")}</p>
+<p>Programmes of past majalis may be found on the shrine's social media pages.</p>
 """),
             "contact": ("Contact",
                         "Contact the committee of Mashhad-e-Hind, Samana.",
@@ -176,8 +177,8 @@ def content(lang):
   <tbody>
     <tr><th>Committee</th><td>{P("name of the managing committee")}</td></tr>
     <tr><th>Phone</th><td>{P("phone number")}</td></tr>
-    <tr><th>Email</th><td>{P("email address")}</td></tr>
-    <tr><th>Address</th><td>{P("full postal address")}<br>Samana, Patiala district, Punjab {P("PIN code")}, India</td></tr>
+    <tr><th>Email</th><td>–</td></tr>
+    <tr><th>Address</th><td>Samana, Patiala district, Punjab 147101, India</td></tr>
   </tbody>
 </table></div>
 <p>For directions, see the <a href="location.html">location</a> page.</p>
@@ -187,21 +188,21 @@ def content(lang):
                          f"""
 <p>Mashhad-e-Hind is in the town of Samana, Patiala district, Punjab. Samana lies on State Highway 10 between Patiala and Patran.</p>
 <iframe class="map" src="{MAP_EMBED}" title="Map of Samana" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">Open in Google Maps</a> · {P("committee to confirm the exact map pin")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">Open in Google Maps</a> for directions from where you are.</p>
 
 <h2>Getting here</h2>
 <ul>
-  <li><strong>By road:</strong> from Patiala, about 27 km south-west on State Highway 10 (approximate).</li>
+  <li><strong>By road:</strong> from Patiala, about 27 km south-west on State Highway 10.</li>
   <li><strong>By rail:</strong> the nearest major railway station is Patiala.</li>
-  <li><strong>By air:</strong> the nearest airport is Chandigarh, about 95 km away (approximate).</li>
-  <li>{P("Directions within Samana, landmarks and parking")}</li>
+  <li><strong>By air:</strong> the nearest airport is Chandigarh, about 95 km away.</li>
+  <li><strong>Within Samana:</strong> the shrine is widely known as Panj Peer Mazar, so asking for it by that name works well. For help on the way, please call a member of the <a href="committee.html">committee</a>.</li>
 </ul>
 """),
         }
 
     if lang == "ur":
         return {
-            "index": ("مشہدِ ہند، سمانہ: سرکاری ویب سائٹ",
+            "index": ("درگاہِ عالیہ مشہدِ ہند، سمانہ: سرکاری ویب سائٹ",
                       "مشہدِ ہند (پنج پیر مزار)، امام زادہ سید مشہد علی کا روضہ، سمانہ، ضلع پٹیالہ، پنجاب کی سرکاری ویب سائٹ۔",
                       f"""
 <section class="hero">
@@ -235,12 +236,12 @@ def content(lang):
 
 <h2>امام زادہ سید مشہد علی</h2>
 <p>یہ روضہ امام زادہ سید مشہد علی کی آرام گاہ مانا جاتا ہے۔ روایت کے مطابق وہ عباسی خلیفہ مامون کے دور میں، جب خاندانِ ائمہ پر سختی کا زمانہ تھا، خراسان کے شہر مشہد سے اس علاقے میں تشریف لائے۔</p>
-<p class="uncertain">ان کے نسب کے بارے میں روایات مختلف ہیں۔ بعض انہیں حضرت امام علی رضا علیہ السلام کا فرزند، بعض امام کی بعد کی نسل سے، اور بعض حضرت امام محمد تقی علیہ السلام کا فرزند بیان کرتے ہیں۔ {P("کمیٹی بیان کیے جانے والے نسب کی تصدیق کرے")}</p>
+<p class="uncertain">ان کے نسب کے بارے میں روایات مختلف ہیں۔ بعض انہیں حضرت امام علی رضا علیہ السلام کا فرزند، بعض امام کی بعد کی نسل سے، اور بعض حضرت امام محمد تقی علیہ السلام کا فرزند بیان کرتے ہیں۔</p>
 
 <h2>روضہ اور اس کا کتبہ</h2>
 <p>ایک عرصے تک یہ مزار صرف پنج پیر مزار کے نام سے جانا جاتا تھا۔ لاہور ہائی کورٹ کے جسٹس شبر رضوی کی تجویز پر، جن کا خاندان تقسیم سے پہلے سمانہ میں آباد تھا، جب روضے کے احاطے کی صفائی کی گئی تو ایک فارسی کتبہ سامنے آیا۔</p>
 <p>بیان کے مطابق اس کتبے میں اس مزار کو امام مشہد علی کا مزار کہا گیا ہے اور درج ہے کہ یہ عمارت اجرالدین خان مغل ولد بخش اللہ خان نے ماہِ رمضان ۹۶۷ ہجری میں، شہنشاہ اکبر کے دورِ حکومت کے چوتھے سال تعمیر کروائی۔ یہ تقریباً ۱۵۶۰ء بنتا ہے؛ بعض بیانات میں ۱۵۵۹ء درج ہے۔</p>
-<p class="uncertain">بیان کیا جاتا ہے کہ اس کتبے کی قرأت کا جائزہ علمائے دین، مؤرخین اور آنے والے حکام نے لیا۔ اس کی کوئی شائع شدہ علمی قرأت ابھی تک نہیں ملی۔ {P("کمیٹی کتبے کا مکمل متن، ترجمہ اور تصویر شامل کرے")}</p>
+<p class="uncertain">بیان کیا جاتا ہے کہ اس کتبے کی قرأت کا جائزہ علمائے دین، مؤرخین اور آنے والے حکام نے لیا۔ اس کی کوئی شائع شدہ علمی قرأت ابھی تک نہیں ملی۔</p>
 
 <h2>۱۹۴۷ء کے بعد</h2>
 <p>۱۹۴۷ء میں تقسیم کے وقت سمانہ کے بہت سے سادات خاندان پاکستان چلے گئے۔ روضہ اپنی جگہ قائم رہا، اور حالیہ برسوں میں یہ پھر سے شیعہ اور سنی مسلمانوں اور سکھ عقیدت مندوں کے لیے زیارت گاہ بن گیا ہے۔ مشہدِ ہند میں ہر سال ایک سالانہ مجلس منعقد ہوتی ہے۔</p>
@@ -260,24 +261,22 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>دن</th><th>زیارت کے اوقات</th></tr></thead>
   <tbody>
-    <tr><td>روزانہ</td><td>{P("مثلاً صبح ۶ بجے سے رات ۹ بجے تک")}</td></tr>
-    <tr><td>جمعرات کی شام</td><td>{P("جمعرات کا پروگرام، اگر ہو")}</td></tr>
-    <tr><td>جمعہ</td><td>{P("نمازِ جمعہ کا وقت")}</td></tr>
+    <tr><td>روزانہ</td><td>صبح ۶ بجے سے رات ۹ بجے تک</td></tr>
+    <tr><td>جمعہ</td><td>نمازِ جمعہ ظہر کے وقت</td></tr>
   </tbody>
 </table></div>
 
 <h2>روزانہ نمازیں</h2>
-<p>{P("باجماعت نماز کے اوقات، اگر روضے پر ادا ہوتی ہو")}</p>
+<p>پٹیالہ کے مقامی شیعہ اوقاتِ نماز کے مطابق۔</p>
 
 <h2>محرم اور خاص مواقع</h2>
-<p>{P("محرم اور دیگر مواقع پر توسیع شدہ اوقات")}</p>
+<p>کوئی پروگرام طے ہونے پر کمیٹی اس کا اعلان کرے گی۔</p>
 
 <h2>زیارت کے آداب</h2>
 <ul>
   <li>براہِ کرم باوقار لباس پہنیں اور سر ڈھانپیں۔</li>
   <li>روضے میں داخل ہونے سے پہلے جوتے اتار دیں۔</li>
   <li>مزار کے قریب خاموشی رکھیں اور نماز پڑھنے والوں کا احترام کریں۔</li>
-  <li>{P("روضے کے اندر تصویر کشی کے قواعد")}</li>
 </ul>
 """),
             "events": ("تقریبات",
@@ -287,12 +286,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>موقع</th><th>اسلامی تاریخ</th><th>اس سال</th></tr></thead>
   <tbody>
-    <tr><td>مشہدِ ہند کی سالانہ مجلس</td><td>{P("تاریخ")}</td><td>{P("تاریخ اور خطبا")}</td></tr>
-    <tr><td>مجالسِ محرم</td><td>۱ تا ۱۰ محرم</td><td>{P("پروگرام")}</td></tr>
-    <tr><td>{P("روضے پر منائے جانے والے دیگر مواقع")}</td><td>{P("تاریخ")}</td><td>{P("تاریخ")}</td></tr>
+    <tr><td>مشہدِ ہند کی سالانہ مجلس</td><td>۱۱–۱۲ جمادی الثانی ۱۴۴۸ھ</td><td>۲۱–۲۲ نومبر ۲۰۲۶ء</td></tr>
   </tbody>
 </table></div>
-<p>گزشتہ مجالس کے پروگرام روضے کے سوشل میڈیا صفحات پر دیکھے جا سکتے ہیں۔ {P("سرکاری صفحات کے لنک")}</p>
+<p>گزشتہ مجالس کے پروگرام روضے کے سوشل میڈیا صفحات پر دیکھے جا سکتے ہیں۔</p>
 """),
             "contact": ("رابطہ",
                         "مشہدِ ہند، سمانہ کی کمیٹی سے رابطہ۔",
@@ -302,8 +299,8 @@ def content(lang):
   <tbody>
     <tr><th>کمیٹی</th><td>{P("انتظامی کمیٹی کا نام")}</td></tr>
     <tr><th>فون</th><td>{P("فون نمبر")}</td></tr>
-    <tr><th>ای میل</th><td>{P("ای میل پتہ")}</td></tr>
-    <tr><th>پتہ</th><td>{P("مکمل ڈاک کا پتہ")}<br>سمانہ، ضلع پٹیالہ، پنجاب {P("پن کوڈ")}، بھارت</td></tr>
+    <tr><th>ای میل</th><td>–</td></tr>
+    <tr><th>پتہ</th><td>سمانہ، ضلع پٹیالہ، پنجاب <bdi dir="ltr">147101</bdi>، بھارت</td></tr>
   </tbody>
 </table></div>
 <p>راستے کے لیے <a href="location.html">مقام</a> کا صفحہ دیکھیں۔</p>
@@ -313,21 +310,21 @@ def content(lang):
                          f"""
 <p>مشہدِ ہند ضلع پٹیالہ، پنجاب کے قصبے سمانہ میں واقع ہے۔ سمانہ پٹیالہ اور پاتڑاں کے درمیان اسٹیٹ ہائی وے ۱۰ پر ہے۔</p>
 <iframe class="map" src="{MAP_EMBED}" title="سمانہ کا نقشہ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">گوگل میپس میں کھولیں</a> · {P("کمیٹی نقشے پر صحیح مقام کی تصدیق کرے")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">گوگل میپس میں کھولیں</a> اور اپنے مقام سے راستہ دیکھیں۔</p>
 
 <h2>یہاں کیسے پہنچیں</h2>
 <ul>
-  <li><strong>سڑک کے راستے:</strong> پٹیالہ سے تقریباً ۲۷ کلومیٹر جنوب مغرب میں، اسٹیٹ ہائی وے ۱۰ پر (اندازاً)۔</li>
+  <li><strong>سڑک کے راستے:</strong> پٹیالہ سے تقریباً ۲۷ کلومیٹر جنوب مغرب میں، اسٹیٹ ہائی وے ۱۰ پر۔</li>
   <li><strong>ریل کے ذریعے:</strong> قریب ترین بڑا ریلوے اسٹیشن پٹیالہ ہے۔</li>
-  <li><strong>ہوائی سفر:</strong> قریب ترین ہوائی اڈہ چندی گڑھ ہے، تقریباً ۹۵ کلومیٹر دور (اندازاً)۔</li>
-  <li>{P("سمانہ کے اندر راستہ، نمایاں مقامات اور پارکنگ")}</li>
+  <li><strong>ہوائی سفر:</strong> قریب ترین ہوائی اڈہ چندی گڑھ ہے، تقریباً ۹۵ کلومیٹر دور۔</li>
+  <li><strong>سمانہ کے اندر:</strong> روضہ عام طور پر پنج پیر مزار کے نام سے جانا جاتا ہے، اس لیے اسی نام سے پوچھنا آسان رہتا ہے۔ راستے میں مدد کے لیے براہِ کرم <a href="committee.html">کمیٹی</a> کے کسی رکن کو فون کریں۔</li>
 </ul>
 """),
         }
 
     if lang == "hi":
         return {
-            "index": ("मशहद-ए-हिंद, समाना: आधिकारिक वेबसाइट",
+            "index": ("दरगाह-ए-आलिया मशहद-ए-हिंद, समाना: आधिकारिक वेबसाइट",
                       "मशहद-ए-हिंद (पंज पीर मज़ार), इमामज़ादा सैयद मशहद अली की दरगाह, समाना, ज़िला पटियाला, पंजाब की आधिकारिक वेबसाइट।",
                       f"""
 <section class="hero">
@@ -361,12 +358,12 @@ def content(lang):
 
 <h2>इमामज़ादा सैयद मशहद अली</h2>
 <p>यह रौज़ा इमामज़ादा सैयद मशहद अली की आरामगाह माना जाता है। परंपरा के अनुसार वे अब्बासी ख़लीफ़ा मामून के समय, जब इमामों के ख़ानदान पर कठिन समय था, ख़ुरासान के शहर मशहद से इस क्षेत्र में आए।</p>
-<p class="uncertain">उनकी वंशावली के बारे में विवरण अलग-अलग हैं। कुछ उन्हें हज़रत इमाम अली रज़ा (अलैहिस्सलाम) का पुत्र, कुछ इमाम की बाद की पीढ़ी से, और कुछ हज़रत इमाम मुहम्मद तक़ी (अलैहिस्सलाम) का पुत्र बताते हैं। {P("कमेटी बताई जाने वाली वंशावली की पुष्टि करे")}</p>
+<p class="uncertain">उनकी वंशावली के बारे में विवरण अलग-अलग हैं। कुछ उन्हें हज़रत इमाम अली रज़ा (अलैहिस्सलाम) का पुत्र, कुछ इमाम की बाद की पीढ़ी से, और कुछ हज़रत इमाम मुहम्मद तक़ी (अलैहिस्सलाम) का पुत्र बताते हैं।</p>
 
 <h2>रौज़ा और उसका शिलालेख</h2>
 <p>लंबे समय तक यह मज़ार केवल पंज पीर मज़ार के नाम से जाना जाता था। लाहौर हाई कोर्ट के जस्टिस शब्बर रिज़वी के सुझाव पर, जिनका परिवार विभाजन से पहले समाना में बसा था, जब रौज़े के अहाते की सफ़ाई की गई तो एक फ़ारसी शिलालेख सामने आया।</p>
 <p>बताए अनुसार इस शिलालेख में इस मज़ार को इमाम मशहद अली का मज़ार कहा गया है और दर्ज है कि यह इमारत अजरुद्दीन ख़ान मुग़ल, पुत्र बख़्श अल्लाह ख़ान, ने रमज़ान के महीने 967 हिजरी में, बादशाह अकबर के शासन के चौथे वर्ष में बनवाई। यह लगभग 1560 ई. बनता है; कुछ विवरणों में 1559 दर्ज है।</p>
-<p class="uncertain">बताया जाता है कि इस शिलालेख के पाठ की जाँच धार्मिक विद्वानों, इतिहासकारों और आए हुए अधिकारियों ने की। इसका कोई प्रकाशित विद्वत्तापूर्ण पाठ अभी तक नहीं मिला है। {P("कमेटी शिलालेख का पूरा पाठ, अनुवाद और तस्वीर शामिल करे")}</p>
+<p class="uncertain">बताया जाता है कि इस शिलालेख के पाठ की जाँच धार्मिक विद्वानों, इतिहासकारों और आए हुए अधिकारियों ने की। इसका कोई प्रकाशित विद्वत्तापूर्ण पाठ अभी तक नहीं मिला है।</p>
 
 <h2>1947 के बाद</h2>
 <p>1947 के विभाजन के समय समाना के कई सैयद परिवार पाकिस्तान चले गए। रौज़ा अपनी जगह क़ायम रहा, और हाल के वर्षों में यह फिर से शिया और सुन्नी मुसलमानों और सिख श्रद्धालुओं के लिए ज़ियारतगाह बन गया है। मशहद-ए-हिंद में हर साल एक सालाना मजलिस होती है।</p>
@@ -386,24 +383,22 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>दिन</th><th>खुलने का समय</th></tr></thead>
   <tbody>
-    <tr><td>प्रतिदिन</td><td>{P("जैसे सुबह 6 बजे से रात 9 बजे तक")}</td></tr>
-    <tr><td>गुरुवार शाम</td><td>{P("गुरुवार का कार्यक्रम, यदि हो")}</td></tr>
-    <tr><td>शुक्रवार</td><td>{P("जुमे की नमाज़ का समय")}</td></tr>
+    <tr><td>प्रतिदिन</td><td>सुबह 6 बजे से रात 9 बजे तक</td></tr>
+    <tr><td>शुक्रवार</td><td>जुमे की नमाज़ ज़ुहर के समय</td></tr>
   </tbody>
 </table></div>
 
 <h2>रोज़ाना नमाज़</h2>
-<p>{P("जमात के साथ नमाज़ के समय, यदि रौज़े पर होती हो")}</p>
+<p>पटियाला के स्थानीय शिया नमाज़ समय के अनुसार।</p>
 
 <h2>मुहर्रम और विशेष अवसर</h2>
-<p>{P("मुहर्रम और अन्य अवसरों पर बढ़ाए गए समय")}</p>
+<p>कोई कार्यक्रम तय होने पर कमेटी उसकी घोषणा करेगी।</p>
 
 <h2>ज़ियारत के आदाब</h2>
 <ul>
   <li>कृपया सादे और मर्यादित वस्त्र पहनें और सिर ढकें।</li>
   <li>रौज़े में प्रवेश करने से पहले जूते उतार दें।</li>
   <li>मज़ार के पास शांति रखें और नमाज़ पढ़ने वालों का सम्मान करें।</li>
-  <li>{P("रौज़े के अंदर फ़ोटो खींचने के नियम")}</li>
 </ul>
 """),
             "events": ("कार्यक्रम",
@@ -413,12 +408,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>अवसर</th><th>इस्लामी तारीख़</th><th>इस वर्ष</th></tr></thead>
   <tbody>
-    <tr><td>मशहद-ए-हिंद की सालाना मजलिस</td><td>{P("तारीख़")}</td><td>{P("तारीख़ और वक्ता")}</td></tr>
-    <tr><td>मुहर्रम की मजलिसें</td><td>1 से 10 मुहर्रम</td><td>{P("कार्यक्रम")}</td></tr>
-    <tr><td>{P("रौज़े पर मनाए जाने वाले अन्य अवसर")}</td><td>{P("तारीख़")}</td><td>{P("तारीख़")}</td></tr>
+    <tr><td>मशहद-ए-हिंद की सालाना मजलिस</td><td>11–12 जमादी-उस-सानी 1448 हिजरी</td><td>21–22 नवंबर 2026</td></tr>
   </tbody>
 </table></div>
-<p>पिछली मजलिसों के कार्यक्रम रौज़े के सोशल मीडिया पेजों पर देखे जा सकते हैं। {P("आधिकारिक पेजों के लिंक")}</p>
+<p>पिछली मजलिसों के कार्यक्रम रौज़े के सोशल मीडिया पेजों पर देखे जा सकते हैं।</p>
 """),
             "contact": ("संपर्क",
                         "मशहद-ए-हिंद, समाना की कमेटी से संपर्क।",
@@ -428,8 +421,8 @@ def content(lang):
   <tbody>
     <tr><th>कमेटी</th><td>{P("प्रबंधक कमेटी का नाम")}</td></tr>
     <tr><th>फ़ोन</th><td>{P("फ़ोन नंबर")}</td></tr>
-    <tr><th>ईमेल</th><td>{P("ईमेल पता")}</td></tr>
-    <tr><th>पता</th><td>{P("पूरा डाक पता")}<br>समाना, ज़िला पटियाला, पंजाब {P("पिन कोड")}, भारत</td></tr>
+    <tr><th>ईमेल</th><td>–</td></tr>
+    <tr><th>पता</th><td>समाना, ज़िला पटियाला, पंजाब 147101, भारत</td></tr>
   </tbody>
 </table></div>
 <p>रास्ते के लिए <a href="location.html">स्थान</a> पेज देखें।</p>
@@ -439,21 +432,21 @@ def content(lang):
                          f"""
 <p>मशहद-ए-हिंद ज़िला पटियाला, पंजाब के क़स्बे समाना में स्थित है। समाना पटियाला और पातड़ां के बीच स्टेट हाईवे 10 पर है।</p>
 <iframe class="map" src="{MAP_EMBED}" title="समाना का नक्शा" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">गूगल मैप्स में खोलें</a> · {P("कमेटी नक्शे पर सही स्थान की पुष्टि करे")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">गूगल मैप्स में खोलें</a> और अपनी जगह से रास्ता देखें।</p>
 
 <h2>यहाँ कैसे पहुँचें</h2>
 <ul>
-  <li><strong>सड़क से:</strong> पटियाला से लगभग 27 किलोमीटर दक्षिण-पश्चिम में, स्टेट हाईवे 10 पर (अनुमानित)।</li>
+  <li><strong>सड़क से:</strong> पटियाला से लगभग 27 किलोमीटर दक्षिण-पश्चिम में, स्टेट हाईवे 10 पर।</li>
   <li><strong>रेल से:</strong> सबसे नज़दीकी बड़ा रेलवे स्टेशन पटियाला है।</li>
-  <li><strong>हवाई मार्ग से:</strong> सबसे नज़दीकी हवाई अड्डा चंडीगढ़ है, लगभग 95 किलोमीटर दूर (अनुमानित)।</li>
-  <li>{P("समाना के अंदर रास्ता, पहचान के स्थान और पार्किंग")}</li>
+  <li><strong>हवाई मार्ग से:</strong> सबसे नज़दीकी हवाई अड्डा चंडीगढ़ है, लगभग 95 किलोमीटर दूर।</li>
+  <li><strong>समाना के अंदर:</strong> दरगाह आम तौर पर पंज पीर मज़ार के नाम से जानी जाती है, इसलिए इसी नाम से पूछना आसान रहता है। रास्ते में मदद के लिए कृपया <a href="committee.html">कमेटी</a> के किसी सदस्य को फ़ोन करें।</li>
 </ul>
 """),
         }
 
     if lang == "pa":
         return {
-            "index": ("ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ: ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ",
+            "index": ("ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ: ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ",
                       "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ (ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ), ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ ਦਾ ਰੌਜ਼ਾ, ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ ਦੀ ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ।",
                       f"""
 <section class="hero">
@@ -487,12 +480,12 @@ def content(lang):
 
 <h2>ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ</h2>
 <p>ਇਹ ਰੌਜ਼ਾ ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ ਦੀ ਆਰਾਮਗਾਹ ਮੰਨਿਆ ਜਾਂਦਾ ਹੈ। ਰਵਾਇਤ ਅਨੁਸਾਰ ਉਹ ਅੱਬਾਸੀ ਖ਼ਲੀਫ਼ਾ ਮਾਮੂਨ ਦੇ ਸਮੇਂ, ਜਦੋਂ ਇਮਾਮਾਂ ਦੇ ਖ਼ਾਨਦਾਨ ਉੱਤੇ ਔਖਾ ਸਮਾਂ ਸੀ, ਖ਼ੁਰਾਸਾਨ ਦੇ ਸ਼ਹਿਰ ਮਸ਼ਹਦ ਤੋਂ ਇਸ ਇਲਾਕੇ ਵਿੱਚ ਆਏ।</p>
-<p class="uncertain">ਉਨ੍ਹਾਂ ਦੀ ਵੰਸ਼ਾਵਲੀ ਬਾਰੇ ਬਿਰਤਾਂਤ ਵੱਖਰੇ ਹਨ। ਕੁਝ ਉਨ੍ਹਾਂ ਨੂੰ ਹਜ਼ਰਤ ਇਮਾਮ ਅਲੀ ਰਜ਼ਾ (ਅਲੈਹਿਸ-ਸਲਾਮ) ਦੇ ਪੁੱਤਰ, ਕੁਝ ਇਮਾਮ ਦੀ ਬਾਅਦ ਦੀ ਪੀੜ੍ਹੀ ਵਿੱਚੋਂ, ਅਤੇ ਕੁਝ ਹਜ਼ਰਤ ਇਮਾਮ ਮੁਹੰਮਦ ਤਕੀ (ਅਲੈਹਿਸ-ਸਲਾਮ) ਦੇ ਪੁੱਤਰ ਦੱਸਦੇ ਹਨ। {P("ਕਮੇਟੀ ਦੱਸੀ ਜਾਣ ਵਾਲੀ ਵੰਸ਼ਾਵਲੀ ਦੀ ਪੁਸ਼ਟੀ ਕਰੇ")}</p>
+<p class="uncertain">ਉਨ੍ਹਾਂ ਦੀ ਵੰਸ਼ਾਵਲੀ ਬਾਰੇ ਬਿਰਤਾਂਤ ਵੱਖਰੇ ਹਨ। ਕੁਝ ਉਨ੍ਹਾਂ ਨੂੰ ਹਜ਼ਰਤ ਇਮਾਮ ਅਲੀ ਰਜ਼ਾ (ਅਲੈਹਿਸ-ਸਲਾਮ) ਦੇ ਪੁੱਤਰ, ਕੁਝ ਇਮਾਮ ਦੀ ਬਾਅਦ ਦੀ ਪੀੜ੍ਹੀ ਵਿੱਚੋਂ, ਅਤੇ ਕੁਝ ਹਜ਼ਰਤ ਇਮਾਮ ਮੁਹੰਮਦ ਤਕੀ (ਅਲੈਹਿਸ-ਸਲਾਮ) ਦੇ ਪੁੱਤਰ ਦੱਸਦੇ ਹਨ।</p>
 
 <h2>ਰੌਜ਼ਾ ਅਤੇ ਇਸ ਦਾ ਸ਼ਿਲਾਲੇਖ</h2>
 <p>ਲੰਮੇ ਸਮੇਂ ਤੱਕ ਇਹ ਮਜ਼ਾਰ ਸਿਰਫ਼ ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ ਦੇ ਨਾਂ ਨਾਲ ਜਾਣਿਆ ਜਾਂਦਾ ਸੀ। ਲਾਹੌਰ ਹਾਈ ਕੋਰਟ ਦੇ ਜਸਟਿਸ ਸ਼ੱਬਰ ਰਿਜ਼ਵੀ ਦੇ ਸੁਝਾਅ ਉੱਤੇ, ਜਿਨ੍ਹਾਂ ਦਾ ਪਰਿਵਾਰ ਵੰਡ ਤੋਂ ਪਹਿਲਾਂ ਸਮਾਣਾ ਵਿੱਚ ਵੱਸਦਾ ਸੀ, ਜਦੋਂ ਰੌਜ਼ੇ ਦੇ ਅਹਾਤੇ ਦੀ ਸਫ਼ਾਈ ਕੀਤੀ ਗਈ ਤਾਂ ਇੱਕ ਫ਼ਾਰਸੀ ਸ਼ਿਲਾਲੇਖ ਸਾਹਮਣੇ ਆਇਆ।</p>
 <p>ਦੱਸੇ ਅਨੁਸਾਰ ਇਸ ਸ਼ਿਲਾਲੇਖ ਵਿੱਚ ਇਸ ਮਜ਼ਾਰ ਨੂੰ ਇਮਾਮ ਮਸ਼ਹਦ ਅਲੀ ਦਾ ਮਜ਼ਾਰ ਕਿਹਾ ਗਿਆ ਹੈ ਅਤੇ ਦਰਜ ਹੈ ਕਿ ਇਹ ਇਮਾਰਤ ਅਜਰੁੱਦੀਨ ਖ਼ਾਨ ਮੁਗ਼ਲ, ਪੁੱਤਰ ਬਖ਼ਸ਼ ਅੱਲਾਹ ਖ਼ਾਨ, ਨੇ ਰਮਜ਼ਾਨ ਦੇ ਮਹੀਨੇ 967 ਹਿਜਰੀ ਵਿੱਚ, ਬਾਦਸ਼ਾਹ ਅਕਬਰ ਦੇ ਰਾਜ ਦੇ ਚੌਥੇ ਸਾਲ ਬਣਵਾਈ। ਇਹ ਲਗਭਗ 1560 ਈ. ਬਣਦਾ ਹੈ; ਕੁਝ ਬਿਰਤਾਂਤਾਂ ਵਿੱਚ 1559 ਦਰਜ ਹੈ।</p>
-<p class="uncertain">ਦੱਸਿਆ ਜਾਂਦਾ ਹੈ ਕਿ ਇਸ ਸ਼ਿਲਾਲੇਖ ਦੀ ਪੜ੍ਹਤ ਦੀ ਜਾਂਚ ਧਾਰਮਿਕ ਵਿਦਵਾਨਾਂ, ਇਤਿਹਾਸਕਾਰਾਂ ਅਤੇ ਆਏ ਅਧਿਕਾਰੀਆਂ ਨੇ ਕੀਤੀ। ਇਸ ਦੀ ਕੋਈ ਛਪੀ ਹੋਈ ਵਿਦਵਤਾਪੂਰਨ ਪੜ੍ਹਤ ਹਾਲੇ ਨਹੀਂ ਮਿਲੀ। {P("ਕਮੇਟੀ ਸ਼ਿਲਾਲੇਖ ਦੀ ਪੂਰੀ ਲਿਖਤ, ਅਨੁਵਾਦ ਅਤੇ ਤਸਵੀਰ ਸ਼ਾਮਲ ਕਰੇ")}</p>
+<p class="uncertain">ਦੱਸਿਆ ਜਾਂਦਾ ਹੈ ਕਿ ਇਸ ਸ਼ਿਲਾਲੇਖ ਦੀ ਪੜ੍ਹਤ ਦੀ ਜਾਂਚ ਧਾਰਮਿਕ ਵਿਦਵਾਨਾਂ, ਇਤਿਹਾਸਕਾਰਾਂ ਅਤੇ ਆਏ ਅਧਿਕਾਰੀਆਂ ਨੇ ਕੀਤੀ। ਇਸ ਦੀ ਕੋਈ ਛਪੀ ਹੋਈ ਵਿਦਵਤਾਪੂਰਨ ਪੜ੍ਹਤ ਹਾਲੇ ਨਹੀਂ ਮਿਲੀ।</p>
 
 <h2>1947 ਤੋਂ ਬਾਅਦ</h2>
 <p>1947 ਦੀ ਵੰਡ ਵੇਲੇ ਸਮਾਣਾ ਦੇ ਬਹੁਤ ਸਾਰੇ ਸੱਯਦ ਪਰਿਵਾਰ ਪਾਕਿਸਤਾਨ ਚਲੇ ਗਏ। ਰੌਜ਼ਾ ਆਪਣੀ ਥਾਂ ਕਾਇਮ ਰਿਹਾ, ਅਤੇ ਹਾਲ ਦੇ ਸਾਲਾਂ ਵਿੱਚ ਇਹ ਮੁੜ ਸ਼ੀਆ ਅਤੇ ਸੁੰਨੀ ਮੁਸਲਮਾਨਾਂ ਅਤੇ ਸਿੱਖ ਸ਼ਰਧਾਲੂਆਂ ਲਈ ਜ਼ਿਆਰਤਗਾਹ ਬਣ ਗਿਆ ਹੈ। ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਵਿੱਚ ਹਰ ਸਾਲ ਇੱਕ ਸਾਲਾਨਾ ਮਜਲਿਸ ਹੁੰਦੀ ਹੈ।</p>
@@ -512,24 +505,22 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>ਦਿਨ</th><th>ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ</th></tr></thead>
   <tbody>
-    <tr><td>ਰੋਜ਼ਾਨਾ</td><td>{P("ਜਿਵੇਂ ਸਵੇਰੇ 6 ਵਜੇ ਤੋਂ ਰਾਤ 9 ਵਜੇ ਤੱਕ")}</td></tr>
-    <tr><td>ਵੀਰਵਾਰ ਸ਼ਾਮ</td><td>{P("ਵੀਰਵਾਰ ਦਾ ਪ੍ਰੋਗਰਾਮ, ਜੇ ਹੋਵੇ")}</td></tr>
-    <tr><td>ਸ਼ੁੱਕਰਵਾਰ</td><td>{P("ਜੁਮੇ ਦੀ ਨਮਾਜ਼ ਦਾ ਸਮਾਂ")}</td></tr>
+    <tr><td>ਰੋਜ਼ਾਨਾ</td><td>ਸਵੇਰੇ 6 ਵਜੇ ਤੋਂ ਰਾਤ 9 ਵਜੇ ਤੱਕ</td></tr>
+    <tr><td>ਸ਼ੁੱਕਰਵਾਰ</td><td>ਜੁਮੇ ਦੀ ਨਮਾਜ਼ ਜ਼ੁਹਰ ਦੇ ਵੇਲੇ</td></tr>
   </tbody>
 </table></div>
 
 <h2>ਰੋਜ਼ਾਨਾ ਨਮਾਜ਼</h2>
-<p>{P("ਜਮਾਤ ਨਾਲ ਨਮਾਜ਼ ਦੇ ਸਮੇਂ, ਜੇ ਰੌਜ਼ੇ ਉੱਤੇ ਹੁੰਦੀ ਹੋਵੇ")}</p>
+<p>ਪਟਿਆਲਾ ਦੇ ਸਥਾਨਕ ਸ਼ੀਆ ਨਮਾਜ਼ ਸਮਿਆਂ ਅਨੁਸਾਰ।</p>
 
 <h2>ਮੁਹੱਰਮ ਅਤੇ ਖ਼ਾਸ ਮੌਕੇ</h2>
-<p>{P("ਮੁਹੱਰਮ ਅਤੇ ਹੋਰ ਮੌਕਿਆਂ ਉੱਤੇ ਵਧਾਏ ਗਏ ਸਮੇਂ")}</p>
+<p>ਕੋਈ ਪ੍ਰੋਗਰਾਮ ਤੈਅ ਹੋਣ ਉੱਤੇ ਕਮੇਟੀ ਉਸ ਦਾ ਐਲਾਨ ਕਰੇਗੀ।</p>
 
 <h2>ਜ਼ਿਆਰਤ ਦੇ ਅਦਬ</h2>
 <ul>
   <li>ਕਿਰਪਾ ਕਰਕੇ ਸਾਦਾ ਅਤੇ ਮਰਿਆਦਾ ਵਾਲਾ ਪਹਿਰਾਵਾ ਪਾਓ ਅਤੇ ਸਿਰ ਢੱਕੋ।</li>
   <li>ਰੌਜ਼ੇ ਵਿੱਚ ਦਾਖ਼ਲ ਹੋਣ ਤੋਂ ਪਹਿਲਾਂ ਜੁੱਤੀਆਂ ਉਤਾਰ ਦਿਓ।</li>
   <li>ਮਜ਼ਾਰ ਦੇ ਨੇੜੇ ਚੁੱਪ ਰੱਖੋ ਅਤੇ ਨਮਾਜ਼ ਪੜ੍ਹਨ ਵਾਲਿਆਂ ਦਾ ਸਤਿਕਾਰ ਕਰੋ।</li>
-  <li>{P("ਰੌਜ਼ੇ ਦੇ ਅੰਦਰ ਤਸਵੀਰਾਂ ਖਿੱਚਣ ਦੇ ਨਿਯਮ")}</li>
 </ul>
 """),
             "events": ("ਸਮਾਗਮ",
@@ -539,12 +530,10 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>ਮੌਕਾ</th><th>ਇਸਲਾਮੀ ਤਰੀਕ</th><th>ਇਸ ਸਾਲ</th></tr></thead>
   <tbody>
-    <tr><td>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਸਾਲਾਨਾ ਮਜਲਿਸ</td><td>{P("ਤਰੀਕ")}</td><td>{P("ਤਰੀਕ ਅਤੇ ਬੁਲਾਰੇ")}</td></tr>
-    <tr><td>ਮੁਹੱਰਮ ਦੀਆਂ ਮਜਲਿਸਾਂ</td><td>1 ਤੋਂ 10 ਮੁਹੱਰਮ</td><td>{P("ਪ੍ਰੋਗਰਾਮ")}</td></tr>
-    <tr><td>{P("ਰੌਜ਼ੇ ਉੱਤੇ ਮਨਾਏ ਜਾਂਦੇ ਹੋਰ ਮੌਕੇ")}</td><td>{P("ਤਰੀਕ")}</td><td>{P("ਤਰੀਕ")}</td></tr>
+    <tr><td>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਸਾਲਾਨਾ ਮਜਲਿਸ</td><td>11–12 ਜਮਾਦੀ-ਉਸ-ਸਾਨੀ 1448 ਹਿਜਰੀ</td><td>21–22 ਨਵੰਬਰ 2026</td></tr>
   </tbody>
 </table></div>
-<p>ਪਿਛਲੀਆਂ ਮਜਲਿਸਾਂ ਦੇ ਪ੍ਰੋਗਰਾਮ ਰੌਜ਼ੇ ਦੇ ਸੋਸ਼ਲ ਮੀਡੀਆ ਪੰਨਿਆਂ ਉੱਤੇ ਵੇਖੇ ਜਾ ਸਕਦੇ ਹਨ। {P("ਅਧਿਕਾਰਤ ਪੰਨਿਆਂ ਦੇ ਲਿੰਕ")}</p>
+<p>ਪਿਛਲੀਆਂ ਮਜਲਿਸਾਂ ਦੇ ਪ੍ਰੋਗਰਾਮ ਰੌਜ਼ੇ ਦੇ ਸੋਸ਼ਲ ਮੀਡੀਆ ਪੰਨਿਆਂ ਉੱਤੇ ਵੇਖੇ ਜਾ ਸਕਦੇ ਹਨ।</p>
 """),
             "contact": ("ਸੰਪਰਕ",
                         "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦੀ ਕਮੇਟੀ ਨਾਲ ਸੰਪਰਕ।",
@@ -554,8 +543,8 @@ def content(lang):
   <tbody>
     <tr><th>ਕਮੇਟੀ</th><td>{P("ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦਾ ਨਾਂ")}</td></tr>
     <tr><th>ਫ਼ੋਨ</th><td>{P("ਫ਼ੋਨ ਨੰਬਰ")}</td></tr>
-    <tr><th>ਈਮੇਲ</th><td>{P("ਈਮੇਲ ਪਤਾ")}</td></tr>
-    <tr><th>ਪਤਾ</th><td>{P("ਪੂਰਾ ਡਾਕ ਪਤਾ")}<br>ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ {P("ਪਿੰਨ ਕੋਡ")}, ਭਾਰਤ</td></tr>
+    <tr><th>ਈਮੇਲ</th><td>–</td></tr>
+    <tr><th>ਪਤਾ</th><td>ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ 147101, ਭਾਰਤ</td></tr>
   </tbody>
 </table></div>
 <p>ਰਸਤੇ ਲਈ <a href="location.html">ਟਿਕਾਣਾ</a> ਪੰਨਾ ਵੇਖੋ।</p>
@@ -565,18 +554,275 @@ def content(lang):
                          f"""
 <p>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ ਦੇ ਸ਼ਹਿਰ ਸਮਾਣਾ ਵਿੱਚ ਸਥਿਤ ਹੈ। ਸਮਾਣਾ ਪਟਿਆਲਾ ਅਤੇ ਪਾਤੜਾਂ ਦੇ ਵਿਚਕਾਰ ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ ਹੈ।</p>
 <iframe class="map" src="{MAP_EMBED}" title="ਸਮਾਣਾ ਦਾ ਨਕਸ਼ਾ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">ਗੂਗਲ ਮੈਪਸ ਵਿੱਚ ਖੋਲ੍ਹੋ</a> · {P("ਕਮੇਟੀ ਨਕਸ਼ੇ ਉੱਤੇ ਸਹੀ ਥਾਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੇ")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">ਗੂਗਲ ਮੈਪਸ ਵਿੱਚ ਖੋਲ੍ਹੋ</a> ਅਤੇ ਆਪਣੀ ਥਾਂ ਤੋਂ ਰਸਤਾ ਵੇਖੋ।</p>
 
 <h2>ਇੱਥੇ ਕਿਵੇਂ ਪਹੁੰਚੀਏ</h2>
 <ul>
-  <li><strong>ਸੜਕ ਰਾਹੀਂ:</strong> ਪਟਿਆਲਾ ਤੋਂ ਲਗਭਗ 27 ਕਿਲੋਮੀਟਰ ਦੱਖਣ-ਪੱਛਮ ਵੱਲ, ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ (ਅੰਦਾਜ਼ਨ)।</li>
+  <li><strong>ਸੜਕ ਰਾਹੀਂ:</strong> ਪਟਿਆਲਾ ਤੋਂ ਲਗਭਗ 27 ਕਿਲੋਮੀਟਰ ਦੱਖਣ-ਪੱਛਮ ਵੱਲ, ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ।</li>
   <li><strong>ਰੇਲ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਵੱਡਾ ਰੇਲਵੇ ਸਟੇਸ਼ਨ ਪਟਿਆਲਾ ਹੈ।</li>
-  <li><strong>ਹਵਾਈ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਹਵਾਈ ਅੱਡਾ ਚੰਡੀਗੜ੍ਹ ਹੈ, ਲਗਭਗ 95 ਕਿਲੋਮੀਟਰ ਦੂਰ (ਅੰਦਾਜ਼ਨ)।</li>
-  <li>{P("ਸਮਾਣਾ ਦੇ ਅੰਦਰ ਰਸਤਾ, ਨਿਸ਼ਾਨੀਆਂ ਅਤੇ ਪਾਰਕਿੰਗ")}</li>
+  <li><strong>ਹਵਾਈ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਹਵਾਈ ਅੱਡਾ ਚੰਡੀਗੜ੍ਹ ਹੈ, ਲਗਭਗ 95 ਕਿਲੋਮੀਟਰ ਦੂਰ।</li>
+  <li><strong>ਸਮਾਣਾ ਦੇ ਅੰਦਰ:</strong> ਦਰਗਾਹ ਆਮ ਤੌਰ ਤੇ ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ ਦੇ ਨਾਂ ਨਾਲ ਜਾਣੀ ਜਾਂਦੀ ਹੈ, ਇਸ ਲਈ ਇਸੇ ਨਾਂ ਨਾਲ ਪੁੱਛਣਾ ਸੌਖਾ ਰਹਿੰਦਾ ਹੈ। ਰਸਤੇ ਵਿੱਚ ਮਦਦ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="committee.html">ਕਮੇਟੀ</a> ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</li>
 </ul>
 """),
         }
     raise KeyError(lang)
+
+
+# ---------------------------------------------------------------------------
+# Home page: News and Message from the Chairman. Newest news item first.
+# ---------------------------------------------------------------------------
+
+HOME_TEXT = {
+    "en": {
+        "glance": "At a glance",
+        "facts": [("Also known as", "Panj Peer Mazar"),
+                  ("Resting place of", "Imamzada Syed Mashhad Ali"),
+                  ("Built", "Ramadan 967 AH (about 1560 CE), as recorded in its inscription"),
+                  ("Administered by", "Punjab Waqf Board")],
+        "msg_intro": "A message to all devotees and visitors from the Chairman of the managing committee.",
+        "msg_link": "Meet the committee",
+        "news": "News",
+        "message": "Message from the Chairman",
+        "video_fallback": "Your browser cannot play this video.",
+        "chairman": "Adv. Zaigam Abbas, Chairman, Dargah-e-Aliya Mashhad-e-Hind, Samana",
+    },
+    "hi": {
+        "glance": "एक नज़र में",
+        "facts": [("अन्य नाम", "पंज पीर मज़ार"),
+                  ("आरामगाह", "इमामज़ादा सैयद मशहद अली"),
+                  ("निर्माण", "रमज़ान 967 हिजरी (लगभग 1560 ई.), शिलालेख के अनुसार"),
+                  ("प्रबंधन", "पंजाब वक़्फ़ बोर्ड")],
+        "msg_intro": "प्रबंधक कमेटी के चेयरमैन की ओर से सभी श्रद्धालुओं और ज़ायरीन के लिए संदेश।",
+        "msg_link": "कमेटी से मिलें",
+        "news": "समाचार",
+        "message": "चेयरमैन का संदेश",
+        "video_fallback": "आपका ब्राउज़र यह वीडियो नहीं चला सकता।",
+        "chairman": "एडवोकेट ज़ैग़म अब्बास, चेयरमैन, दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
+    },
+    "pa": {
+        "glance": "ਇੱਕ ਨਜ਼ਰ ਵਿੱਚ",
+        "facts": [("ਹੋਰ ਨਾਂ", "ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ"),
+                  ("ਆਰਾਮਗਾਹ", "ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ"),
+                  ("ਉਸਾਰੀ", "ਰਮਜ਼ਾਨ 967 ਹਿਜਰੀ (ਲਗਭਗ 1560 ਈ.), ਸ਼ਿਲਾਲੇਖ ਅਨੁਸਾਰ"),
+                  ("ਪ੍ਰਬੰਧ", "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ")],
+        "msg_intro": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦੇ ਚੇਅਰਮੈਨ ਵੱਲੋਂ ਸਾਰੇ ਸ਼ਰਧਾਲੂਆਂ ਅਤੇ ਜ਼ਾਇਰੀਨ ਲਈ ਸੁਨੇਹਾ।",
+        "msg_link": "ਕਮੇਟੀ ਨੂੰ ਮਿਲੋ",
+        "news": "ਖ਼ਬਰਾਂ",
+        "message": "ਚੇਅਰਮੈਨ ਦਾ ਸੁਨੇਹਾ",
+        "video_fallback": "ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ ਇਹ ਵੀਡੀਓ ਨਹੀਂ ਚਲਾ ਸਕਦਾ।",
+        "chairman": "ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ, ਚੇਅਰਮੈਨ, ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
+    },
+    "ur": {
+        "glance": "ایک نظر میں",
+        "facts": [("دوسرا نام", "پنج پیر مزار"),
+                  ("آرام گاہ", "امام زادہ سید مشہد علی"),
+                  ("تعمیر", "رمضان ۹۶۷ھ (تقریباً ۱۵۶۰ء)، کتبے کے مطابق"),
+                  ("انتظام", "پنجاب وقف بورڈ")],
+        "msg_intro": "انتظامی کمیٹی کے چیئرمین کی جانب سے تمام عقیدت مندوں اور زائرین کے نام پیغام۔",
+        "msg_link": "کمیٹی سے ملیں",
+        "news": "خبریں",
+        "message": "چیئرمین کا پیغام",
+        "video_fallback": "آپ کا براؤزر یہ ویڈیو نہیں چلا سکتا۔",
+        "chairman": "ایڈووکیٹ ضیغم عباس، چیئرمین، درگاہِ عالیہ مشہدِ ہند، سمانہ",
+    },
+}
+
+NEWS = [
+    {
+        "images": ["assets/news/majalis-2026-poster.jpg", "assets/news/majalis-2026-banner.jpg"],
+        "en": ("Salana Majalis, Juloos-e-Aza wa Mehfil",
+               "21 and 22 November 2026, Samana, Punjab. All devotees of the Ahl al-Bayt are humbly requested to attend."),
+        "hi": ("सालाना मजालिस, जुलूस-ए-अज़ा व महफ़िल",
+               "21 और 22 नवंबर 2026, समाना, पंजाब। तमाम आशिक़ान-ए-अहलेबैत से शिरकत की गुज़ारिश है।"),
+        "pa": ("ਸਾਲਾਨਾ ਮਜਾਲਿਸ, ਜਲੂਸ-ਏ-ਅਜ਼ਾ ਵ ਮਹਿਫ਼ਲ",
+               "21 ਅਤੇ 22 ਨਵੰਬਰ 2026, ਸਮਾਣਾ, ਪੰਜਾਬ। ਸਾਰੇ ਆਸ਼ਿਕਾਨ-ਏ-ਅਹਿਲੇਬੈਤ ਨੂੰ ਸ਼ਿਰਕਤ ਦੀ ਗੁਜ਼ਾਰਿਸ਼ ਹੈ।"),
+        "ur": ("سالانہ مجالس، جلوسِ عزا و محفل",
+               "۲۱ اور ۲۲ نومبر ۲۰۲۶ء، سمانہ، پنجاب۔ تمام عاشقانِ اہلِ بیت سے شرکت کی گزارش ہے۔"),
+    },
+]
+
+
+def home_sections(lang):
+    T = HOME_TEXT[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    chair = COMMITTEE[0]
+    items = []
+    for item in NEWS:
+        heading, text = item[lang]
+        pics = [f'<a href="{up}{img}" target="_blank" rel="noopener"><img src="{up}{img}" alt="{heading}" loading="lazy"></a>'
+                for img in item["images"]]
+        # The first image (the poster) sits beside the text; any others follow the text.
+        more = f'<div class="news-more">{"".join(pics[1:])}</div>' if len(pics) > 1 else ""
+        items.append(f'<article class="news-item"><div class="news-poster">{pics[0]}</div>'
+                     f'<div class="news-body"><h3>{heading}</h3><p>{text}</p>{more}</div></article>')
+    return f"""<section class="news band band-tint">
+  <h2>{T['news']}</h2>
+  {"".join(items)}
+</section>
+<section class="message band">
+  <h2>{T['message']}</h2>
+  <div class="message-grid">
+    <figure>
+      <video controls preload="none" playsinline poster="{up}assets/media/chairman-message.jpg" aria-label="{T['chairman']}">
+        <source src="{up}assets/media/chairman-message.mp4" type="video/mp4">
+        {T['video_fallback']}
+      </video>
+    </figure>
+    <div class="message-text">
+      <img src="{up}{chair['photo']}" alt="{chair[lang][0]}" width="158" height="200" loading="lazy">
+      <p class="msg-name">{chair[lang][0]}</p>
+      <p class="msg-role">{chair[lang][1]}</p>
+      <p>{T['msg_intro']}</p>
+      <a class="btn btn-outline" href="committee.html">{T['msg_link']}</a>
+    </div>
+  </div>
+</section>
+"""
+
+
+# Interface text used by the page shell, home hero and footer.
+UI = {
+    "en": {"cta_visit": "Plan your visit", "cta_history": "Read the history",
+           "hours": "Opening hours", "hours_link": "Daily 6 AM – 9 PM",
+           "next": "Next event", "next_text": "Annual majlis · 21–22 November 2026",
+           "where": "Location", "where_text": "Samana, Patiala district, Punjab",
+           "photo_alt": "Mashhad-e-Hind shrine, Samana", "quick": "Quick links",
+           "country": "Samana, Patiala district, Punjab, India"},
+    "hi": {"cta_visit": "ज़ियारत की योजना बनाएँ", "cta_history": "इतिहास पढ़ें",
+           "hours": "खुलने का समय", "hours_link": "प्रतिदिन सुबह 6 से रात 9 बजे",
+           "next": "अगला कार्यक्रम", "next_text": "सालाना मजलिस · 21–22 नवंबर 2026",
+           "where": "स्थान", "where_text": "समाना, ज़िला पटियाला, पंजाब",
+           "photo_alt": "मशहद-ए-हिंद का रौज़ा, समाना", "quick": "त्वरित लिंक",
+           "country": "समाना, ज़िला पटियाला, पंजाब, भारत"},
+    "pa": {"cta_visit": "ਜ਼ਿਆਰਤ ਦੀ ਯੋਜਨਾ ਬਣਾਓ", "cta_history": "ਇਤਿਹਾਸ ਪੜ੍ਹੋ",
+           "hours": "ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ", "hours_link": "ਰੋਜ਼ਾਨਾ ਸਵੇਰੇ 6 ਤੋਂ ਰਾਤ 9 ਵਜੇ",
+           "next": "ਅਗਲਾ ਸਮਾਗਮ", "next_text": "ਸਾਲਾਨਾ ਮਜਲਿਸ · 21–22 ਨਵੰਬਰ 2026",
+           "where": "ਟਿਕਾਣਾ", "where_text": "ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ",
+           "photo_alt": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦਾ ਰੌਜ਼ਾ, ਸਮਾਣਾ", "quick": "ਤੁਰੰਤ ਲਿੰਕ",
+           "country": "ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ"},
+    "ur": {"cta_visit": "زیارت کا منصوبہ بنائیں", "cta_history": "تاریخ پڑھیں",
+           "hours": "زیارت کے اوقات", "hours_link": "روزانہ صبح ۶ سے رات ۹ بجے",
+           "next": "اگلی تقریب", "next_text": "سالانہ مجلس · ۲۱–۲۲ نومبر ۲۰۲۶ء",
+           "where": "مقام", "where_text": "سمانہ، ضلع پٹیالہ، پنجاب",
+           "photo_alt": "مشہدِ ہند کا روضہ، سمانہ", "quick": "فوری روابط",
+           "country": "سمانہ، ضلع پٹیالہ، پنجاب، بھارت"},
+}
+
+BISMILLAH = "بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+
+
+def home_hero(lang, body):
+    """Turn the home page's hero section into the full-width banner and info strip."""
+    import re
+    U = UI[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    m = re.search(r'<section class="hero">(.*?)</section>', body, re.S)
+    inner = re.sub(r'\s*<img class="arch"[^>]*>', "", m.group(1)).strip()
+    hero = f"""<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="bismillah" lang="ar" dir="rtl">{BISMILLAH}</p>
+      {inner}
+      <div class="cta"><a class="btn btn-gold" href="location.html">{U['cta_visit']}</a><a class="btn btn-ghost" href="history.html">{U['cta_history']}</a></div>
+    </div>
+    <figure class="hero-photo"><img src="{up}assets/media/shrine.jpg" alt="{U['photo_alt']}" width="372" height="296"></figure>
+  </div>
+</section>
+<section class="info-strip" aria-label="{U['hours']}">
+  <div class="wrap info-grid">
+    <a class="info" href="timings.html"><span class="info-label">{U['hours']}</span><span class="info-value">{U['hours_link']}</span></a>
+    <a class="info" href="events.html"><span class="info-label">{U['next']}</span><span class="info-value">{U['next_text']}</span></a>
+    <a class="info" href="location.html"><span class="info-label">{U['where']}</span><span class="info-value">{U['where_text']}</span></a>
+  </div>
+</section>
+"""
+    body = body[:m.start()] + body[m.end():]
+    body = re.sub(r'\s*<p class="notice">.*?</p>', "", body, count=1, flags=re.S)
+    T = HOME_TEXT[lang]
+    facts = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in T["facts"])
+    glance = f'<aside class="glance"><h3>{T["glance"]}</h3><dl>{facts}</dl></aside>'
+    w = re.search(r"<section>(.*?)</section>", body, re.S)
+    welcome = f'<section class="welcome band"><div class="welcome-grid"><div class="welcome-text">{w.group(1)}</div>{glance}</div></section>'
+    body = body[:w.start()] + welcome + body[w.end():]
+    return hero, body
+
+
+# ---------------------------------------------------------------------------
+# Managing committee, shown on the Committee page and the Contact page.
+# ---------------------------------------------------------------------------
+
+COMMITTEE = [
+    {"photo": "assets/committee/zaigam-abbas.jpg", "phone": "+919779097254", "phone_text": "97790 97254",
+     "en": ("Adv. Zaigam Abbas", "Chairman"), "hi": ("एडवोकेट ज़ैग़म अब्बास", "चेयरमैन"),
+     "pa": ("ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ", "ਚੇਅਰਮੈਨ"), "ur": ("ایڈووکیٹ ضیغم عباس", "چیئرمین")},
+    {"photo": "assets/committee/naseem-haider.jpg", "phone": "+918146887031", "phone_text": "81468 87031",
+     "en": ("Naseem Haider", "President"), "hi": ("नसीम हैदर", "अध्यक्ष"),
+     "pa": ("ਨਸੀਮ ਹੈਦਰ", "ਪ੍ਰਧਾਨ"), "ur": ("نسیم حیدر", "صدر")},
+    {"photo": "assets/committee/shabbir-hussain.jpg", "phone": "+919876160462", "phone_text": "98761 60462",
+     "en": ("Shabbir Hussain", "General Secretary"), "hi": ("शब्बीर हुसैन", "महासचिव"),
+     "pa": ("ਸ਼ੱਬੀਰ ਹੁਸੈਨ", "ਜਨਰਲ ਸਕੱਤਰ"), "ur": ("شبیر حسین", "جنرل سیکرٹری")},
+]
+
+ABOUT = {
+    "en": ("Committee", "The managing committee of Dargah-e-Aliya Mashhad-e-Hind, Samana, with phone numbers.",
+           "The Dargah",
+           "Dargah-e-Aliya Mashhad-e-Hind in Samana is the shrine of Imamzada Syed Mashhad Ali. It is an undertaking of the {waqf} and is managed by the committee below.",
+           "Punjab Waqf Board", "Managing committee",
+           "For visits, events and enquiries, please call a member of the committee or see the {contact} page.",
+           "Managing committee of Dargah-e-Aliya Mashhad-e-Hind"),
+    "hi": ("कमेटी", "दरगाह-ए-आलिया मशहद-ए-हिंद, समाना की प्रबंधक कमेटी और फ़ोन नंबर।",
+           "दरगाह",
+           "समाना में दरगाह-ए-आलिया मशहद-ए-हिंद इमामज़ादा सैयद मशहद अली का रौज़ा है। यह {waqf} का उपक्रम है और इसका प्रबंध नीचे दी गई कमेटी करती है।",
+           "पंजाब वक़्फ़ बोर्ड", "प्रबंधक कमेटी",
+           "ज़ियारत, कार्यक्रमों और जानकारी के लिए कृपया कमेटी के किसी सदस्य को फ़ोन करें या {contact} पेज देखें।",
+           "दरगाह-ए-आलिया मशहद-ए-हिंद की प्रबंधक कमेटी"),
+    "pa": ("ਕਮੇਟੀ", "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦੀ ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਅਤੇ ਫ਼ੋਨ ਨੰਬਰ।",
+           "ਦਰਗਾਹ",
+           "ਸਮਾਣਾ ਵਿੱਚ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ ਦਾ ਰੌਜ਼ਾ ਹੈ। ਇਹ {waqf} ਦੇ ਅਧੀਨ ਹੈ ਅਤੇ ਇਸ ਦਾ ਪ੍ਰਬੰਧ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮੇਟੀ ਕਰਦੀ ਹੈ।",
+           "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ", "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ",
+           "ਜ਼ਿਆਰਤ, ਸਮਾਗਮਾਂ ਅਤੇ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਕਮੇਟੀ ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ ਜਾਂ {contact} ਪੰਨਾ ਵੇਖੋ।",
+           "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ"),
+    "ur": ("کمیٹی", "درگاہِ عالیہ مشہدِ ہند، سمانہ کی انتظامی کمیٹی اور فون نمبر۔",
+           "درگاہ",
+           "سمانہ میں درگاہِ عالیہ مشہدِ ہند امام زادہ سید مشہد علی کا روضہ ہے۔ یہ {waqf} کے زیرِ انتظام ہے اور اس کا انتظام نیچے دی گئی کمیٹی کرتی ہے۔",
+           "پنجاب وقف بورڈ", "انتظامی کمیٹی",
+           "زیارت، تقریبات اور معلومات کے لیے براہِ کرم کمیٹی کے کسی رکن کو فون کریں یا {contact} کا صفحہ دیکھیں۔",
+           "درگاہِ عالیہ مشہدِ ہند کی انتظامی کمیٹی"),
+}
+
+
+def phone_link(member):
+    return f'<a href="tel:{member["phone"]}"><bdi dir="ltr">{member["phone_text"]}</bdi></a>'
+
+
+def committee_page(lang):
+    title, desc, h_dargah, intro, waqf, h_committee, outro, _ = ABOUT[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    contact_label = dict(zip(PAGES, LANGS[lang]["nav"]))["contact"]
+    cards = "".join(
+        f'<article class="member"><img src="{up}{m["photo"]}" alt="{m[lang][0]}" width="158" height="200" loading="lazy">'
+        f'<h3>{m[lang][0]}</h3><p class="role">{m[lang][1]}</p><p class="phone">{phone_link(m)}</p></article>'
+        for m in COMMITTEE
+    )
+    body = f"""
+<h2>{h_dargah}</h2>
+<p>{intro.format(waqf=f'<a href="{WAQF_URL}" target="_blank" rel="noopener">{waqf}</a>')}</p>
+<h2>{h_committee}</h2>
+<div class="committee">{cards}</div>
+<p>{outro.format(contact=f'<a href="contact.html">{contact_label}</a>')}</p>
+"""
+    return title, desc, body
+
+
+def contact_committee(lang, body):
+    """Fill the Contact page's committee and phone rows from COMMITTEE."""
+    committee_ph = {"en": "name of the managing committee", "hi": "प्रबंधक कमेटी का नाम",
+                    "pa": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦਾ ਨਾਂ", "ur": "انتظامی کمیٹی کا نام"}[lang]
+    phone_ph = {"en": "phone number", "hi": "फ़ोन नंबर", "pa": "ਫ਼ੋਨ ਨੰਬਰ", "ur": "فون نمبر"}[lang]
+    committee_label = dict(zip(PAGES, LANGS[lang]["nav"]))["committee"]
+    phones = "<br>".join(f"{m[lang][0]} ({m[lang][1]}): {phone_link(m)}" for m in COMMITTEE)
+    body = body.replace(ph(lang, committee_ph), f'{ABOUT[lang][7]} · <a href="committee.html">{committee_label}</a>')
+    return body.replace(ph(lang, phone_ph), phones)
 
 
 # ---------------------------------------------------------------------------
@@ -604,15 +850,17 @@ def json_ld(lang, desc):
         "@context": "https://schema.org",
         "@type": ["PlaceOfWorship", "TouristAttraction"],
         "name": "Mashhad-e-Hind",
-        "alternateName": ["Mashhad e Hind", "Mashad-e-Hind", "Panj Peer Mazar, Samana",
+        "alternateName": ["Dargah-e-Aliya Mashhad-e-Hind", "Mashhad e Hind", "Mashad-e-Hind", "Panj Peer Mazar, Samana",
                           "Roza-e-Imam Mashhad Ali", "मशहद-ए-हिंद", "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ", "مشہدِ ہند"],
         "description": desc,
         "url": page_url("index", lang),
+        "openingHours": "Mo-Su 06:00-21:00",
         "inLanguage": lang,
         "address": {
             "@type": "PostalAddress",
             "addressLocality": "Samana",
             "addressRegion": "Punjab",
+            "postalCode": "147101",
             "addressCountry": "IN",
         },
     }
@@ -658,7 +906,21 @@ def render(lang, page, title, desc, body):
     if page == "index":
         seo += "\n" + json_ld(lang, desc)
     full_title = title if page == "index" else f"{title} · {L['site']}"
-    heading = "" if page == "index" else f'<div class="page-title"><h1>{title}</h1></div>\n'
+    U = UI[lang]
+    if page == "index":
+        top, body = home_hero(lang, body)
+    else:
+        top = f"""<section class="page-banner">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">{L['nav'][0]}</a> <span aria-hidden="true">/</span> {title}</p>
+    <h1>{title}</h1>
+  </div>
+</section>
+"""
+    fonts = L["fonts"] + ("&family=Amiri:wght@400;700" if page == "index" else "")
+    import re
+    label = dict(zip(PAGES, L["nav"]))
+    quick = "".join(f'<li><a href="{p}.html">{label}</a></li>' for p, label in zip(PAGES, L["nav"]))
     return f"""<!doctype html>
 <html lang="{lang}" dir="{L['dir']}">
 <head>
@@ -671,15 +933,20 @@ def render(lang, page, title, desc, body):
 <link rel="icon" href="{up}assets/arch.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={L['fonts']}&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={fonts}&display=swap">
 <link rel="stylesheet" href="{up}assets/style.css">
 </head>
 <body>
 <a class="skip" href="#main">{L['skip']}</a>
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="authority" href="{WAQF_URL}" target="_blank" rel="noopener">{L['authority']}</a>
+    <div class="lang-switch">{switch}</div>
+  </div>
+</div>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="{up}assets/arch.svg" alt="">{L['site']}</a>
-    <div class="lang-switch">{switch}</div>
+    <a class="brand" href="index.html"><span class="emblem"><img src="{up}assets/arch.svg" alt=""></span><span class="brand-name">{L['site']}</span></a>
   </div>
 </header>
 <nav class="main" aria-label="{L['nav'][0]}">
@@ -687,11 +954,28 @@ def render(lang, page, title, desc, body):
 {nav}
   </ul>
 </nav>
-<main id="main" class="wrap">
-{heading}{body.strip()}
+{top}<main id="main" class="wrap">
+{body.strip()}
 </main>
 <footer class="site-footer">
-  <div class="wrap">{L['footer']}</div>
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-name">{L['site']}</p>
+      <p><a href="{WAQF_URL}" target="_blank" rel="noopener">{L['authority']}</a></p>
+    </div>
+    <div>
+      <p class="footer-head">{U['quick']}</p>
+      <ul class="footer-links">{quick}</ul>
+    </div>
+    <div>
+      <p class="footer-head">{label['contact']}</p>
+      <p>{U['country']}</p>
+      <p><a href="contact.html">{label['contact']}</a> · <a href="location.html">{label['location']}</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">© 2026 {L['site']} · {L['authority']}</div>
+  </div>
 </footer>
 </body>
 </html>
@@ -704,7 +988,11 @@ def main():
         outdir = ROOT / L["prefix"]
         outdir.mkdir(parents=True, exist_ok=True)
         for page in PAGES:
-            title, desc, body = pages[page]
+            title, desc, body = committee_page(lang) if page == "committee" else pages[page]
+            if page == "contact":
+                body = contact_committee(lang, body)
+            if page == "index":
+                body = body.replace('<section class="cards"', home_sections(lang) + '<section class="cards"', 1)
             (outdir / f"{page}.html").write_text(render(lang, page, title, desc, body), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
