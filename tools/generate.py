@@ -166,7 +166,7 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>Occasion</th><th>Islamic date</th><th>This year</th></tr></thead>
   <tbody>
-    <tr><td>Annual majlis (Salana Majlis) at Mashhad-e-Hind</td><td>{P("date")}</td><td>{P("date and speakers")}</td></tr>
+    <tr><td>Annual majlis (Salana Majlis) at Mashhad-e-Hind</td><td>{P("date")}</td><td>21–22 November 2026</td></tr>
     <tr><td>Majalis of Muharram</td><td>1–10 Muharram</td><td>{P("programme")}</td></tr>
     <tr><td>{P("Other observances held at the shrine")}</td><td>{P("date")}</td><td>{P("date")}</td></tr>
   </tbody>
@@ -292,7 +292,7 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>موقع</th><th>اسلامی تاریخ</th><th>اس سال</th></tr></thead>
   <tbody>
-    <tr><td>مشہدِ ہند کی سالانہ مجلس</td><td>{P("تاریخ")}</td><td>{P("تاریخ اور خطبا")}</td></tr>
+    <tr><td>مشہدِ ہند کی سالانہ مجلس</td><td>{P("تاریخ")}</td><td>۲۱–۲۲ نومبر ۲۰۲۶ء</td></tr>
     <tr><td>مجالسِ محرم</td><td>۱ تا ۱۰ محرم</td><td>{P("پروگرام")}</td></tr>
     <tr><td>{P("روضے پر منائے جانے والے دیگر مواقع")}</td><td>{P("تاریخ")}</td><td>{P("تاریخ")}</td></tr>
   </tbody>
@@ -418,7 +418,7 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>अवसर</th><th>इस्लामी तारीख़</th><th>इस वर्ष</th></tr></thead>
   <tbody>
-    <tr><td>मशहद-ए-हिंद की सालाना मजलिस</td><td>{P("तारीख़")}</td><td>{P("तारीख़ और वक्ता")}</td></tr>
+    <tr><td>मशहद-ए-हिंद की सालाना मजलिस</td><td>{P("तारीख़")}</td><td>21–22 नवंबर 2026</td></tr>
     <tr><td>मुहर्रम की मजलिसें</td><td>1 से 10 मुहर्रम</td><td>{P("कार्यक्रम")}</td></tr>
     <tr><td>{P("रौज़े पर मनाए जाने वाले अन्य अवसर")}</td><td>{P("तारीख़")}</td><td>{P("तारीख़")}</td></tr>
   </tbody>
@@ -544,7 +544,7 @@ def content(lang):
 <div class="table-scroll"><table>
   <thead><tr><th>ਮੌਕਾ</th><th>ਇਸਲਾਮੀ ਤਰੀਕ</th><th>ਇਸ ਸਾਲ</th></tr></thead>
   <tbody>
-    <tr><td>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਸਾਲਾਨਾ ਮਜਲਿਸ</td><td>{P("ਤਰੀਕ")}</td><td>{P("ਤਰੀਕ ਅਤੇ ਬੁਲਾਰੇ")}</td></tr>
+    <tr><td>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਸਾਲਾਨਾ ਮਜਲਿਸ</td><td>{P("ਤਰੀਕ")}</td><td>21–22 ਨਵੰਬਰ 2026</td></tr>
     <tr><td>ਮੁਹੱਰਮ ਦੀਆਂ ਮਜਲਿਸਾਂ</td><td>1 ਤੋਂ 10 ਮੁਹੱਰਮ</td><td>{P("ਪ੍ਰੋਗਰਾਮ")}</td></tr>
     <tr><td>{P("ਰੌਜ਼ੇ ਉੱਤੇ ਮਨਾਏ ਜਾਂਦੇ ਹੋਰ ਮੌਕੇ")}</td><td>{P("ਤਰੀਕ")}</td><td>{P("ਤਰੀਕ")}</td></tr>
   </tbody>
@@ -582,6 +582,81 @@ def content(lang):
 """),
         }
     raise KeyError(lang)
+
+
+# ---------------------------------------------------------------------------
+# Home page: News and Message from the Chairman. Newest news item first.
+# ---------------------------------------------------------------------------
+
+HOME_TEXT = {
+    "en": {
+        "news": "News",
+        "message": "Message from the Chairman",
+        "video_fallback": "Your browser cannot play this video.",
+        "chairman": "Adv. Zaigam Abbas, Chairman, Dargah-e-Aliya Mashhad-e-Hind, Samana",
+    },
+    "hi": {
+        "news": "समाचार",
+        "message": "चेयरमैन का संदेश",
+        "video_fallback": "आपका ब्राउज़र यह वीडियो नहीं चला सकता।",
+        "chairman": "एडवोकेट ज़ैग़म अब्बास, चेयरमैन, दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
+    },
+    "pa": {
+        "news": "ਖ਼ਬਰਾਂ",
+        "message": "ਚੇਅਰਮੈਨ ਦਾ ਸੁਨੇਹਾ",
+        "video_fallback": "ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ ਇਹ ਵੀਡੀਓ ਨਹੀਂ ਚਲਾ ਸਕਦਾ।",
+        "chairman": "ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ, ਚੇਅਰਮੈਨ, ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
+    },
+    "ur": {
+        "news": "خبریں",
+        "message": "چیئرمین کا پیغام",
+        "video_fallback": "آپ کا براؤزر یہ ویڈیو نہیں چلا سکتا۔",
+        "chairman": "ایڈووکیٹ ضیغم عباس، چیئرمین، درگاہِ عالیہ مشہدِ ہند، سمانہ",
+    },
+}
+
+NEWS = [
+    {
+        "images": ["assets/news/majalis-2026-poster.jpg", "assets/news/majalis-2026-banner.jpg"],
+        "en": ("Salana Majalis, Juloos-e-Aza wa Mehfil",
+               "21 and 22 November 2026, Samana, Punjab. All devotees of the Ahl al-Bayt are humbly requested to attend."),
+        "hi": ("सालाना मजालिस, जुलूस-ए-अज़ा व महफ़िल",
+               "21 और 22 नवंबर 2026, समाना, पंजाब। तमाम आशिक़ान-ए-अहलेबैत से शिरकत की गुज़ारिश है।"),
+        "pa": ("ਸਾਲਾਨਾ ਮਜਾਲਿਸ, ਜਲੂਸ-ਏ-ਅਜ਼ਾ ਵ ਮਹਿਫ਼ਲ",
+               "21 ਅਤੇ 22 ਨਵੰਬਰ 2026, ਸਮਾਣਾ, ਪੰਜਾਬ। ਸਾਰੇ ਆਸ਼ਿਕਾਨ-ਏ-ਅਹਿਲੇਬੈਤ ਨੂੰ ਸ਼ਿਰਕਤ ਦੀ ਗੁਜ਼ਾਰਿਸ਼ ਹੈ।"),
+        "ur": ("سالانہ مجالس، جلوسِ عزا و محفل",
+               "۲۱ اور ۲۲ نومبر ۲۰۲۶ء، سمانہ، پنجاب۔ تمام عاشقانِ اہلِ بیت سے شرکت کی گزارش ہے۔"),
+    },
+]
+
+
+def home_sections(lang):
+    T = HOME_TEXT[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    items = []
+    for item in NEWS:
+        heading, text = item[lang]
+        pics = "".join(
+            f'<a href="{up}{img}" target="_blank" rel="noopener"><img src="{up}{img}" alt="{heading}" loading="lazy"></a>'
+            for img in item["images"]
+        )
+        items.append(f'<article class="news-item"><div class="news-pics">{pics}</div>'
+                     f'<div><h3>{heading}</h3><p>{text}</p></div></article>')
+    return f"""<section class="news">
+  <h2>{T['news']}</h2>
+  {"".join(items)}
+</section>
+<section class="message">
+  <h2>{T['message']}</h2>
+  <figure>
+    <video controls preload="none" playsinline poster="{up}assets/media/chairman-message.jpg">
+      <source src="{up}assets/media/chairman-message.mp4" type="video/mp4">
+      {T['video_fallback']}
+    </video>
+    <figcaption>{T['chairman']}</figcaption>
+  </figure>
+</section>
+"""
 
 
 # ---------------------------------------------------------------------------
@@ -713,6 +788,8 @@ def main():
         outdir.mkdir(parents=True, exist_ok=True)
         for page in PAGES:
             title, desc, body = pages[page]
+            if page == "index":
+                body = body.replace('<section class="cards"', home_sections(lang) + '<section class="cards"', 1)
             (outdir / f"{page}.html").write_text(render(lang, page, title, desc, body), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")

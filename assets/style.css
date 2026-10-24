@@ -104,6 +104,16 @@ main { padding-bottom: 3rem; }
 .placeholder { background: var(--ph-bg); border: 1px dashed var(--ph-border); color: var(--ph-text); padding: 0 .35rem; border-radius: 4px; font-size: .92em; }
 .uncertain { border-inline-start: 4px solid var(--ph-border); background: var(--ph-bg); color: var(--text); padding: .6rem 1rem; border-radius: 6px; font-size: .95rem; }
 
+/* Home: news and chairman's message */
+.news-item { display: grid; gap: 1rem; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; margin-top: 1rem; }
+@media (min-width: 700px) { .news-item { grid-template-columns: 1.2fr 1fr; align-items: center; } }
+.news-pics { display: grid; grid-template-columns: 2fr 3fr; gap: .5rem; align-items: start; }
+.news-pics img { width: 100%; height: auto; display: block; border-radius: 6px; }
+.news-item h3 { margin-top: 0; color: var(--green); }
+.message figure { margin: 1rem 0 0; }
+.message video { width: 100%; max-width: 720px; display: block; border-radius: var(--radius); background: #000; }
+.message figcaption { color: var(--muted); margin-top: .5rem; }
+
 /* Tables */
 table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 th, td { text-align: start; padding: .6rem .8rem; border-bottom: 1px solid var(--border); vertical-align: top; }
