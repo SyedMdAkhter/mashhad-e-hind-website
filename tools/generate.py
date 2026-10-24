@@ -23,7 +23,7 @@ LANGS = {
     "en": {
         "dir": "ltr", "prefix": "", "label": "English",
         "fonts": "Noto+Serif:wght@400;700",
-        "site": "Mashhad-e-Hind, Samana",
+        "site": "Dargah-e-Aliya Mashhad-e-Hind, Samana",
         "ph": "To be confirmed by the committee",
         "nav": ["Home", "History", "Timings", "Events", "Contact", "Location"],
         "authority": "An undertaking of the Punjab Waqf Board",
@@ -34,7 +34,7 @@ LANGS = {
     "hi": {
         "dir": "ltr", "prefix": "hi/", "label": "हिन्दी",
         "fonts": "Noto+Sans+Devanagari:wght@400;700",
-        "site": "मशहद-ए-हिंद, समाना",
+        "site": "दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
         "ph": "कमेटी द्वारा पुष्टि बाकी है",
         "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "संपर्क", "स्थान"],
         "authority": "पंजाब वक़्फ़ बोर्ड के अधीन",
@@ -45,7 +45,7 @@ LANGS = {
     "pa": {
         "dir": "ltr", "prefix": "pa/", "label": "ਪੰਜਾਬੀ",
         "fonts": "Noto+Sans+Gurmukhi:wght@400;700",
-        "site": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
+        "site": "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
         "ph": "ਕਮੇਟੀ ਵੱਲੋਂ ਪੁਸ਼ਟੀ ਬਾਕੀ ਹੈ",
         "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
         "authority": "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਅਧੀਨ",
@@ -56,7 +56,7 @@ LANGS = {
     "ur": {
         "dir": "rtl", "prefix": "ur/", "label": "اردو",
         "fonts": "Noto+Nastaliq+Urdu:wght@400;700",
-        "site": "مشہدِ ہند، سمانہ",
+        "site": "درگاہِ عالیہ مشہدِ ہند، سمانہ",
         "ph": "کمیٹی سے تصدیق باقی ہے",
         "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
         "authority": "پنجاب وقف بورڈ کے زیرِ انتظام",
@@ -80,7 +80,7 @@ def content(lang):
     P = lambda w: ph(lang, w)
     if lang == "en":
         return {
-            "index": ("Mashhad-e-Hind, Samana: official website",
+            "index": ("Dargah-e-Aliya Mashhad-e-Hind, Samana: official website",
                       "Official website of Mashhad-e-Hind (Mashhad e Hind, Panj Peer Mazar), the shrine of Imamzada Syed Mashhad Ali in Samana, Patiala district, Punjab. History, timings, events, contact and directions.",
                       f"""
 <section class="hero">
@@ -206,7 +206,7 @@ def content(lang):
 
     if lang == "ur":
         return {
-            "index": ("مشہدِ ہند، سمانہ: سرکاری ویب سائٹ",
+            "index": ("درگاہِ عالیہ مشہدِ ہند، سمانہ: سرکاری ویب سائٹ",
                       "مشہدِ ہند (پنج پیر مزار)، امام زادہ سید مشہد علی کا روضہ، سمانہ، ضلع پٹیالہ، پنجاب کی سرکاری ویب سائٹ۔",
                       f"""
 <section class="hero">
@@ -332,7 +332,7 @@ def content(lang):
 
     if lang == "hi":
         return {
-            "index": ("मशहद-ए-हिंद, समाना: आधिकारिक वेबसाइट",
+            "index": ("दरगाह-ए-आलिया मशहद-ए-हिंद, समाना: आधिकारिक वेबसाइट",
                       "मशहद-ए-हिंद (पंज पीर मज़ार), इमामज़ादा सैयद मशहद अली की दरगाह, समाना, ज़िला पटियाला, पंजाब की आधिकारिक वेबसाइट।",
                       f"""
 <section class="hero">
@@ -458,7 +458,7 @@ def content(lang):
 
     if lang == "pa":
         return {
-            "index": ("ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ: ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ",
+            "index": ("ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ: ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ",
                       "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ (ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ), ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ ਦਾ ਰੌਜ਼ਾ, ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ ਦੀ ਅਧਿਕਾਰਤ ਵੈੱਬਸਾਈਟ।",
                       f"""
 <section class="hero">
@@ -609,7 +609,7 @@ def json_ld(lang, desc):
         "@context": "https://schema.org",
         "@type": ["PlaceOfWorship", "TouristAttraction"],
         "name": "Mashhad-e-Hind",
-        "alternateName": ["Mashhad e Hind", "Mashad-e-Hind", "Panj Peer Mazar, Samana",
+        "alternateName": ["Dargah-e-Aliya Mashhad-e-Hind", "Mashhad e Hind", "Mashad-e-Hind", "Panj Peer Mazar, Samana",
                           "Roza-e-Imam Mashhad Ali", "मशहद-ए-हिंद", "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ", "مشہدِ ہند"],
         "description": desc,
         "url": page_url("index", lang),
