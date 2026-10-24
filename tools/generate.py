@@ -140,7 +140,6 @@ def content(lang):
   <thead><tr><th>Day</th><th>Opening hours</th></tr></thead>
   <tbody>
     <tr><td>Daily</td><td>6:00 AM – 9:00 PM</td></tr>
-    <tr><td>Thursday evening</td><td>6:00 AM – 9:00 PM</td></tr>
     <tr><td>Friday</td><td>Friday prayer at the time of Zuhr</td></tr>
   </tbody>
 </table></div>
@@ -265,7 +264,6 @@ def content(lang):
   <thead><tr><th>دن</th><th>زیارت کے اوقات</th></tr></thead>
   <tbody>
     <tr><td>روزانہ</td><td>صبح ۶ بجے سے رات ۹ بجے تک</td></tr>
-    <tr><td>جمعرات کی شام</td><td>صبح ۶ بجے سے رات ۹ بجے تک</td></tr>
     <tr><td>جمعہ</td><td>نمازِ جمعہ ظہر کے وقت</td></tr>
   </tbody>
 </table></div>
@@ -390,7 +388,6 @@ def content(lang):
   <thead><tr><th>दिन</th><th>खुलने का समय</th></tr></thead>
   <tbody>
     <tr><td>प्रतिदिन</td><td>सुबह 6 बजे से रात 9 बजे तक</td></tr>
-    <tr><td>गुरुवार शाम</td><td>सुबह 6 बजे से रात 9 बजे तक</td></tr>
     <tr><td>शुक्रवार</td><td>जुमे की नमाज़ ज़ुहर के समय</td></tr>
   </tbody>
 </table></div>
@@ -515,7 +512,6 @@ def content(lang):
   <thead><tr><th>ਦਿਨ</th><th>ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ</th></tr></thead>
   <tbody>
     <tr><td>ਰੋਜ਼ਾਨਾ</td><td>ਸਵੇਰੇ 6 ਵਜੇ ਤੋਂ ਰਾਤ 9 ਵਜੇ ਤੱਕ</td></tr>
-    <tr><td>ਵੀਰਵਾਰ ਸ਼ਾਮ</td><td>ਸਵੇਰੇ 6 ਵਜੇ ਤੋਂ ਰਾਤ 9 ਵਜੇ ਤੱਕ</td></tr>
     <tr><td>ਸ਼ੁੱਕਰਵਾਰ</td><td>ਜੁਮੇ ਦੀ ਨਮਾਜ਼ ਜ਼ੁਹਰ ਦੇ ਵੇਲੇ</td></tr>
   </tbody>
 </table></div>
