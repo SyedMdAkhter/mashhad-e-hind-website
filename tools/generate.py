@@ -659,6 +659,68 @@ def home_sections(lang):
 """
 
 
+# Interface text used by the page shell, home hero and footer.
+UI = {
+    "en": {"cta_visit": "Plan your visit", "cta_history": "Read the history",
+           "hours": "Opening hours", "hours_link": "See all timings",
+           "next": "Next event", "next_text": "Annual majlis · 21–22 November 2026",
+           "where": "Location", "where_text": "Samana, Patiala district, Punjab",
+           "photo_alt": "Mashhad-e-Hind shrine, Samana", "quick": "Quick links",
+           "country": "Samana, Patiala district, Punjab, India"},
+    "hi": {"cta_visit": "ज़ियारत की योजना बनाएँ", "cta_history": "इतिहास पढ़ें",
+           "hours": "खुलने का समय", "hours_link": "सभी समय देखें",
+           "next": "अगला कार्यक्रम", "next_text": "सालाना मजलिस · 21–22 नवंबर 2026",
+           "where": "स्थान", "where_text": "समाना, ज़िला पटियाला, पंजाब",
+           "photo_alt": "मशहद-ए-हिंद का रौज़ा, समाना", "quick": "त्वरित लिंक",
+           "country": "समाना, ज़िला पटियाला, पंजाब, भारत"},
+    "pa": {"cta_visit": "ਜ਼ਿਆਰਤ ਦੀ ਯੋਜਨਾ ਬਣਾਓ", "cta_history": "ਇਤਿਹਾਸ ਪੜ੍ਹੋ",
+           "hours": "ਖੁੱਲ੍ਹਣ ਦਾ ਸਮਾਂ", "hours_link": "ਸਾਰੇ ਸਮੇਂ ਵੇਖੋ",
+           "next": "ਅਗਲਾ ਸਮਾਗਮ", "next_text": "ਸਾਲਾਨਾ ਮਜਲਿਸ · 21–22 ਨਵੰਬਰ 2026",
+           "where": "ਟਿਕਾਣਾ", "where_text": "ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ",
+           "photo_alt": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦਾ ਰੌਜ਼ਾ, ਸਮਾਣਾ", "quick": "ਤੁਰੰਤ ਲਿੰਕ",
+           "country": "ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ"},
+    "ur": {"cta_visit": "زیارت کا منصوبہ بنائیں", "cta_history": "تاریخ پڑھیں",
+           "hours": "زیارت کے اوقات", "hours_link": "تمام اوقات دیکھیں",
+           "next": "اگلی تقریب", "next_text": "سالانہ مجلس · ۲۱–۲۲ نومبر ۲۰۲۶ء",
+           "where": "مقام", "where_text": "سمانہ، ضلع پٹیالہ، پنجاب",
+           "photo_alt": "مشہدِ ہند کا روضہ، سمانہ", "quick": "فوری روابط",
+           "country": "سمانہ، ضلع پٹیالہ، پنجاب، بھارت"},
+}
+
+BISMILLAH = "بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ"
+
+
+def home_hero(lang, body):
+    """Turn the home page's hero section into the full-width banner and info strip."""
+    import re
+    U = UI[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    m = re.search(r'<section class="hero">(.*?)</section>', body, re.S)
+    inner = re.sub(r'\s*<img class="arch"[^>]*>', "", m.group(1)).strip()
+    hero = f"""<section class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-text">
+      <p class="bismillah" lang="ar" dir="rtl">{BISMILLAH}</p>
+      {inner}
+      <div class="cta"><a class="btn btn-gold" href="location.html">{U['cta_visit']}</a><a class="btn btn-ghost" href="history.html">{U['cta_history']}</a></div>
+    </div>
+    <figure class="hero-photo"><img src="{up}assets/media/shrine.jpg" alt="{U['photo_alt']}" width="372" height="296"></figure>
+  </div>
+</section>
+<section class="info-strip" aria-label="{U['hours']}">
+  <div class="wrap info-grid">
+    <a class="info" href="timings.html"><span class="info-label">{U['hours']}</span><span class="info-value">{U['hours_link']}</span></a>
+    <a class="info" href="events.html"><span class="info-label">{U['next']}</span><span class="info-value">{U['next_text']}</span></a>
+    <a class="info" href="location.html"><span class="info-label">{U['where']}</span><span class="info-value">{U['where_text']}</span></a>
+  </div>
+</section>
+"""
+    body = body[:m.start()] + body[m.end():]
+    body = re.sub(r'\s*<p class="notice">.*?</p>', "", body, count=1, flags=re.S)
+    body = body.replace("<section>", '<section class="welcome">', 1)
+    return hero, body
+
+
 # ---------------------------------------------------------------------------
 # Page shell
 # ---------------------------------------------------------------------------
@@ -738,7 +800,21 @@ def render(lang, page, title, desc, body):
     if page == "index":
         seo += "\n" + json_ld(lang, desc)
     full_title = title if page == "index" else f"{title} · {L['site']}"
-    heading = "" if page == "index" else f'<div class="page-title"><h1>{title}</h1></div>\n'
+    U = UI[lang]
+    if page == "index":
+        top, body = home_hero(lang, body)
+    else:
+        top = f"""<section class="page-banner">
+  <div class="wrap">
+    <p class="crumbs"><a href="index.html">{L['nav'][0]}</a> <span aria-hidden="true">/</span> {title}</p>
+    <h1>{title}</h1>
+  </div>
+</section>
+"""
+    fonts = L["fonts"] + ("&family=Amiri:wght@400;700" if page == "index" else "")
+    import re
+    footer_note = re.split(r"[.।۔] ", L["footer"], maxsplit=1)[-1]
+    quick = "".join(f'<li><a href="{p}.html">{label}</a></li>' for p, label in zip(PAGES, L["nav"]))
     return f"""<!doctype html>
 <html lang="{lang}" dir="{L['dir']}">
 <head>
@@ -751,18 +827,20 @@ def render(lang, page, title, desc, body):
 <link rel="icon" href="{up}assets/arch.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={L['fonts']}&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family={fonts}&display=swap">
 <link rel="stylesheet" href="{up}assets/style.css">
 </head>
 <body>
 <a class="skip" href="#main">{L['skip']}</a>
+<div class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="authority" href="{WAQF_URL}" target="_blank" rel="noopener">{L['authority']}</a>
+    <div class="lang-switch">{switch}</div>
+  </div>
+</div>
 <header class="site-header">
   <div class="wrap">
-    <div class="brand-block">
-      <a class="brand" href="index.html"><img src="{up}assets/arch.svg" alt="">{L['site']}</a>
-      <a class="authority" href="{WAQF_URL}" target="_blank" rel="noopener">{L['authority']}</a>
-    </div>
-    <div class="lang-switch">{switch}</div>
+    <a class="brand" href="index.html"><span class="emblem"><img src="{up}assets/arch.svg" alt=""></span><span class="brand-name">{L['site']}</span></a>
   </div>
 </header>
 <nav class="main" aria-label="{L['nav'][0]}">
@@ -770,11 +848,28 @@ def render(lang, page, title, desc, body):
 {nav}
   </ul>
 </nav>
-<main id="main" class="wrap">
-{heading}{body.strip()}
+{top}<main id="main" class="wrap">
+{body.strip()}
 </main>
 <footer class="site-footer">
-  <div class="wrap">{L['footer']}</div>
+  <div class="wrap footer-grid">
+    <div>
+      <p class="footer-name">{L['site']}</p>
+      <p><a href="{WAQF_URL}" target="_blank" rel="noopener">{L['authority']}</a></p>
+    </div>
+    <div>
+      <p class="footer-head">{U['quick']}</p>
+      <ul class="footer-links">{quick}</ul>
+    </div>
+    <div>
+      <p class="footer-head">{L['nav'][4]}</p>
+      <p>{U['country']}</p>
+      <p><a href="contact.html">{L['nav'][4]}</a> · <a href="location.html">{L['nav'][5]}</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">© 2026 {L['site']} · {footer_note}</div>
+  </div>
 </footer>
 </body>
 </html>
