@@ -15,6 +15,7 @@ MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 
 # Address the site is served from. Change this when a custom domain is set up.
 SITE_URL = "https://mashhad-e-hind-website.pages.dev"
+WAQF_URL = "https://waqf.punjab.gov.in/"
 
 PAGES = ["index", "history", "timings", "events", "contact", "location"]
 
@@ -25,6 +26,7 @@ LANGS = {
         "site": "Mashhad-e-Hind, Samana",
         "ph": "To be confirmed by the committee",
         "nav": ["Home", "History", "Timings", "Events", "Contact", "Location"],
+        "authority": "An undertaking of the Punjab Waqf Board",
         "skip": "Skip to content",
         "footer": "Mashhad-e-Hind · Samana, Patiala district, Punjab, India. "
                   "Text marked in yellow is awaiting confirmation by the shrine committee.",
@@ -35,6 +37,7 @@ LANGS = {
         "site": "मशहद-ए-हिंद, समाना",
         "ph": "कमेटी द्वारा पुष्टि बाकी है",
         "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "संपर्क", "स्थान"],
+        "authority": "पंजाब वक़्फ़ बोर्ड के अधीन",
         "skip": "सामग्री पर जाएँ",
         "footer": "मशहद-ए-हिंद · समाना, ज़िला पटियाला, पंजाब, भारत। "
                   "पीले रंग में दिखाए गए लेख की पुष्टि रौज़े की कमेटी द्वारा अभी बाकी है।",
@@ -45,6 +48,7 @@ LANGS = {
         "site": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
         "ph": "ਕਮੇਟੀ ਵੱਲੋਂ ਪੁਸ਼ਟੀ ਬਾਕੀ ਹੈ",
         "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
+        "authority": "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਅਧੀਨ",
         "skip": "ਸਮੱਗਰੀ ਵੱਲ ਜਾਓ",
         "footer": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ · ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ। "
                   "ਪੀਲੇ ਰੰਗ ਵਿੱਚ ਦਰਸਾਈ ਲਿਖਤ ਦੀ ਪੁਸ਼ਟੀ ਰੌਜ਼ੇ ਦੀ ਕਮੇਟੀ ਵੱਲੋਂ ਹਾਲੇ ਬਾਕੀ ਹੈ।",
@@ -55,6 +59,7 @@ LANGS = {
         "site": "مشہدِ ہند، سمانہ",
         "ph": "کمیٹی سے تصدیق باقی ہے",
         "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
+        "authority": "پنجاب وقف بورڈ کے زیرِ انتظام",
         "skip": "مواد پر جائیں",
         "footer": "مشہدِ ہند · سمانہ، ضلع پٹیالہ، پنجاب، بھارت۔ "
                   "پیلے رنگ میں نشان زد عبارت کی تصدیق روضے کی کمیٹی سے ابھی باقی ہے۔",
@@ -678,7 +683,10 @@ def render(lang, page, title, desc, body):
 <a class="skip" href="#main">{L['skip']}</a>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="index.html"><img src="{up}assets/arch.svg" alt="">{L['site']}</a>
+    <div class="brand-block">
+      <a class="brand" href="index.html"><img src="{up}assets/arch.svg" alt="">{L['site']}</a>
+      <a class="authority" href="{WAQF_URL}" target="_blank" rel="noopener">{L['authority']}</a>
+    </div>
     <div class="lang-switch">{switch}</div>
   </div>
 </header>
