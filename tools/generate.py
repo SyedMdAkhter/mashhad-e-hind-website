@@ -574,24 +574,52 @@ def content(lang):
 
 HOME_TEXT = {
     "en": {
+        "glance": "At a glance",
+        "facts": [("Also known as", "Panj Peer Mazar"),
+                  ("Resting place of", "Imamzada Syed Mashhad Ali"),
+                  ("Built", "Ramadan 967 AH (about 1560 CE), as recorded in its inscription"),
+                  ("Administered by", "Punjab Waqf Board")],
+        "msg_intro": "A message to all devotees and visitors from the Chairman of the managing committee.",
+        "msg_link": "Meet the committee",
         "news": "News",
         "message": "Message from the Chairman",
         "video_fallback": "Your browser cannot play this video.",
         "chairman": "Adv. Zaigam Abbas, Chairman, Dargah-e-Aliya Mashhad-e-Hind, Samana",
     },
     "hi": {
+        "glance": "एक नज़र में",
+        "facts": [("अन्य नाम", "पंज पीर मज़ार"),
+                  ("आरामगाह", "इमामज़ादा सैयद मशहद अली"),
+                  ("निर्माण", "रमज़ान 967 हिजरी (लगभग 1560 ई.), शिलालेख के अनुसार"),
+                  ("प्रबंधन", "पंजाब वक़्फ़ बोर्ड")],
+        "msg_intro": "प्रबंधक कमेटी के चेयरमैन की ओर से सभी श्रद्धालुओं और ज़ायरीन के लिए संदेश।",
+        "msg_link": "कमेटी से मिलें",
         "news": "समाचार",
         "message": "चेयरमैन का संदेश",
         "video_fallback": "आपका ब्राउज़र यह वीडियो नहीं चला सकता।",
         "chairman": "एडवोकेट ज़ैग़म अब्बास, चेयरमैन, दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
     },
     "pa": {
+        "glance": "ਇੱਕ ਨਜ਼ਰ ਵਿੱਚ",
+        "facts": [("ਹੋਰ ਨਾਂ", "ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ"),
+                  ("ਆਰਾਮਗਾਹ", "ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ"),
+                  ("ਉਸਾਰੀ", "ਰਮਜ਼ਾਨ 967 ਹਿਜਰੀ (ਲਗਭਗ 1560 ਈ.), ਸ਼ਿਲਾਲੇਖ ਅਨੁਸਾਰ"),
+                  ("ਪ੍ਰਬੰਧ", "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ")],
+        "msg_intro": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦੇ ਚੇਅਰਮੈਨ ਵੱਲੋਂ ਸਾਰੇ ਸ਼ਰਧਾਲੂਆਂ ਅਤੇ ਜ਼ਾਇਰੀਨ ਲਈ ਸੁਨੇਹਾ।",
+        "msg_link": "ਕਮੇਟੀ ਨੂੰ ਮਿਲੋ",
         "news": "ਖ਼ਬਰਾਂ",
         "message": "ਚੇਅਰਮੈਨ ਦਾ ਸੁਨੇਹਾ",
         "video_fallback": "ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ ਇਹ ਵੀਡੀਓ ਨਹੀਂ ਚਲਾ ਸਕਦਾ।",
         "chairman": "ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ, ਚੇਅਰਮੈਨ, ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
     },
     "ur": {
+        "glance": "ایک نظر میں",
+        "facts": [("دوسرا نام", "پنج پیر مزار"),
+                  ("آرام گاہ", "امام زادہ سید مشہد علی"),
+                  ("تعمیر", "رمضان ۹۶۷ھ (تقریباً ۱۵۶۰ء)، کتبے کے مطابق"),
+                  ("انتظام", "پنجاب وقف بورڈ")],
+        "msg_intro": "انتظامی کمیٹی کے چیئرمین کی جانب سے تمام عقیدت مندوں اور زائرین کے نام پیغام۔",
+        "msg_link": "کمیٹی سے ملیں",
         "news": "خبریں",
         "message": "چیئرمین کا پیغام",
         "video_fallback": "آپ کا براؤزر یہ ویڈیو نہیں چلا سکتا۔",
@@ -617,28 +645,37 @@ NEWS = [
 def home_sections(lang):
     T = HOME_TEXT[lang]
     up = "../" if LANGS[lang]["prefix"] else ""
+    chair = COMMITTEE[0]
     items = []
     for item in NEWS:
         heading, text = item[lang]
-        pics = "".join(
-            f'<a href="{up}{img}" target="_blank" rel="noopener"><img src="{up}{img}" alt="{heading}" loading="lazy"></a>'
-            for img in item["images"]
-        )
-        items.append(f'<article class="news-item"><div class="news-pics">{pics}</div>'
-                     f'<div><h3>{heading}</h3><p>{text}</p></div></article>')
-    return f"""<section class="news">
+        pics = [f'<a href="{up}{img}" target="_blank" rel="noopener"><img src="{up}{img}" alt="{heading}" loading="lazy"></a>'
+                for img in item["images"]]
+        # The first image (the poster) sits beside the text; any others follow the text.
+        more = f'<div class="news-more">{"".join(pics[1:])}</div>' if len(pics) > 1 else ""
+        items.append(f'<article class="news-item"><div class="news-poster">{pics[0]}</div>'
+                     f'<div class="news-body"><h3>{heading}</h3><p>{text}</p>{more}</div></article>')
+    return f"""<section class="news band band-tint">
   <h2>{T['news']}</h2>
   {"".join(items)}
 </section>
-<section class="message">
+<section class="message band">
   <h2>{T['message']}</h2>
-  <figure>
-    <video controls preload="none" playsinline poster="{up}assets/media/chairman-message.jpg">
-      <source src="{up}assets/media/chairman-message.mp4" type="video/mp4">
-      {T['video_fallback']}
-    </video>
-    <figcaption>{T['chairman']}</figcaption>
-  </figure>
+  <div class="message-grid">
+    <figure>
+      <video controls preload="none" playsinline poster="{up}assets/media/chairman-message.jpg" aria-label="{T['chairman']}">
+        <source src="{up}assets/media/chairman-message.mp4" type="video/mp4">
+        {T['video_fallback']}
+      </video>
+    </figure>
+    <div class="message-text">
+      <img src="{up}{chair['photo']}" alt="{chair[lang][0]}" width="158" height="200" loading="lazy">
+      <p class="msg-name">{chair[lang][0]}</p>
+      <p class="msg-role">{chair[lang][1]}</p>
+      <p>{T['msg_intro']}</p>
+      <a class="btn btn-outline" href="committee.html">{T['msg_link']}</a>
+    </div>
+  </div>
 </section>
 """
 
@@ -701,7 +738,12 @@ def home_hero(lang, body):
 """
     body = body[:m.start()] + body[m.end():]
     body = re.sub(r'\s*<p class="notice">.*?</p>', "", body, count=1, flags=re.S)
-    body = body.replace("<section>", '<section class="welcome">', 1)
+    T = HOME_TEXT[lang]
+    facts = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in T["facts"])
+    glance = f'<aside class="glance"><h3>{T["glance"]}</h3><dl>{facts}</dl></aside>'
+    w = re.search(r"<section>(.*?)</section>", body, re.S)
+    welcome = f'<section class="welcome band"><div class="welcome-grid"><div class="welcome-text">{w.group(1)}</div>{glance}</div></section>'
+    body = body[:w.start()] + welcome + body[w.end():]
     return hero, body
 
 
