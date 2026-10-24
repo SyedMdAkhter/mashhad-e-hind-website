@@ -14,7 +14,7 @@ MAP_EMBED = f"https://maps.google.com/maps?q={MAP_QUERY}&output=embed"
 MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 
 # Address the site is served from. Change this when a custom domain is set up.
-SITE_URL = "https://mashhad-e-hind-website.pages.dev"
+SITE_URL = "https://mashhadehind.org"
 WAQF_URL = "https://waqf.punjab.gov.in/"
 
 PAGES = ["index", "history", "timings", "events", "committee", "contact", "location"]

@@ -8,8 +8,9 @@ the ones only the site owner can take. They are in order of impact.
 
 ## 1. Use a proper domain name
 
-An address like `mashhadehind.org` looks official and ranks much better than
-`mashhad-e-hind-website.pages.dev`.
+Done: the site's address is `mashhadehind.org`, registered through Cloudflare on
+24 October 2026 and connected under the Pages project's **Custom domains** tab. It
+looks official and ranks much better than `mashhad-e-hind-website.pages.dev`.
 
 - **First check whether the committee owns `mashadehind.in`.** That site already
   shows up for searches about the shrine. If it is the committee's, point that
@@ -23,10 +24,9 @@ An address like `mashhadehind.org` looks official and ranks much better than
 ## 2. Register the site with Google Search Console
 
 1. Go to https://search.google.com/search-console and sign in with a Google account.
-2. Click **Add property**. With a custom domain, choose **Domain** and follow the
-   steps to add a DNS record in Cloudflare. Without one, choose **URL prefix**,
-   enter `https://mashhad-e-hind-website.pages.dev/`, pick **HTML tag** and send the
-   tag to Claude to add to the site.
+2. Click **Add property**, choose **Domain**, enter `mashhadehind.org` and follow
+   the steps to add the DNS record Google gives you in Cloudflare (Cloudflare can
+   often add it automatically when you click **Verify**).
 3. Once it's verified, open **Sitemaps** and submit `sitemap.xml`.
 4. Open **URL inspection**, enter the home page address and click **Request indexing**.
 

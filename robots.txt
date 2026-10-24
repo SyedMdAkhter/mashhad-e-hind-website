@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mashhad-e-hind-website.pages.dev/sitemap.xml
+Sitemap: https://mashhadehind.org/sitemap.xml
