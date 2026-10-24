@@ -17,7 +17,7 @@ MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 SITE_URL = "https://mashhad-e-hind-website.pages.dev"
 WAQF_URL = "https://waqf.punjab.gov.in/"
 
-PAGES = ["index", "history", "timings", "events", "contact", "location"]
+PAGES = ["index", "about", "history", "timings", "events", "contact", "location"]
 
 LANGS = {
     "en": {
@@ -25,7 +25,7 @@ LANGS = {
         "fonts": "Noto+Serif:wght@400;700",
         "site": "Dargah-e-Aliya Mashhad-e-Hind, Samana",
         "ph": "To be confirmed by the committee",
-        "nav": ["Home", "History", "Timings", "Events", "Contact", "Location"],
+        "nav": ["Home", "About us", "History", "Timings", "Events", "Contact", "Location"],
         "authority": "An undertaking of the Punjab Waqf Board",
         "skip": "Skip to content",
         "footer": "Mashhad-e-Hind · Samana, Patiala district, Punjab, India. "
@@ -36,7 +36,7 @@ LANGS = {
         "fonts": "Noto+Sans+Devanagari:wght@400;700",
         "site": "दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
         "ph": "कमेटी द्वारा पुष्टि बाकी है",
-        "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "संपर्क", "स्थान"],
+        "nav": ["मुख्य पृष्ठ", "हमारे बारे में", "इतिहास", "समय", "कार्यक्रम", "संपर्क", "स्थान"],
         "authority": "पंजाब वक़्फ़ बोर्ड के अधीन",
         "skip": "सामग्री पर जाएँ",
         "footer": "मशहद-ए-हिंद · समाना, ज़िला पटियाला, पंजाब, भारत। "
@@ -47,7 +47,7 @@ LANGS = {
         "fonts": "Noto+Sans+Gurmukhi:wght@400;700",
         "site": "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
         "ph": "ਕਮੇਟੀ ਵੱਲੋਂ ਪੁਸ਼ਟੀ ਬਾਕੀ ਹੈ",
-        "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
+        "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਸਾਡੇ ਬਾਰੇ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
         "authority": "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਅਧੀਨ",
         "skip": "ਸਮੱਗਰੀ ਵੱਲ ਜਾਓ",
         "footer": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ · ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ। "
@@ -58,7 +58,7 @@ LANGS = {
         "fonts": "Noto+Nastaliq+Urdu:wght@400;700",
         "site": "درگاہِ عالیہ مشہدِ ہند، سمانہ",
         "ph": "کمیٹی سے تصدیق باقی ہے",
-        "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
+        "nav": ["سرورق", "ہمارے بارے میں", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
         "authority": "پنجاب وقف بورڈ کے زیرِ انتظام",
         "skip": "مواد پر جائیں",
         "footer": "مشہدِ ہند · سمانہ، ضلع پٹیالہ، پنجاب، بھارت۔ "
@@ -722,6 +722,84 @@ def home_hero(lang, body):
 
 
 # ---------------------------------------------------------------------------
+# Managing committee, shown on the About us page and the Contact page.
+# ---------------------------------------------------------------------------
+
+COMMITTEE = [
+    {"photo": "assets/committee/zaigam-abbas.jpg", "phone": "+919779097254", "phone_text": "97790 97254",
+     "en": ("Adv. Zaigam Abbas", "Chairman"), "hi": ("एडवोकेट ज़ैग़म अब्बास", "चेयरमैन"),
+     "pa": ("ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ", "ਚੇਅਰਮੈਨ"), "ur": ("ایڈووکیٹ ضیغم عباس", "چیئرمین")},
+    {"photo": "assets/committee/naseem-haider.jpg", "phone": "+918146887031", "phone_text": "81468 87031",
+     "en": ("Naseem Haider", "President"), "hi": ("नसीम हैदर", "अध्यक्ष"),
+     "pa": ("ਨਸੀਮ ਹੈਦਰ", "ਪ੍ਰਧਾਨ"), "ur": ("نسیم حیدر", "صدر")},
+    {"photo": "assets/committee/shabbir-hussain.jpg", "phone": "+919876160462", "phone_text": "98761 60462",
+     "en": ("Shabbir Hussain", "General Secretary"), "hi": ("शब्बीर हुसैन", "महासचिव"),
+     "pa": ("ਸ਼ੱਬੀਰ ਹੁਸੈਨ", "ਜਨਰਲ ਸਕੱਤਰ"), "ur": ("شبیر حسین", "جنرل سیکرٹری")},
+]
+
+ABOUT = {
+    "en": ("About us", "About Dargah-e-Aliya Mashhad-e-Hind, Samana and its managing committee.",
+           "The Dargah",
+           "Dargah-e-Aliya Mashhad-e-Hind in Samana is the shrine of Imamzada Syed Mashhad Ali. It is an undertaking of the {waqf} and is managed by the committee below.",
+           "Punjab Waqf Board", "Managing committee",
+           "For visits, events and enquiries, please call a member of the committee or see the {contact} page.",
+           "Managing committee of Dargah-e-Aliya Mashhad-e-Hind"),
+    "hi": ("हमारे बारे में", "दरगाह-ए-आलिया मशहद-ए-हिंद, समाना और उसकी प्रबंधक कमेटी के बारे में।",
+           "दरगाह",
+           "समाना में दरगाह-ए-आलिया मशहद-ए-हिंद इमामज़ादा सैयद मशहद अली का रौज़ा है। यह {waqf} का उपक्रम है और इसका प्रबंध नीचे दी गई कमेटी करती है।",
+           "पंजाब वक़्फ़ बोर्ड", "प्रबंधक कमेटी",
+           "ज़ियारत, कार्यक्रमों और जानकारी के लिए कृपया कमेटी के किसी सदस्य को फ़ोन करें या {contact} पेज देखें।",
+           "दरगाह-ए-आलिया मशहद-ए-हिंद की प्रबंधक कमेटी"),
+    "pa": ("ਸਾਡੇ ਬਾਰੇ", "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਅਤੇ ਇਸ ਦੀ ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਬਾਰੇ।",
+           "ਦਰਗਾਹ",
+           "ਸਮਾਣਾ ਵਿੱਚ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਇਮਾਮਜ਼ਾਦਾ ਸੱਯਦ ਮਸ਼ਹਦ ਅਲੀ ਦਾ ਰੌਜ਼ਾ ਹੈ। ਇਹ {waqf} ਦੇ ਅਧੀਨ ਹੈ ਅਤੇ ਇਸ ਦਾ ਪ੍ਰਬੰਧ ਹੇਠਾਂ ਦਿੱਤੀ ਕਮੇਟੀ ਕਰਦੀ ਹੈ।",
+           "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ", "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ",
+           "ਜ਼ਿਆਰਤ, ਸਮਾਗਮਾਂ ਅਤੇ ਜਾਣਕਾਰੀ ਲਈ ਕਿਰਪਾ ਕਰਕੇ ਕਮੇਟੀ ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ ਜਾਂ {contact} ਪੰਨਾ ਵੇਖੋ।",
+           "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੀ ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ"),
+    "ur": ("ہمارے بارے میں", "درگاہِ عالیہ مشہدِ ہند، سمانہ اور اس کی انتظامی کمیٹی کے بارے میں۔",
+           "درگاہ",
+           "سمانہ میں درگاہِ عالیہ مشہدِ ہند امام زادہ سید مشہد علی کا روضہ ہے۔ یہ {waqf} کے زیرِ انتظام ہے اور اس کا انتظام نیچے دی گئی کمیٹی کرتی ہے۔",
+           "پنجاب وقف بورڈ", "انتظامی کمیٹی",
+           "زیارت، تقریبات اور معلومات کے لیے براہِ کرم کمیٹی کے کسی رکن کو فون کریں یا {contact} کا صفحہ دیکھیں۔",
+           "درگاہِ عالیہ مشہدِ ہند کی انتظامی کمیٹی"),
+}
+
+
+def phone_link(member):
+    return f'<a href="tel:{member["phone"]}"><bdi dir="ltr">{member["phone_text"]}</bdi></a>'
+
+
+def about_page(lang):
+    title, desc, h_dargah, intro, waqf, h_committee, outro, _ = ABOUT[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    contact_label = dict(zip(PAGES, LANGS[lang]["nav"]))["contact"]
+    cards = "".join(
+        f'<article class="member"><img src="{up}{m["photo"]}" alt="{m[lang][0]}" width="158" height="200" loading="lazy">'
+        f'<h3>{m[lang][0]}</h3><p class="role">{m[lang][1]}</p><p class="phone">{phone_link(m)}</p></article>'
+        for m in COMMITTEE
+    )
+    body = f"""
+<h2>{h_dargah}</h2>
+<p>{intro.format(waqf=f'<a href="{WAQF_URL}" target="_blank" rel="noopener">{waqf}</a>')}</p>
+<h2>{h_committee}</h2>
+<div class="committee">{cards}</div>
+<p>{outro.format(contact=f'<a href="contact.html">{contact_label}</a>')}</p>
+"""
+    return title, desc, body
+
+
+def contact_committee(lang, body):
+    """Fill the Contact page's committee and phone rows from COMMITTEE."""
+    committee_ph = {"en": "name of the managing committee", "hi": "प्रबंधक कमेटी का नाम",
+                    "pa": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦਾ ਨਾਂ", "ur": "انتظامی کمیٹی کا نام"}[lang]
+    phone_ph = {"en": "phone number", "hi": "फ़ोन नंबर", "pa": "ਫ਼ੋਨ ਨੰਬਰ", "ur": "فون نمبر"}[lang]
+    about_label = dict(zip(PAGES, LANGS[lang]["nav"]))["about"]
+    phones = "<br>".join(f"{m[lang][0]} ({m[lang][1]}): {phone_link(m)}" for m in COMMITTEE)
+    body = body.replace(ph(lang, committee_ph), f'{ABOUT[lang][7]} · <a href="about.html">{about_label}</a>')
+    return body.replace(ph(lang, phone_ph), phones)
+
+
+# ---------------------------------------------------------------------------
 # Page shell
 # ---------------------------------------------------------------------------
 
@@ -814,6 +892,7 @@ def render(lang, page, title, desc, body):
     fonts = L["fonts"] + ("&family=Amiri:wght@400;700" if page == "index" else "")
     import re
     footer_note = re.split(r"[.।۔] ", L["footer"], maxsplit=1)[-1]
+    label = dict(zip(PAGES, L["nav"]))
     quick = "".join(f'<li><a href="{p}.html">{label}</a></li>' for p, label in zip(PAGES, L["nav"]))
     return f"""<!doctype html>
 <html lang="{lang}" dir="{L['dir']}">
@@ -862,9 +941,9 @@ def render(lang, page, title, desc, body):
       <ul class="footer-links">{quick}</ul>
     </div>
     <div>
-      <p class="footer-head">{L['nav'][4]}</p>
+      <p class="footer-head">{label['contact']}</p>
       <p>{U['country']}</p>
-      <p><a href="contact.html">{L['nav'][4]}</a> · <a href="location.html">{L['nav'][5]}</a></p>
+      <p><a href="contact.html">{label['contact']}</a> · <a href="location.html">{label['location']}</a></p>
     </div>
   </div>
   <div class="footer-bottom">
@@ -882,7 +961,9 @@ def main():
         outdir = ROOT / L["prefix"]
         outdir.mkdir(parents=True, exist_ok=True)
         for page in PAGES:
-            title, desc, body = pages[page]
+            title, desc, body = about_page(lang) if page == "about" else pages[page]
+            if page == "contact":
+                body = contact_committee(lang, body)
             if page == "index":
                 body = body.replace('<section class="cards"', home_sections(lang) + '<section class="cards"', 1)
             (outdir / f"{page}.html").write_text(render(lang, page, title, desc, body), encoding="utf-8")

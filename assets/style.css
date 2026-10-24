@@ -167,6 +167,14 @@ main { padding-bottom: 3.5rem; }
 .message video { width: 100%; display: block; border-radius: 8px; background: #000; }
 .message figcaption { color: var(--muted); margin: .6rem .25rem .1rem; text-align: center; }
 
+/* ---------- Committee ---------- */
+.committee { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin: 1rem 0 1.5rem; }
+.member { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: var(--radius); padding: 1.4rem 1rem 1rem; text-align: center; box-shadow: var(--shadow); }
+.member img { width: 120px; height: 120px; object-fit: cover; object-position: top; border-radius: 50%; border: 3px solid var(--gold); display: block; margin: 0 auto .6rem; }
+.member h3 { margin: 0; color: var(--green); font-size: 1.15rem; }
+.member .role { margin: 0; color: var(--gold); font-weight: 700; }
+.member .phone { margin: .3rem 0 0; }
+
 /* ---------- Tables ---------- */
 table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
 th, td { text-align: start; padding: .7rem .9rem; border-bottom: 1px solid var(--border); vertical-align: top; }

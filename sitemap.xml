@@ -29,6 +29,34 @@
     <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/"/>
   </url>
   <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/about.html"/>
+  </url>
+  <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/hi/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/about.html"/>
+  </url>
+  <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/pa/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/about.html"/>
+  </url>
+  <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/ur/about.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/about.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/about.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/about.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/about.html"/>
+  </url>
+  <url>
     <loc>https://mashhad-e-hind-website.pages.dev/history.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/history.html"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/history.html"/>
