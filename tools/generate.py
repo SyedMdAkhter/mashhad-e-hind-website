@@ -188,14 +188,14 @@ def content(lang):
                          f"""
 <p>Mashhad-e-Hind is in the town of Samana, Patiala district, Punjab. Samana lies on State Highway 10 between Patiala and Patran.</p>
 <iframe class="map" src="{MAP_EMBED}" title="Map of Samana" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">Open in Google Maps</a> · {P("committee to confirm the exact map pin")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">Open in Google Maps</a> for directions from where you are.</p>
 
 <h2>Getting here</h2>
 <ul>
-  <li><strong>By road:</strong> from Patiala, about 27 km south-west on State Highway 10 (approximate).</li>
+  <li><strong>By road:</strong> from Patiala, about 27 km south-west on State Highway 10.</li>
   <li><strong>By rail:</strong> the nearest major railway station is Patiala.</li>
-  <li><strong>By air:</strong> the nearest airport is Chandigarh, about 95 km away (approximate).</li>
-  <li>{P("Directions within Samana, landmarks and parking")}</li>
+  <li><strong>By air:</strong> the nearest airport is Chandigarh, about 95 km away.</li>
+  <li><strong>Within Samana:</strong> the shrine is widely known as Panj Peer Mazar, so asking for it by that name works well. For help on the way, please call a member of the <a href="committee.html">committee</a>.</li>
 </ul>
 """),
         }
@@ -310,14 +310,14 @@ def content(lang):
                          f"""
 <p>مشہدِ ہند ضلع پٹیالہ، پنجاب کے قصبے سمانہ میں واقع ہے۔ سمانہ پٹیالہ اور پاتڑاں کے درمیان اسٹیٹ ہائی وے ۱۰ پر ہے۔</p>
 <iframe class="map" src="{MAP_EMBED}" title="سمانہ کا نقشہ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">گوگل میپس میں کھولیں</a> · {P("کمیٹی نقشے پر صحیح مقام کی تصدیق کرے")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">گوگل میپس میں کھولیں</a> اور اپنے مقام سے راستہ دیکھیں۔</p>
 
 <h2>یہاں کیسے پہنچیں</h2>
 <ul>
-  <li><strong>سڑک کے راستے:</strong> پٹیالہ سے تقریباً ۲۷ کلومیٹر جنوب مغرب میں، اسٹیٹ ہائی وے ۱۰ پر (اندازاً)۔</li>
+  <li><strong>سڑک کے راستے:</strong> پٹیالہ سے تقریباً ۲۷ کلومیٹر جنوب مغرب میں، اسٹیٹ ہائی وے ۱۰ پر۔</li>
   <li><strong>ریل کے ذریعے:</strong> قریب ترین بڑا ریلوے اسٹیشن پٹیالہ ہے۔</li>
-  <li><strong>ہوائی سفر:</strong> قریب ترین ہوائی اڈہ چندی گڑھ ہے، تقریباً ۹۵ کلومیٹر دور (اندازاً)۔</li>
-  <li>{P("سمانہ کے اندر راستہ، نمایاں مقامات اور پارکنگ")}</li>
+  <li><strong>ہوائی سفر:</strong> قریب ترین ہوائی اڈہ چندی گڑھ ہے، تقریباً ۹۵ کلومیٹر دور۔</li>
+  <li><strong>سمانہ کے اندر:</strong> روضہ عام طور پر پنج پیر مزار کے نام سے جانا جاتا ہے، اس لیے اسی نام سے پوچھنا آسان رہتا ہے۔ راستے میں مدد کے لیے براہِ کرم <a href="committee.html">کمیٹی</a> کے کسی رکن کو فون کریں۔</li>
 </ul>
 """),
         }
@@ -432,14 +432,14 @@ def content(lang):
                          f"""
 <p>मशहद-ए-हिंद ज़िला पटियाला, पंजाब के क़स्बे समाना में स्थित है। समाना पटियाला और पातड़ां के बीच स्टेट हाईवे 10 पर है।</p>
 <iframe class="map" src="{MAP_EMBED}" title="समाना का नक्शा" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">गूगल मैप्स में खोलें</a> · {P("कमेटी नक्शे पर सही स्थान की पुष्टि करे")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">गूगल मैप्स में खोलें</a> और अपनी जगह से रास्ता देखें।</p>
 
 <h2>यहाँ कैसे पहुँचें</h2>
 <ul>
-  <li><strong>सड़क से:</strong> पटियाला से लगभग 27 किलोमीटर दक्षिण-पश्चिम में, स्टेट हाईवे 10 पर (अनुमानित)।</li>
+  <li><strong>सड़क से:</strong> पटियाला से लगभग 27 किलोमीटर दक्षिण-पश्चिम में, स्टेट हाईवे 10 पर।</li>
   <li><strong>रेल से:</strong> सबसे नज़दीकी बड़ा रेलवे स्टेशन पटियाला है।</li>
-  <li><strong>हवाई मार्ग से:</strong> सबसे नज़दीकी हवाई अड्डा चंडीगढ़ है, लगभग 95 किलोमीटर दूर (अनुमानित)।</li>
-  <li>{P("समाना के अंदर रास्ता, पहचान के स्थान और पार्किंग")}</li>
+  <li><strong>हवाई मार्ग से:</strong> सबसे नज़दीकी हवाई अड्डा चंडीगढ़ है, लगभग 95 किलोमीटर दूर।</li>
+  <li><strong>समाना के अंदर:</strong> दरगाह आम तौर पर पंज पीर मज़ार के नाम से जानी जाती है, इसलिए इसी नाम से पूछना आसान रहता है। रास्ते में मदद के लिए कृपया <a href="committee.html">कमेटी</a> के किसी सदस्य को फ़ोन करें।</li>
 </ul>
 """),
         }
@@ -554,14 +554,14 @@ def content(lang):
                          f"""
 <p>ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ ਦੇ ਸ਼ਹਿਰ ਸਮਾਣਾ ਵਿੱਚ ਸਥਿਤ ਹੈ। ਸਮਾਣਾ ਪਟਿਆਲਾ ਅਤੇ ਪਾਤੜਾਂ ਦੇ ਵਿਚਕਾਰ ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ ਹੈ।</p>
 <iframe class="map" src="{MAP_EMBED}" title="ਸਮਾਣਾ ਦਾ ਨਕਸ਼ਾ" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-<p><a href="{MAP_LINK}" target="_blank" rel="noopener">ਗੂਗਲ ਮੈਪਸ ਵਿੱਚ ਖੋਲ੍ਹੋ</a> · {P("ਕਮੇਟੀ ਨਕਸ਼ੇ ਉੱਤੇ ਸਹੀ ਥਾਂ ਦੀ ਪੁਸ਼ਟੀ ਕਰੇ")}</p>
+<p><a href="{MAP_LINK}" target="_blank" rel="noopener">ਗੂਗਲ ਮੈਪਸ ਵਿੱਚ ਖੋਲ੍ਹੋ</a> ਅਤੇ ਆਪਣੀ ਥਾਂ ਤੋਂ ਰਸਤਾ ਵੇਖੋ।</p>
 
 <h2>ਇੱਥੇ ਕਿਵੇਂ ਪਹੁੰਚੀਏ</h2>
 <ul>
-  <li><strong>ਸੜਕ ਰਾਹੀਂ:</strong> ਪਟਿਆਲਾ ਤੋਂ ਲਗਭਗ 27 ਕਿਲੋਮੀਟਰ ਦੱਖਣ-ਪੱਛਮ ਵੱਲ, ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ (ਅੰਦਾਜ਼ਨ)।</li>
+  <li><strong>ਸੜਕ ਰਾਹੀਂ:</strong> ਪਟਿਆਲਾ ਤੋਂ ਲਗਭਗ 27 ਕਿਲੋਮੀਟਰ ਦੱਖਣ-ਪੱਛਮ ਵੱਲ, ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ।</li>
   <li><strong>ਰੇਲ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਵੱਡਾ ਰੇਲਵੇ ਸਟੇਸ਼ਨ ਪਟਿਆਲਾ ਹੈ।</li>
-  <li><strong>ਹਵਾਈ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਹਵਾਈ ਅੱਡਾ ਚੰਡੀਗੜ੍ਹ ਹੈ, ਲਗਭਗ 95 ਕਿਲੋਮੀਟਰ ਦੂਰ (ਅੰਦਾਜ਼ਨ)।</li>
-  <li>{P("ਸਮਾਣਾ ਦੇ ਅੰਦਰ ਰਸਤਾ, ਨਿਸ਼ਾਨੀਆਂ ਅਤੇ ਪਾਰਕਿੰਗ")}</li>
+  <li><strong>ਹਵਾਈ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਹਵਾਈ ਅੱਡਾ ਚੰਡੀਗੜ੍ਹ ਹੈ, ਲਗਭਗ 95 ਕਿਲੋਮੀਟਰ ਦੂਰ।</li>
+  <li><strong>ਸਮਾਣਾ ਦੇ ਅੰਦਰ:</strong> ਦਰਗਾਹ ਆਮ ਤੌਰ ਤੇ ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ ਦੇ ਨਾਂ ਨਾਲ ਜਾਣੀ ਜਾਂਦੀ ਹੈ, ਇਸ ਲਈ ਇਸੇ ਨਾਂ ਨਾਲ ਪੁੱਛਣਾ ਸੌਖਾ ਰਹਿੰਦਾ ਹੈ। ਰਸਤੇ ਵਿੱਚ ਮਦਦ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="committee.html">ਕਮੇਟੀ</a> ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</li>
 </ul>
 """),
         }
