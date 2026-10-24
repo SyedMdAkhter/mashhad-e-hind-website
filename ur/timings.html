@@ -37,7 +37,8 @@
   </div>
 </header>
 <nav class="main" aria-label="سرورق">
-  <ul>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>مینو</span></button>
+  <ul id="site-menu">
     <li><a href="index.html">سرورق</a></li>
     <li><a href="history.html">تاریخ</a></li>
     <li><a href="timings.html" aria-current="page">اوقات</a></li>
@@ -47,6 +48,7 @@
     <li><a href="location.html">مقام</a></li>
   </ul>
 </nav>
+<script>(function(){var n=document.querySelector('nav.main'),b=n.querySelector('.menu-toggle');n.classList.add('js');b.addEventListener('click',function(){b.setAttribute('aria-expanded',n.classList.toggle('open'))})})();</script>
 <section class="page-banner">
   <div class="wrap">
     <p class="crumbs"><a href="index.html">سرورق</a> <span aria-hidden="true">/</span> اوقات</p>
