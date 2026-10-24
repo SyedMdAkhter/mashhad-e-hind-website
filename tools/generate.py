@@ -177,8 +177,8 @@ def content(lang):
   <tbody>
     <tr><th>Committee</th><td>{P("name of the managing committee")}</td></tr>
     <tr><th>Phone</th><td>{P("phone number")}</td></tr>
-    <tr><th>Email</th><td>{P("email address")}</td></tr>
-    <tr><th>Address</th><td>{P("full postal address")}<br>Samana, Patiala district, Punjab {P("PIN code")}, India</td></tr>
+    <tr><th>Email</th><td>–</td></tr>
+    <tr><th>Address</th><td>Samana, Patiala district, Punjab 147101, India</td></tr>
   </tbody>
 </table></div>
 <p>For directions, see the <a href="location.html">location</a> page.</p>
@@ -299,8 +299,8 @@ def content(lang):
   <tbody>
     <tr><th>کمیٹی</th><td>{P("انتظامی کمیٹی کا نام")}</td></tr>
     <tr><th>فون</th><td>{P("فون نمبر")}</td></tr>
-    <tr><th>ای میل</th><td>{P("ای میل پتہ")}</td></tr>
-    <tr><th>پتہ</th><td>{P("مکمل ڈاک کا پتہ")}<br>سمانہ، ضلع پٹیالہ، پنجاب {P("پن کوڈ")}، بھارت</td></tr>
+    <tr><th>ای میل</th><td>–</td></tr>
+    <tr><th>پتہ</th><td>سمانہ، ضلع پٹیالہ، پنجاب <bdi dir="ltr">147101</bdi>، بھارت</td></tr>
   </tbody>
 </table></div>
 <p>راستے کے لیے <a href="location.html">مقام</a> کا صفحہ دیکھیں۔</p>
@@ -421,8 +421,8 @@ def content(lang):
   <tbody>
     <tr><th>कमेटी</th><td>{P("प्रबंधक कमेटी का नाम")}</td></tr>
     <tr><th>फ़ोन</th><td>{P("फ़ोन नंबर")}</td></tr>
-    <tr><th>ईमेल</th><td>{P("ईमेल पता")}</td></tr>
-    <tr><th>पता</th><td>{P("पूरा डाक पता")}<br>समाना, ज़िला पटियाला, पंजाब {P("पिन कोड")}, भारत</td></tr>
+    <tr><th>ईमेल</th><td>–</td></tr>
+    <tr><th>पता</th><td>समाना, ज़िला पटियाला, पंजाब 147101, भारत</td></tr>
   </tbody>
 </table></div>
 <p>रास्ते के लिए <a href="location.html">स्थान</a> पेज देखें।</p>
@@ -543,8 +543,8 @@ def content(lang):
   <tbody>
     <tr><th>ਕਮੇਟੀ</th><td>{P("ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦਾ ਨਾਂ")}</td></tr>
     <tr><th>ਫ਼ੋਨ</th><td>{P("ਫ਼ੋਨ ਨੰਬਰ")}</td></tr>
-    <tr><th>ਈਮੇਲ</th><td>{P("ਈਮੇਲ ਪਤਾ")}</td></tr>
-    <tr><th>ਪਤਾ</th><td>{P("ਪੂਰਾ ਡਾਕ ਪਤਾ")}<br>ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ {P("ਪਿੰਨ ਕੋਡ")}, ਭਾਰਤ</td></tr>
+    <tr><th>ਈਮੇਲ</th><td>–</td></tr>
+    <tr><th>ਪਤਾ</th><td>ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ 147101, ਭਾਰਤ</td></tr>
   </tbody>
 </table></div>
 <p>ਰਸਤੇ ਲਈ <a href="location.html">ਟਿਕਾਣਾ</a> ਪੰਨਾ ਵੇਖੋ।</p>
@@ -818,6 +818,7 @@ def json_ld(lang, desc):
             "@type": "PostalAddress",
             "addressLocality": "Samana",
             "addressRegion": "Punjab",
+            "postalCode": "147101",
             "addressCountry": "IN",
         },
     }
