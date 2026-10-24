@@ -17,7 +17,7 @@ MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 SITE_URL = "https://mashhad-e-hind-website.pages.dev"
 WAQF_URL = "https://waqf.punjab.gov.in/"
 
-PAGES = ["index", "committee", "history", "timings", "events", "contact", "location"]
+PAGES = ["index", "history", "timings", "events", "committee", "contact", "location"]
 
 LANGS = {
     "en": {
@@ -25,7 +25,7 @@ LANGS = {
         "fonts": "Noto+Serif:wght@400;700",
         "site": "Dargah-e-Aliya Mashhad-e-Hind, Samana",
         "ph": "To be confirmed by the committee",
-        "nav": ["Home", "Committee", "History", "Timings", "Events", "Contact", "Location"],
+        "nav": ["Home", "History", "Timings", "Events", "Committee", "Contact", "Location"],
         "authority": "An undertaking of the Punjab Waqf Board",
         "skip": "Skip to content",
         "footer": "Mashhad-e-Hind · Samana, Patiala district, Punjab, India. "
@@ -36,7 +36,7 @@ LANGS = {
         "fonts": "Noto+Sans+Devanagari:wght@400;700",
         "site": "दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
         "ph": "कमेटी द्वारा पुष्टि बाकी है",
-        "nav": ["मुख्य पृष्ठ", "कमेटी", "इतिहास", "समय", "कार्यक्रम", "संपर्क", "स्थान"],
+        "nav": ["मुख्य पृष्ठ", "इतिहास", "समय", "कार्यक्रम", "कमेटी", "संपर्क", "स्थान"],
         "authority": "पंजाब वक़्फ़ बोर्ड के अधीन",
         "skip": "सामग्री पर जाएँ",
         "footer": "मशहद-ए-हिंद · समाना, ज़िला पटियाला, पंजाब, भारत। "
@@ -47,7 +47,7 @@ LANGS = {
         "fonts": "Noto+Sans+Gurmukhi:wght@400;700",
         "site": "ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
         "ph": "ਕਮੇਟੀ ਵੱਲੋਂ ਪੁਸ਼ਟੀ ਬਾਕੀ ਹੈ",
-        "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਕਮੇਟੀ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
+        "nav": ["ਮੁੱਖ ਪੰਨਾ", "ਇਤਿਹਾਸ", "ਸਮਾਂ", "ਸਮਾਗਮ", "ਕਮੇਟੀ", "ਸੰਪਰਕ", "ਟਿਕਾਣਾ"],
         "authority": "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਅਧੀਨ",
         "skip": "ਸਮੱਗਰੀ ਵੱਲ ਜਾਓ",
         "footer": "ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ · ਸਮਾਣਾ, ਜ਼ਿਲ੍ਹਾ ਪਟਿਆਲਾ, ਪੰਜਾਬ, ਭਾਰਤ। "
@@ -58,7 +58,7 @@ LANGS = {
         "fonts": "Noto+Nastaliq+Urdu:wght@400;700",
         "site": "درگاہِ عالیہ مشہدِ ہند، سمانہ",
         "ph": "کمیٹی سے تصدیق باقی ہے",
-        "nav": ["سرورق", "کمیٹی", "تاریخ", "اوقات", "تقریبات", "رابطہ", "مقام"],
+        "nav": ["سرورق", "تاریخ", "اوقات", "تقریبات", "کمیٹی", "رابطہ", "مقام"],
         "authority": "پنجاب وقف بورڈ کے زیرِ انتظام",
         "skip": "مواد پر جائیں",
         "footer": "مشہدِ ہند · سمانہ، ضلع پٹیالہ، پنجاب، بھارت۔ "

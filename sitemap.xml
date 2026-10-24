@@ -29,34 +29,6 @@
     <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/"/>
   </url>
   <url>
-    <loc>https://mashhad-e-hind-website.pages.dev/committee.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
-  </url>
-  <url>
-    <loc>https://mashhad-e-hind-website.pages.dev/hi/committee.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
-  </url>
-  <url>
-    <loc>https://mashhad-e-hind-website.pages.dev/pa/committee.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
-  </url>
-  <url>
-    <loc>https://mashhad-e-hind-website.pages.dev/ur/committee.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
-  </url>
-  <url>
     <loc>https://mashhad-e-hind-website.pages.dev/history.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/history.html"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/history.html"/>
@@ -139,6 +111,34 @@
     <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/events.html"/>
     <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/events.html"/>
     <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/events.html"/>
+  </url>
+  <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/committee.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
+  </url>
+  <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/hi/committee.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
+  </url>
+  <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/pa/committee.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
+  </url>
+  <url>
+    <loc>https://mashhad-e-hind-website.pages.dev/ur/committee.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mashhad-e-hind-website.pages.dev/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhad-e-hind-website.pages.dev/hi/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhad-e-hind-website.pages.dev/pa/committee.html"/>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhad-e-hind-website.pages.dev/ur/committee.html"/>
   </url>
   <url>
     <loc>https://mashhad-e-hind-website.pages.dev/contact.html</loc>
