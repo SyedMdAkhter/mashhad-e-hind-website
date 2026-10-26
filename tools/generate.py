@@ -6,6 +6,7 @@ serves, and they can be edited by hand. If you edit content here instead, run
 `python3 tools/generate.py` from the repository root to rewrite the pages.
 """
 import hashlib
+import re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -847,7 +848,13 @@ OG_LOCALE = {"en": "en_IN", "hi": "hi_IN", "pa": "pa_IN", "ur": "ur_IN"}
 
 def page_url(page, lang):
     """Absolute address of a page, used by search engines."""
-    return f"{SITE_URL}/{LANGS[lang]['prefix']}{'' if page == 'index' else page + '.html'}"
+    return f"{SITE_URL}/{LANGS[lang]['prefix']}{'' if page == 'index' else page}"
+
+
+def clean_links(html):
+    """Cloudflare Pages redirects /page.html to /page, so link to the final address directly."""
+    html = re.sub(r'href="((?:\.\./)?(?:[a-z]{2}/)?)index\.html"', lambda m: f'href="{m.group(1) or "./"}"', html)
+    return re.sub(r'href="((?:\.\./)?(?:[a-z]{2}/)?[a-z]+)\.html"', r'href="\1"', html)
 
 
 def json_ld(lang, desc):
@@ -1002,7 +1009,7 @@ def main():
                 body = contact_committee(lang, body)
             if page == "index":
                 body = body.replace('<section class="cards"', home_sections(lang) + '<section class="cards"', 1)
-            (outdir / f"{page}.html").write_text(render(lang, page, title, desc, body), encoding="utf-8")
+            (outdir / f"{page}.html").write_text(clean_links(render(lang, page, title, desc, body)), encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(sitemap(), encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE_URL}/sitemap.xml\n", encoding="utf-8")
     print("Wrote", len(LANGS) * len(PAGES), "pages, sitemap.xml and robots.txt")
