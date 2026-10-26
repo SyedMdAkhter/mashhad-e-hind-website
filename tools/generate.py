@@ -759,19 +759,10 @@ def home_hero(lang, body):
 # Managing committee, shown on the Committee page and the Contact page.
 # ---------------------------------------------------------------------------
 
-# Shown in place of a name until the committee confirms the current office holder.
-TBU = {"en": "To be updated", "hi": "जल्द अपडेट किया जाएगा", "pa": "ਜਲਦੀ ਅੱਪਡੇਟ ਕੀਤਾ ਜਾਵੇਗਾ", "ur": "جلد اپ ڈیٹ کیا جائے گا"}
-
 COMMITTEE = [
     {"photo": "assets/committee/zaigam-abbas.jpg", "phone": "+919779097254", "phone_text": "97790 97254",
      "en": ("Adv. Zaigam Abbas", "Chairman"), "hi": ("एडवोकेट ज़ैग़म अब्बास", "चेयरमैन"),
      "pa": ("ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ", "ਚੇਅਰਮੈਨ"), "ur": ("ایڈووکیٹ ضیغم عباس", "چیئرمین")},
-    {"photo": None, "phone": None, "phone_text": None,
-     "en": (TBU["en"], "President"), "hi": (TBU["hi"], "अध्यक्ष"),
-     "pa": (TBU["pa"], "ਪ੍ਰਧਾਨ"), "ur": (TBU["ur"], "صدر")},
-    {"photo": None, "phone": None, "phone_text": None,
-     "en": (TBU["en"], "General Secretary"), "hi": (TBU["hi"], "महासचिव"),
-     "pa": (TBU["pa"], "ਜਨਰਲ ਸਕੱਤਰ"), "ur": (TBU["ur"], "جنرل سیکرٹری")},
 ]
 
 ABOUT = {
@@ -811,11 +802,8 @@ def committee_page(lang):
     up = "../" if LANGS[lang]["prefix"] else ""
     contact_label = dict(zip(PAGES, LANGS[lang]["nav"]))["contact"]
     cards = "".join(
-        (f'<article class="member"><img src="{up}{m["photo"]}" alt="{m[lang][0]}" width="158" height="200" loading="lazy">'
-         f'<h3>{m[lang][0]}</h3><p class="role">{m[lang][1]}</p><p class="phone">{phone_link(m)}</p></article>')
-        if m["photo"] else
-        (f'<article class="member member-vacant"><span class="member-emblem"><img src="{up}assets/arch.svg" alt=""></span>'
-         f'<p class="role">{m[lang][1]}</p><p class="tbu">{m[lang][0]}</p></article>')
+        f'<article class="member"><img src="{up}{m["photo"]}" alt="{m[lang][0]}" width="158" height="200" loading="lazy">'
+        f'<h3>{m[lang][0]}</h3><p class="role">{m[lang][1]}</p><p class="phone">{phone_link(m)}</p></article>'
         for m in COMMITTEE
     )
     body = f"""
@@ -834,7 +822,7 @@ def contact_committee(lang, body):
                     "pa": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦਾ ਨਾਂ", "ur": "انتظامی کمیٹی کا نام"}[lang]
     phone_ph = {"en": "phone number", "hi": "फ़ोन नंबर", "pa": "ਫ਼ੋਨ ਨੰਬਰ", "ur": "فون نمبر"}[lang]
     committee_label = dict(zip(PAGES, LANGS[lang]["nav"]))["committee"]
-    phones = "<br>".join(f"{m[lang][0]} ({m[lang][1]}): {phone_link(m)}" for m in COMMITTEE if m["phone"])
+    phones = "<br>".join(f"{m[lang][0]} ({m[lang][1]}): {phone_link(m)}" for m in COMMITTEE)
     body = body.replace(ph(lang, committee_ph), f'{ABOUT[lang][7]} · <a href="committee.html">{committee_label}</a>')
     return body.replace(ph(lang, phone_ph), phones)
 
