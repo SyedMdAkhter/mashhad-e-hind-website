@@ -213,6 +213,10 @@ main { padding-bottom: 3.5rem; }
 .member h3 { margin: 0; color: var(--green); font-size: 1.15rem; }
 .member .role { margin: 0; color: var(--gold); font-weight: 700; }
 .member .phone { margin: .3rem 0 0; }
+.member-emblem { width: 120px; height: 120px; border-radius: 50%; border: 3px solid var(--gold); display: grid; place-items: center; margin: 0 auto .6rem; background: var(--band); }
+.member-emblem img { width: 52px; height: 52px; border: 0; border-radius: 0; margin: 0; }
+.member-vacant .role { font-size: 1.15rem; }
+.member .tbu { margin: .3rem 0 0; color: var(--muted, #6b6b6b); font-style: italic; }
 
 /* ---------- Tables ---------- */
 table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
