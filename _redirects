@@ -1,0 +1,9 @@
+# The Committee page is hidden for now; send old links to Contact.
+/committee       /contact     301
+/committee.html  /contact     301
+/hi/committee      /hi/contact  301
+/hi/committee.html /hi/contact  301
+/pa/committee      /pa/contact  301
+/pa/committee.html /pa/contact  301
+/ur/committee      /ur/contact  301
+/ur/committee.html /ur/contact  301

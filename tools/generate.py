@@ -6,6 +6,7 @@ serves, and they can be edited by hand. If you edit content here instead, run
 `python3 tools/generate.py` from the repository root to rewrite the pages.
 """
 import hashlib
+import html
 import re
 from pathlib import Path
 
@@ -21,7 +22,11 @@ MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 SITE_URL = "https://mashhadehind.org"
 WAQF_URL = "https://waqf.punjab.gov.in/"
 
-PAGES = ["index", "history", "timings", "events", "committee", "contact", "location"]
+ALL_PAGES = ["index", "history", "timings", "events", "committee", "contact", "location"]
+# The Committee page is hidden while only the Chairman is listed (Syed, 2026-11-02).
+# The Chairman's number is on the Contact page. Remove "committee" from here to bring it back.
+HIDDEN_PAGES = {"committee"}
+PAGES = [p for p in ALL_PAGES if p not in HIDDEN_PAGES]
 
 LANGS = {
     "en": {
@@ -74,6 +79,11 @@ LANGS = {
     },
 }
 
+
+
+# Drop the menu labels of hidden pages so the menu lines up with PAGES.
+for _L in LANGS.values():
+    _L["nav"] = [label for page, label in zip(ALL_PAGES, _L["nav"]) if page in PAGES]
 
 def ph(lang, what):
     """A visible placeholder the committee must replace."""
@@ -203,7 +213,7 @@ def content(lang):
   <li><strong>By road:</strong> from Patiala, about 27 km south-west on State Highway 10.</li>
   <li><strong>By rail:</strong> the nearest major railway station is Patiala.</li>
   <li><strong>By air:</strong> the nearest airport is Chandigarh, about 95 km away.</li>
-  <li><strong>Within Samana:</strong> the shrine is widely known as Panj Peer Mazar, so asking for it by that name works well. For help on the way, please call a member of the <a href="committee.html">committee</a>.</li>
+  <li><strong>Within Samana:</strong> the shrine is widely known as Panj Peer Mazar, so asking for it by that name works well. For help on the way, please call a member of the <a href="contact.html">committee</a>.</li>
 </ul>
 """),
         }
@@ -325,7 +335,7 @@ def content(lang):
   <li><strong>سڑک کے راستے:</strong> پٹیالہ سے تقریباً ۲۷ کلومیٹر جنوب مغرب میں، اسٹیٹ ہائی وے ۱۰ پر۔</li>
   <li><strong>ریل کے ذریعے:</strong> قریب ترین بڑا ریلوے اسٹیشن پٹیالہ ہے۔</li>
   <li><strong>ہوائی سفر:</strong> قریب ترین ہوائی اڈہ چندی گڑھ ہے، تقریباً ۹۵ کلومیٹر دور۔</li>
-  <li><strong>سمانہ کے اندر:</strong> روضہ عام طور پر پنج پیر مزار کے نام سے جانا جاتا ہے، اس لیے اسی نام سے پوچھنا آسان رہتا ہے۔ راستے میں مدد کے لیے براہِ کرم <a href="committee.html">کمیٹی</a> کے کسی رکن کو فون کریں۔</li>
+  <li><strong>سمانہ کے اندر:</strong> روضہ عام طور پر پنج پیر مزار کے نام سے جانا جاتا ہے، اس لیے اسی نام سے پوچھنا آسان رہتا ہے۔ راستے میں مدد کے لیے براہِ کرم <a href="contact.html">کمیٹی</a> کے کسی رکن کو فون کریں۔</li>
 </ul>
 """),
         }
@@ -447,7 +457,7 @@ def content(lang):
   <li><strong>सड़क से:</strong> पटियाला से लगभग 27 किलोमीटर दक्षिण-पश्चिम में, स्टेट हाईवे 10 पर।</li>
   <li><strong>रेल से:</strong> सबसे नज़दीकी बड़ा रेलवे स्टेशन पटियाला है।</li>
   <li><strong>हवाई मार्ग से:</strong> सबसे नज़दीकी हवाई अड्डा चंडीगढ़ है, लगभग 95 किलोमीटर दूर।</li>
-  <li><strong>समाना के अंदर:</strong> दरगाह आम तौर पर पंज पीर मज़ार के नाम से जानी जाती है, इसलिए इसी नाम से पूछना आसान रहता है। रास्ते में मदद के लिए कृपया <a href="committee.html">कमेटी</a> के किसी सदस्य को फ़ोन करें।</li>
+  <li><strong>समाना के अंदर:</strong> दरगाह आम तौर पर पंज पीर मज़ार के नाम से जानी जाती है, इसलिए इसी नाम से पूछना आसान रहता है। रास्ते में मदद के लिए कृपया <a href="contact.html">कमेटी</a> के किसी सदस्य को फ़ोन करें।</li>
 </ul>
 """),
         }
@@ -569,7 +579,7 @@ def content(lang):
   <li><strong>ਸੜਕ ਰਾਹੀਂ:</strong> ਪਟਿਆਲਾ ਤੋਂ ਲਗਭਗ 27 ਕਿਲੋਮੀਟਰ ਦੱਖਣ-ਪੱਛਮ ਵੱਲ, ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ।</li>
   <li><strong>ਰੇਲ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਵੱਡਾ ਰੇਲਵੇ ਸਟੇਸ਼ਨ ਪਟਿਆਲਾ ਹੈ।</li>
   <li><strong>ਹਵਾਈ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਹਵਾਈ ਅੱਡਾ ਚੰਡੀਗੜ੍ਹ ਹੈ, ਲਗਭਗ 95 ਕਿਲੋਮੀਟਰ ਦੂਰ।</li>
-  <li><strong>ਸਮਾਣਾ ਦੇ ਅੰਦਰ:</strong> ਦਰਗਾਹ ਆਮ ਤੌਰ ਤੇ ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ ਦੇ ਨਾਂ ਨਾਲ ਜਾਣੀ ਜਾਂਦੀ ਹੈ, ਇਸ ਲਈ ਇਸੇ ਨਾਂ ਨਾਲ ਪੁੱਛਣਾ ਸੌਖਾ ਰਹਿੰਦਾ ਹੈ। ਰਸਤੇ ਵਿੱਚ ਮਦਦ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="committee.html">ਕਮੇਟੀ</a> ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</li>
+  <li><strong>ਸਮਾਣਾ ਦੇ ਅੰਦਰ:</strong> ਦਰਗਾਹ ਆਮ ਤੌਰ ਤੇ ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ ਦੇ ਨਾਂ ਨਾਲ ਜਾਣੀ ਜਾਂਦੀ ਹੈ, ਇਸ ਲਈ ਇਸੇ ਨਾਂ ਨਾਲ ਪੁੱਛਣਾ ਸੌਖਾ ਰਹਿੰਦਾ ਹੈ। ਰਸਤੇ ਵਿੱਚ ਮਦਦ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="contact.html">ਕਮੇਟੀ</a> ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</li>
 </ul>
 """),
         }
@@ -588,8 +598,9 @@ HOME_TEXT = {
                   ("Built", "Ramadan 967 AH (about 1560 CE), as recorded in its inscription"),
                   ("Administered by", "Punjab Waqf Board")],
         "msg_intro": "A message to all devotees and visitors from the Chairman of the managing committee.",
-        "msg_link": "Meet the committee",
+        "msg_link": "Contact us",
         "news": "News",
+        "gallery": "Gallery", "gallery_close": "Close", "gallery_prev": "Previous photo", "gallery_next": "Next photo",
         "message": "Message from the Chairman",
         "video_fallback": "Your browser cannot play this video.",
         "chairman": "Adv. Zaigam Abbas, Chairman, Dargah-e-Aliya Mashhad-e-Hind, Samana",
@@ -601,8 +612,9 @@ HOME_TEXT = {
                   ("निर्माण", "रमज़ान 967 हिजरी (लगभग 1560 ई.), शिलालेख के अनुसार"),
                   ("प्रबंधन", "पंजाब वक़्फ़ बोर्ड")],
         "msg_intro": "प्रबंधक कमेटी के चेयरमैन की ओर से सभी श्रद्धालुओं और ज़ायरीन के लिए संदेश।",
-        "msg_link": "कमेटी से मिलें",
+        "msg_link": "संपर्क करें",
         "news": "समाचार",
+        "gallery": "गैलरी", "gallery_close": "बंद करें", "gallery_prev": "पिछली फ़ोटो", "gallery_next": "अगली फ़ोटो",
         "message": "चेयरमैन का संदेश",
         "video_fallback": "आपका ब्राउज़र यह वीडियो नहीं चला सकता।",
         "chairman": "एडवोकेट ज़ैग़म अब्बास, चेयरमैन, दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
@@ -614,8 +626,9 @@ HOME_TEXT = {
                   ("ਉਸਾਰੀ", "ਰਮਜ਼ਾਨ 967 ਹਿਜਰੀ (ਲਗਭਗ 1560 ਈ.), ਸ਼ਿਲਾਲੇਖ ਅਨੁਸਾਰ"),
                   ("ਪ੍ਰਬੰਧ", "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ")],
         "msg_intro": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦੇ ਚੇਅਰਮੈਨ ਵੱਲੋਂ ਸਾਰੇ ਸ਼ਰਧਾਲੂਆਂ ਅਤੇ ਜ਼ਾਇਰੀਨ ਲਈ ਸੁਨੇਹਾ।",
-        "msg_link": "ਕਮੇਟੀ ਨੂੰ ਮਿਲੋ",
+        "msg_link": "ਸੰਪਰਕ ਕਰੋ",
         "news": "ਖ਼ਬਰਾਂ",
+        "gallery": "ਗੈਲਰੀ", "gallery_close": "ਬੰਦ ਕਰੋ", "gallery_prev": "ਪਿਛਲੀ ਫ਼ੋਟੋ", "gallery_next": "ਅਗਲੀ ਫ਼ੋਟੋ",
         "message": "ਚੇਅਰਮੈਨ ਦਾ ਸੁਨੇਹਾ",
         "video_fallback": "ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ ਇਹ ਵੀਡੀਓ ਨਹੀਂ ਚਲਾ ਸਕਦਾ।",
         "chairman": "ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ, ਚੇਅਰਮੈਨ, ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
@@ -627,8 +640,9 @@ HOME_TEXT = {
                   ("تعمیر", "رمضان ۹۶۷ھ (تقریباً ۱۵۶۰ء)، کتبے کے مطابق"),
                   ("انتظام", "پنجاب وقف بورڈ")],
         "msg_intro": "انتظامی کمیٹی کے چیئرمین کی جانب سے تمام عقیدت مندوں اور زائرین کے نام پیغام۔",
-        "msg_link": "کمیٹی سے ملیں",
+        "msg_link": "رابطہ کریں",
         "news": "خبریں",
+        "gallery": "گیلری", "gallery_close": "بند کریں", "gallery_prev": "پچھلی تصویر", "gallery_next": "اگلی تصویر",
         "message": "چیئرمین کا پیغام",
         "video_fallback": "آپ کا براؤزر یہ ویڈیو نہیں چلا سکتا۔",
         "chairman": "ایڈووکیٹ ضیغم عباس، چیئرمین، درگاہِ عالیہ مشہدِ ہند، سمانہ",
@@ -650,6 +664,94 @@ NEWS = [
 ]
 
 
+# Gallery photos, newest first. Add one with tools/add_photo.py, which resizes the
+# original and prints an entry to paste here. Missing languages fall back to English.
+GALLERY = [
+    {"id": "cm-poster-release-2026-10-a", "focus": "center 40%", "size": (600, 799), "en": "Hon'ble Chief Minister of Punjab Shri Bhagwant Mann and Adv. Zaigam Abbas, Chairman, Mashhad-e-Hind, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "पंजाब के माननीय मुख्यमंत्री श्री भगवंत मान और मशहद-ए-हिंद के चेयरमैन एडवोकेट ज़ैग़म अब्बास दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਪੰਜਾਬ ਦੇ ਮਾਣਯੋਗ ਮੁੱਖ ਮੰਤਰੀ ਸ੍ਰੀ ਭਗਵੰਤ ਮਾਨ ਅਤੇ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੇ ਚੇਅਰਮੈਨ ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "وزیرِ اعلیٰ پنجاب عزت مآب شری بھگونت مان اور مشہدِ ہند کے چیئرمین جناب ایڈووکیٹ ضیغم عباس درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+    {"id": "cm-poster-release-2026-10-b", "focus": "center 55%", "size": (600, 750), "en": "Hon'ble Chief Minister of Punjab Shri Bhagwant Mann and Adv. Zaigam Abbas, Chairman, Mashhad-e-Hind, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "पंजाब के माननीय मुख्यमंत्री श्री भगवंत मान और मशहद-ए-हिंद के चेयरमैन एडवोकेट ज़ैग़म अब्बास दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਪੰਜਾਬ ਦੇ ਮਾਣਯੋਗ ਮੁੱਖ ਮੰਤਰੀ ਸ੍ਰੀ ਭਗਵੰਤ ਮਾਨ ਅਤੇ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੇ ਚੇਅਰਮੈਨ ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "وزیرِ اعلیٰ پنجاب عزت مآب شری بھگونت مان اور مشہدِ ہند کے چیئرمین جناب ایڈووکیٹ ضیغم عباس درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+    {"id": "poster-release-2026-10", "size": (600, 450), "en": "Punjab Finance Minister Shri Harpal Singh Cheema and Adv. Shamshad Ali, Member, Punjab Waqf Board, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "पंजाब के वित्त मंत्री श्री हरपाल सिंह चीमा और पंजाब वक़्फ़ बोर्ड के सदस्य एडवोकेट शमशाद अली दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਪੰਜਾਬ ਦੇ ਵਿੱਤ ਮੰਤਰੀ ਸ੍ਰੀ ਹਰਪਾਲ ਸਿੰਘ ਚੀਮਾ ਅਤੇ ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਮੈਂਬਰ ਐਡਵੋਕੇਟ ਸ਼ਮਸ਼ਾਦ ਅਲੀ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "پنجاب کے وزیرِ خزانہ شری ہرپال سنگھ چیمہ اور پنجاب وقف بورڈ کے رکن ایڈووکیٹ شمشاد علی درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+    {"id": "poster-release-2026-10-b", "size": (600, 800), "en": "Punjab Health Minister Shri Balbir Singh, Shri Baltej Singh Pannu, Chief Advisor to the Chief Minister of Punjab, and Dr Sufi Raj Jain of Hoshiarpur releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "पंजाब के स्वास्थ्य मंत्री श्री बलबीर सिंह, पंजाब के मुख्यमंत्री के मुख्य सलाहकार श्री बलतेज सिंह पन्नू और होशियारपुर के डॉ. सूफ़ी राज जैन दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਪੰਜਾਬ ਦੇ ਸਿਹਤ ਮੰਤਰੀ ਸ੍ਰੀ ਬਲਬੀਰ ਸਿੰਘ, ਪੰਜਾਬ ਦੇ ਮੁੱਖ ਮੰਤਰੀ ਦੇ ਮੁੱਖ ਸਲਾਹਕਾਰ ਸ੍ਰੀ ਬਲਤੇਜ ਸਿੰਘ ਪੰਨੂ ਅਤੇ ਹੁਸ਼ਿਆਰਪੁਰ ਦੇ ਡਾ. ਸੂਫ਼ੀ ਰਾਜ ਜੈਨ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "پنجاب کے وزیرِ صحت شری بلبیر سنگھ، وزیرِ اعلیٰ پنجاب کے چیف ایڈوائزر شری بلتیج سنگھ پنوں اور ہوشیارپور کے ڈاکٹر صوفی راج جین درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+    {"id": "poster-release-2026-10-c", "focus": "center 75%", "size": (600, 800), "en": "Mohali MLA Shri Kulwant Singh, Market Committee Chairman Shri Govinder Mittal, Adv. Shamshad Ali, Member, Punjab Waqf Board, Shri Gurcharan Singh Alipur and Adv. Zaigam Abbas, Chairman, Mashhad-e-Hind, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "मोहाली के विधायक श्री कुलवंत सिंह, मार्केट कमेटी के चेयरमैन श्री गोविंदर मित्तल, पंजाब वक़्फ़ बोर्ड के सदस्य एडवोकेट शमशाद अली, श्री गुरचरण सिंह अलीपुर और मशहद-ए-हिंद के चेयरमैन एडवोकेट ज़ैग़म अब्बास दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਮੋਹਾਲੀ ਦੇ ਵਿਧਾਇਕ ਸ੍ਰੀ ਕੁਲਵੰਤ ਸਿੰਘ, ਮਾਰਕੀਟ ਕਮੇਟੀ ਦੇ ਚੇਅਰਮੈਨ ਸ੍ਰੀ ਗੋਵਿੰਦਰ ਮਿੱਤਲ, ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਮੈਂਬਰ ਐਡਵੋਕੇਟ ਸ਼ਮਸ਼ਾਦ ਅਲੀ, ਸ੍ਰੀ ਗੁਰਚਰਨ ਸਿੰਘ ਅਲੀਪੁਰ ਅਤੇ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੇ ਚੇਅਰਮੈਨ ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "موہالی کے ایم ایل اے شری کلونت سنگھ، مارکیٹ کمیٹی کے چیئرمین شری گووندر متل، پنجاب وقف بورڈ کے رکن ایڈووکیٹ شمشاد علی، شری گرچرن سنگھ علی پور اور مشہدِ ہند کے چیئرمین جناب ایڈووکیٹ ضیغم عباس درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+    {"id": "poster-release-2026-10-d", "focus": "center 65%", "size": (600, 1067), "en": "Development Board Chairman Shri Gurmail Singh Gharachon, Adv. Shamshad Ali, Member, Punjab Waqf Board, and Adv. Zaigam Abbas, Chairman, Mashhad-e-Hind, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana, Punjab.",
+     "hi": "डेवलपमेंट बोर्ड के चेयरमैन श्री गुरमेल सिंह घराचों, पंजाब वक़्फ़ बोर्ड के सदस्य एडवोकेट शमशाद अली और मशहद-ए-हिंद के चेयरमैन एडवोकेट ज़ैग़म अब्बास दरगाह-ए-आलिया मशहद-ए-हिंद, समाना, पंजाब का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਡਿਵੈਲਪਮੈਂਟ ਬੋਰਡ ਦੇ ਚੇਅਰਮੈਨ ਸ੍ਰੀ ਗੁਰਮੇਲ ਸਿੰਘ ਘਰਾਚੋਂ, ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਮੈਂਬਰ ਐਡਵੋਕੇਟ ਸ਼ਮਸ਼ਾਦ ਅਲੀ ਅਤੇ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੇ ਚੇਅਰਮੈਨ ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ, ਪੰਜਾਬ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "ڈیولپمنٹ بورڈ کے چیئرمین شری گرمیل سنگھ گھراچوں، پنجاب وقف بورڈ کے رکن ایڈووکیٹ شمشاد علی اور مشہدِ ہند کے چیئرمین جناب ایڈووکیٹ ضیغم عباس درگاہِ عالیہ مشہدِ ہند، سمانہ، پنجاب کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+]
+
+
+def gallery_section(lang):
+    if not GALLERY:
+        return ""
+    T = HOME_TEXT[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    total = len(GALLERY)
+    slides, thumbs = [], []
+    for n, photo in enumerate(GALLERY):
+        caption = html.escape(photo.get(lang) or photo["en"])
+        base = f'{up}assets/gallery/{photo["id"]}'
+        lazy = "" if n == 0 else ' loading="lazy"'
+        slides.append(
+            f'<figure class="slide" aria-roledescription="slide" aria-label="{n + 1} / {total}">'
+            f'<a href="{base}-1600.jpg" data-caption="{caption}"><span class="slide-bg" style="background-image: url(\'{base}-600.jpg\')" aria-hidden="true"></span>'
+            f'<img src="{base}-1600.jpg" srcset="{base}-600.jpg 600w, {base}-1600.jpg 1600w" sizes="(max-width: 1150px) 100vw, 1100px" alt="{caption}"{lazy} decoding="async"></a>'
+            f'<figcaption>{caption}</figcaption></figure>')
+        # Optional "focus" picks which part of a tall photo the small thumbnail keeps.
+        focus = f' style="object-position: {photo["focus"]}"' if "focus" in photo else ""
+        current = ' aria-current="true"' if n == 0 else ""
+        thumbs.append(f'<button type="button" aria-label="{n + 1} / {total}"{current}><img src="{base}-600.jpg" alt="" loading="lazy"{focus}></button>')
+    return f"""<section class="gallery band">
+  <h2>{T['gallery']}</h2>
+  <div class="slider" aria-roledescription="carousel" aria-label="{T['gallery']}">
+    <div class="slides" tabindex="0">{"".join(slides)}</div>
+    <button type="button" class="slide-btn slide-prev" aria-label="{T['gallery_prev']}">‹</button>
+    <button type="button" class="slide-btn slide-next" aria-label="{T['gallery_next']}">›</button>
+  </div>
+  <p class="slide-count" aria-live="polite">1 / {total}</p>
+  <div class="thumbs">{"".join(thumbs)}</div>
+  <dialog class="lightbox" aria-label="{T['gallery']}">
+    <img alt="">
+    <p class="lightbox-caption"></p>
+    <button type="button" class="lb-close" aria-label="{T['gallery_close']}">×</button>
+    <button type="button" class="lb-prev" aria-label="{T['gallery_prev']}">‹</button>
+    <button type="button" class="lb-next" aria-label="{T['gallery_next']}">›</button>
+  </dialog>
+  <script>(function(){{var s=document.currentScript.parentNode,track=s.querySelector('.slides'),slides=[].slice.call(track.children),thumbs=[].slice.call(s.querySelectorAll('.thumbs button')),count=s.querySelector('.slide-count'),cur=0;
+function mark(n){{cur=n;count.textContent=(n+1)+' / '+slides.length;thumbs.forEach(function(t,k){{if(k===n)t.setAttribute('aria-current','true');else t.removeAttribute('aria-current')}})}}
+function go(n){{n=(n+slides.length)%slides.length;mark(n);track.scrollTo({{left:slides[n].offsetLeft-slides[0].offsetLeft,behavior:'smooth'}})}}
+function sync(){{var n=Math.round(Math.abs(track.scrollLeft)/track.clientWidth);if(n!==cur)mark(n)}}
+var tm;track.addEventListener('scroll',function(){{clearTimeout(tm);tm=setTimeout(sync,80)}});
+s.querySelector('.slide-prev').onclick=function(){{go(cur-1)}};
+s.querySelector('.slide-next').onclick=function(){{go(cur+1)}};
+thumbs.forEach(function(t,k){{t.onclick=function(){{go(k)}}}});
+var d=s.querySelector('dialog'),im=d.querySelector('img'),cap=d.querySelector('.lightbox-caption'),links=slides.map(function(f){{return f.querySelector('a')}}),i=0;
+if(!d.showModal)return;
+function show(n){{i=(n+links.length)%links.length;im.src=links[i].href;im.alt=cap.textContent=links[i].dataset.caption}}
+links.forEach(function(a,n){{a.addEventListener('click',function(e){{e.preventDefault();show(n);d.showModal()}})}});
+d.querySelector('.lb-close').onclick=function(){{d.close()}};
+d.querySelector('.lb-prev').onclick=function(){{show(i-1)}};
+d.querySelector('.lb-next').onclick=function(){{show(i+1)}};
+d.addEventListener('click',function(e){{if(e.target===d)d.close()}});
+d.addEventListener('close',function(){{go(i)}});
+d.addEventListener('keydown',function(e){{var rtl=document.dir==='rtl';if(e.key==='ArrowRight')show(rtl?i-1:i+1);if(e.key==='ArrowLeft')show(rtl?i+1:i-1)}});
+}})();</script>
+</section>
+"""
+
 def home_sections(lang):
     T = HOME_TEXT[lang]
     up = "../" if LANGS[lang]["prefix"] else ""
@@ -667,7 +769,7 @@ def home_sections(lang):
   <h2>{T['news']}</h2>
   {"".join(items)}
 </section>
-<section class="message band">
+{gallery_section(lang)}<section class="message band">
   <h2>{T['message']}</h2>
   <div class="message-grid">
     <figure>
@@ -681,7 +783,7 @@ def home_sections(lang):
       <p class="msg-name">{chair[lang][0]}</p>
       <p class="msg-role">{chair[lang][1]}</p>
       <p>{T['msg_intro']}</p>
-      <a class="btn btn-outline" href="committee.html">{T['msg_link']}</a>
+      <a class="btn btn-outline" href="contact.html">{T['msg_link']}</a>
     </div>
   </div>
 </section>
@@ -821,9 +923,8 @@ def contact_committee(lang, body):
     committee_ph = {"en": "name of the managing committee", "hi": "प्रबंधक कमेटी का नाम",
                     "pa": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦਾ ਨਾਂ", "ur": "انتظامی کمیٹی کا نام"}[lang]
     phone_ph = {"en": "phone number", "hi": "फ़ोन नंबर", "pa": "ਫ਼ੋਨ ਨੰਬਰ", "ur": "فون نمبر"}[lang]
-    committee_label = dict(zip(PAGES, LANGS[lang]["nav"]))["committee"]
     phones = "<br>".join(f"{m[lang][0]} ({m[lang][1]}): {phone_link(m)}" for m in COMMITTEE)
-    body = body.replace(ph(lang, committee_ph), f'{ABOUT[lang][7]} · <a href="committee.html">{committee_label}</a>')
+    body = body.replace(ph(lang, committee_ph), ABOUT[lang][7])
     return body.replace(ph(lang, phone_ph), phones)
 
 

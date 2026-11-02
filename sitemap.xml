@@ -113,34 +113,6 @@
     <xhtml:link rel="alternate" hreflang="ur" href="https://mashhadehind.org/ur/events"/>
   </url>
   <url>
-    <loc>https://mashhadehind.org/committee</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhadehind.org/committee"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhadehind.org/hi/committee"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhadehind.org/pa/committee"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhadehind.org/ur/committee"/>
-  </url>
-  <url>
-    <loc>https://mashhadehind.org/hi/committee</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhadehind.org/committee"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhadehind.org/hi/committee"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhadehind.org/pa/committee"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhadehind.org/ur/committee"/>
-  </url>
-  <url>
-    <loc>https://mashhadehind.org/pa/committee</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhadehind.org/committee"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhadehind.org/hi/committee"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhadehind.org/pa/committee"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhadehind.org/ur/committee"/>
-  </url>
-  <url>
-    <loc>https://mashhadehind.org/ur/committee</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mashhadehind.org/committee"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://mashhadehind.org/hi/committee"/>
-    <xhtml:link rel="alternate" hreflang="pa" href="https://mashhadehind.org/pa/committee"/>
-    <xhtml:link rel="alternate" hreflang="ur" href="https://mashhadehind.org/ur/committee"/>
-  </url>
-  <url>
     <loc>https://mashhadehind.org/contact</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mashhadehind.org/contact"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://mashhadehind.org/hi/contact"/>

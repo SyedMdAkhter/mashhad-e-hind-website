@@ -141,8 +141,8 @@ html[lang="ur"] .hero .eyebrow, html[lang="hi"] .hero .eyebrow, html[lang="pa"] 
 .info-value { color: var(--green); font-weight: 700; }
 
 /* ---------- Section headings on the home page ---------- */
-.welcome h2, .news > h2, .message > h2 { text-align: center; }
-.welcome h2::after, .news > h2::after, .message > h2::after {
+.welcome h2, .news > h2, .gallery > h2, .message > h2 { text-align: center; }
+.welcome h2::after, .news > h2::after, .gallery > h2::after, .message > h2::after {
   content: ""; display: block; width: 120px; height: 14px; margin: .4rem auto 0;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='14' viewBox='0 0 120 14'%3E%3Cg fill='none' stroke='%23b8913f' stroke-width='1.5'%3E%3Cpath d='M0 7h46M74 7h46'/%3E%3Cpath d='M60 1l3 4 4 2-4 2-3 4-3-4-4-2 4-2z' fill='%23b8913f'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
 }
@@ -237,3 +237,37 @@ blockquote { margin: 1rem 0; padding: .5rem 1rem; border-inline-start: 4px solid
 .footer-links a { text-decoration: none; color: #e1e8e3; }
 .footer-links a:hover { color: var(--gold-light); }
 .footer-bottom { border-top: 1px solid rgba(226, 196, 124, .2); padding: .9rem 0; font-size: .85rem; color: #a9b6ae; }
+
+/* ---------- Gallery ---------- */
+.slider { position: relative; }
+.slides { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth; scrollbar-width: none; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); box-shadow: var(--shadow); }
+.slides::-webkit-scrollbar { display: none; }
+.slides:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
+.slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
+/* The whole photo is shown; a soft, blurred copy of the same photo fills the space beside it. */
+.slide a { display: block; position: relative; overflow: hidden; background: #101713; }
+.slide-bg { position: absolute; inset: -40px; background: center / cover no-repeat; filter: blur(28px) brightness(.75) saturate(1.1); }
+.slide img { position: relative; display: block; width: 100%; height: min(62vh, 560px); object-fit: contain; }
+.slide figcaption { padding: .9rem 1.2rem 1rem; text-align: center; line-height: 1.6; max-width: 52rem; margin: 0 auto; }
+.slide-btn { position: absolute; top: calc(min(62vh, 560px) / 2); transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .35); background: rgba(0, 0, 0, .45); color: #fff; font-size: 1.7rem; line-height: 1; cursor: pointer; }
+.slide-btn:hover, .slide-btn:focus-visible { border-color: var(--gold-light); color: var(--gold-light); }
+.slide-prev { inset-inline-start: .7rem; }
+.slide-next { inset-inline-end: .7rem; }
+.slide-count { text-align: center; color: var(--muted); font-size: .9rem; margin: .7rem 0 .5rem; }
+.thumbs { display: flex; gap: .5rem; overflow-x: auto; padding: .2rem .1rem .4rem; justify-content: safe center; scrollbar-width: thin; }
+.thumbs button { flex: 0 0 auto; padding: 0; border: 2px solid transparent; border-radius: 8px; overflow: hidden; background: none; cursor: pointer; opacity: .6; transition: opacity .2s, border-color .2s; }
+.thumbs button:hover, .thumbs button:focus-visible { opacity: 1; }
+.thumbs button[aria-current="true"] { border-color: var(--gold); opacity: 1; }
+.thumbs img { display: block; width: 84px; height: 60px; object-fit: cover; }
+@media (max-width: 600px) { .slide img { height: 52vh; } .slide-btn { top: 26vh; width: 40px; height: 40px; } .thumbs img { width: 64px; height: 46px; } }
+.lightbox { border: 0; padding: 0; background: rgba(0, 0, 0, .92); max-width: 100vw; max-height: 100vh; width: 100vw; height: 100vh; }
+.lightbox::backdrop { background: rgba(0, 0, 0, .9); }
+.lightbox[open] { display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.lightbox img { max-width: 94vw; max-height: 80vh; object-fit: contain; }
+.lightbox-caption { color: #f4efe1; text-align: center; max-width: 60rem; margin: .8rem 1rem 0; }
+.lightbox button { position: absolute; background: rgba(0, 0, 0, .5); color: #fff; border: 1px solid rgba(255, 255, 255, .3); border-radius: 50%; width: 48px; height: 48px; font-size: 1.8rem; line-height: 1; cursor: pointer; }
+.lightbox button:hover, .lightbox button:focus-visible { border-color: var(--gold-light); color: var(--gold-light); }
+.lb-close { top: 1rem; inset-inline-end: 1rem; }
+.lb-prev, .lb-next { top: 50%; transform: translateY(-50%); }
+.lb-prev { inset-inline-start: 1rem; }
+.lb-next { inset-inline-end: 1rem; }
