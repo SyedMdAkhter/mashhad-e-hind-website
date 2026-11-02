@@ -698,7 +698,7 @@ def gallery_section(lang):
         lazy = "" if n == 0 else ' loading="lazy"'
         slides.append(
             f'<figure class="slide" aria-roledescription="slide" aria-label="{n + 1} / {total}">'
-            f'<a href="{base}-1600.jpg" data-caption="{caption}">'
+            f'<a href="{base}-1600.jpg" data-caption="{caption}"><span class="slide-bg" style="background-image: url(\'{base}-600.jpg\')" aria-hidden="true"></span>'
             f'<img src="{base}-1600.jpg" srcset="{base}-600.jpg 600w, {base}-1600.jpg 1600w" sizes="(max-width: 1150px) 100vw, 1100px" alt="{caption}"{lazy} decoding="async"></a>'
             f'<figcaption>{caption}</figcaption></figure>')
         # Optional "focus" picks which part of a tall photo the small thumbnail keeps.

@@ -244,8 +244,10 @@ blockquote { margin: 1rem 0; padding: .5rem 1rem; border-inline-start: 4px solid
 .slides::-webkit-scrollbar { display: none; }
 .slides:focus-visible { outline: 3px solid var(--gold); outline-offset: 3px; }
 .slide { flex: 0 0 100%; margin: 0; scroll-snap-align: start; }
-.slide a { display: block; background: #101713; }
-.slide img { display: block; width: 100%; height: min(62vh, 560px); object-fit: contain; }
+/* The whole photo is shown; a soft, blurred copy of the same photo fills the space beside it. */
+.slide a { display: block; position: relative; overflow: hidden; background: #101713; }
+.slide-bg { position: absolute; inset: -40px; background: center / cover no-repeat; filter: blur(28px) brightness(.75) saturate(1.1); }
+.slide img { position: relative; display: block; width: 100%; height: min(62vh, 560px); object-fit: contain; }
 .slide figcaption { padding: .9rem 1.2rem 1rem; text-align: center; line-height: 1.6; max-width: 52rem; margin: 0 auto; }
 .slide-btn { position: absolute; top: calc(min(62vh, 560px) / 2); transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, .35); background: rgba(0, 0, 0, .45); color: #fff; font-size: 1.7rem; line-height: 1; cursor: pointer; }
 .slide-btn:hover, .slide-btn:focus-visible { border-color: var(--gold-light); color: var(--gold-light); }
