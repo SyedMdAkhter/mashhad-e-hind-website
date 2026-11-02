@@ -658,6 +658,14 @@ NEWS = [
 # Gallery photos, newest first. Add one with tools/add_photo.py, which resizes the
 # original and prints an entry to paste here. Missing languages fall back to English.
 GALLERY = [
+    {"id": "cm-poster-release-2026-10-a", "focus": "center 40%", "size": (600, 799), "en": "Hon'ble Chief Minister of Punjab Shri Bhagwant Mann and Adv. Zaigam Abbas, Chairman, Mashhad-e-Hind, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "पंजाब के माननीय मुख्यमंत्री श्री भगवंत मान और मशहद-ए-हिंद के चेयरमैन एडवोकेट ज़ैग़म अब्बास दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਪੰਜਾਬ ਦੇ ਮਾਣਯੋਗ ਮੁੱਖ ਮੰਤਰੀ ਸ੍ਰੀ ਭਗਵੰਤ ਮਾਨ ਅਤੇ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੇ ਚੇਅਰਮੈਨ ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "وزیرِ اعلیٰ پنجاب عزت مآب شری بھگونت مان اور مشہدِ ہند کے چیئرمین جناب ایڈووکیٹ ضیغم عباس درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+    {"id": "cm-poster-release-2026-10-b", "focus": "center 55%", "size": (600, 750), "en": "Hon'ble Chief Minister of Punjab Shri Bhagwant Mann and Adv. Zaigam Abbas, Chairman, Mashhad-e-Hind, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "पंजाब के माननीय मुख्यमंत्री श्री भगवंत मान और मशहद-ए-हिंद के चेयरमैन एडवोकेट ज़ैग़म अब्बास दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਪੰਜਾਬ ਦੇ ਮਾਣਯੋਗ ਮੁੱਖ ਮੰਤਰੀ ਸ੍ਰੀ ਭਗਵੰਤ ਮਾਨ ਅਤੇ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੇ ਚੇਅਰਮੈਨ ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "وزیرِ اعلیٰ پنجاب عزت مآب شری بھگونت مان اور مشہدِ ہند کے چیئرمین جناب ایڈووکیٹ ضیغم عباس درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
     {"id": "poster-release-2026-10", "size": (600, 450), "en": "Punjab Finance Minister Shri Harpal Singh Cheema and Adv. Shamshad Ali, Member, Punjab Waqf Board, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
      "hi": "पंजाब के वित्त मंत्री श्री हरपाल सिंह चीमा और पंजाब वक़्फ़ बोर्ड के सदस्य एडवोकेट शमशाद अली दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
      "pa": "ਪੰਜਾਬ ਦੇ ਵਿੱਤ ਮੰਤਰੀ ਸ੍ਰੀ ਹਰਪਾਲ ਸਿੰਘ ਚੀਮਾ ਅਤੇ ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਮੈਂਬਰ ਐਡਵੋਕੇਟ ਸ਼ਮਸ਼ਾਦ ਅਲੀ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
