@@ -666,6 +666,10 @@ GALLERY = [
      "hi": "पंजाब के स्वास्थ्य मंत्री श्री बलबीर सिंह, पंजाब के मुख्यमंत्री के मुख्य सलाहकार श्री बलतेज सिंह पन्नू और होशियारपुर के डॉ. सूफ़ी राज जैन दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
      "pa": "ਪੰਜਾਬ ਦੇ ਸਿਹਤ ਮੰਤਰੀ ਸ੍ਰੀ ਬਲਬੀਰ ਸਿੰਘ, ਪੰਜਾਬ ਦੇ ਮੁੱਖ ਮੰਤਰੀ ਦੇ ਮੁੱਖ ਸਲਾਹਕਾਰ ਸ੍ਰੀ ਬਲਤੇਜ ਸਿੰਘ ਪੰਨੂ ਅਤੇ ਹੁਸ਼ਿਆਰਪੁਰ ਦੇ ਡਾ. ਸੂਫ਼ੀ ਰਾਜ ਜੈਨ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
      "ur": "پنجاب کے وزیرِ صحت شری بلبیر سنگھ، وزیرِ اعلیٰ پنجاب کے چیف ایڈوائزر شری بلتیج سنگھ پنوں اور ہوشیارپور کے ڈاکٹر صوفی راج جین درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+    {"id": "poster-release-2026-10-c", "focus": "center 75%", "size": (600, 800), "en": "Mohali MLA Shri Kulwant Singh, Market Committee Chairman Shri Govinder Mittal, Adv. Shamshad Ali, Member, Punjab Waqf Board, Shri Gurcharan Singh Alipur and Adv. Zaigam Abbas, Chairman, Mashhad-e-Hind, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "मोहाली के विधायक श्री कुलवंत सिंह, मार्केट कमेटी के चेयरमैन श्री गोविंदर मित्तल, पंजाब वक़्फ़ बोर्ड के सदस्य एडवोकेट शमशाद अली, श्री गुरचरण सिंह अलीपुर और मशहद-ए-हिंद के चेयरमैन एडवोकेट ज़ैग़म अब्बास दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਮੋਹਾਲੀ ਦੇ ਵਿਧਾਇਕ ਸ੍ਰੀ ਕੁਲਵੰਤ ਸਿੰਘ, ਮਾਰਕੀਟ ਕਮੇਟੀ ਦੇ ਚੇਅਰਮੈਨ ਸ੍ਰੀ ਗੋਵਿੰਦਰ ਮਿੱਤਲ, ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਮੈਂਬਰ ਐਡਵੋਕੇਟ ਸ਼ਮਸ਼ਾਦ ਅਲੀ, ਸ੍ਰੀ ਗੁਰਚਰਨ ਸਿੰਘ ਅਲੀਪੁਰ ਅਤੇ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ ਦੇ ਚੇਅਰਮੈਨ ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "موہالی کے ایم ایل اے شری کلونت سنگھ، مارکیٹ کمیٹی کے چیئرمین شری گووندر متل، پنجاب وقف بورڈ کے رکن ایڈووکیٹ شمشاد علی، شری گرچرن سنگھ علی پور اور مشہدِ ہند کے چیئرمین جناب ایڈووکیٹ ضیغم عباس درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
 ]
 
 
@@ -678,9 +682,11 @@ def gallery_section(lang):
     for photo in GALLERY:
         caption = html.escape(photo.get(lang) or photo["en"])
         w, h = photo["size"]
+        # Optional "focus" picks which part of the photo the square-ish grid tile keeps.
+        focus = f' style="object-position: {photo["focus"]}"' if "focus" in photo else ""
         figures.append(
             f'<figure><a href="{up}assets/gallery/{photo["id"]}-1600.jpg" data-caption="{caption}">'
-            f'<img src="{up}assets/gallery/{photo["id"]}-600.jpg" alt="{caption}" width="{w}" height="{h}" loading="lazy" decoding="async"></a>'
+            f'<img src="{up}assets/gallery/{photo["id"]}-600.jpg" alt="{caption}" width="{w}" height="{h}" loading="lazy" decoding="async"{focus}></a>'
             f'<figcaption>{caption}</figcaption></figure>')
     return f"""<section class="gallery band">
   <h2>{T['gallery']}</h2>
