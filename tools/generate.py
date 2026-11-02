@@ -22,7 +22,11 @@ MAP_LINK = f"https://www.google.com/maps/search/?api=1&query={MAP_QUERY}"
 SITE_URL = "https://mashhadehind.org"
 WAQF_URL = "https://waqf.punjab.gov.in/"
 
-PAGES = ["index", "history", "timings", "events", "committee", "contact", "location"]
+ALL_PAGES = ["index", "history", "timings", "events", "committee", "contact", "location"]
+# The Committee page is hidden while only the Chairman is listed (Syed, 2026-11-02).
+# The Chairman's number is on the Contact page. Remove "committee" from here to bring it back.
+HIDDEN_PAGES = {"committee"}
+PAGES = [p for p in ALL_PAGES if p not in HIDDEN_PAGES]
 
 LANGS = {
     "en": {
@@ -75,6 +79,11 @@ LANGS = {
     },
 }
 
+
+
+# Drop the menu labels of hidden pages so the menu lines up with PAGES.
+for _L in LANGS.values():
+    _L["nav"] = [label for page, label in zip(ALL_PAGES, _L["nav"]) if page in PAGES]
 
 def ph(lang, what):
     """A visible placeholder the committee must replace."""
@@ -204,7 +213,7 @@ def content(lang):
   <li><strong>By road:</strong> from Patiala, about 27 km south-west on State Highway 10.</li>
   <li><strong>By rail:</strong> the nearest major railway station is Patiala.</li>
   <li><strong>By air:</strong> the nearest airport is Chandigarh, about 95 km away.</li>
-  <li><strong>Within Samana:</strong> the shrine is widely known as Panj Peer Mazar, so asking for it by that name works well. For help on the way, please call a member of the <a href="committee.html">committee</a>.</li>
+  <li><strong>Within Samana:</strong> the shrine is widely known as Panj Peer Mazar, so asking for it by that name works well. For help on the way, please call a member of the <a href="contact.html">committee</a>.</li>
 </ul>
 """),
         }
@@ -326,7 +335,7 @@ def content(lang):
   <li><strong>سڑک کے راستے:</strong> پٹیالہ سے تقریباً ۲۷ کلومیٹر جنوب مغرب میں، اسٹیٹ ہائی وے ۱۰ پر۔</li>
   <li><strong>ریل کے ذریعے:</strong> قریب ترین بڑا ریلوے اسٹیشن پٹیالہ ہے۔</li>
   <li><strong>ہوائی سفر:</strong> قریب ترین ہوائی اڈہ چندی گڑھ ہے، تقریباً ۹۵ کلومیٹر دور۔</li>
-  <li><strong>سمانہ کے اندر:</strong> روضہ عام طور پر پنج پیر مزار کے نام سے جانا جاتا ہے، اس لیے اسی نام سے پوچھنا آسان رہتا ہے۔ راستے میں مدد کے لیے براہِ کرم <a href="committee.html">کمیٹی</a> کے کسی رکن کو فون کریں۔</li>
+  <li><strong>سمانہ کے اندر:</strong> روضہ عام طور پر پنج پیر مزار کے نام سے جانا جاتا ہے، اس لیے اسی نام سے پوچھنا آسان رہتا ہے۔ راستے میں مدد کے لیے براہِ کرم <a href="contact.html">کمیٹی</a> کے کسی رکن کو فون کریں۔</li>
 </ul>
 """),
         }
@@ -448,7 +457,7 @@ def content(lang):
   <li><strong>सड़क से:</strong> पटियाला से लगभग 27 किलोमीटर दक्षिण-पश्चिम में, स्टेट हाईवे 10 पर।</li>
   <li><strong>रेल से:</strong> सबसे नज़दीकी बड़ा रेलवे स्टेशन पटियाला है।</li>
   <li><strong>हवाई मार्ग से:</strong> सबसे नज़दीकी हवाई अड्डा चंडीगढ़ है, लगभग 95 किलोमीटर दूर।</li>
-  <li><strong>समाना के अंदर:</strong> दरगाह आम तौर पर पंज पीर मज़ार के नाम से जानी जाती है, इसलिए इसी नाम से पूछना आसान रहता है। रास्ते में मदद के लिए कृपया <a href="committee.html">कमेटी</a> के किसी सदस्य को फ़ोन करें।</li>
+  <li><strong>समाना के अंदर:</strong> दरगाह आम तौर पर पंज पीर मज़ार के नाम से जानी जाती है, इसलिए इसी नाम से पूछना आसान रहता है। रास्ते में मदद के लिए कृपया <a href="contact.html">कमेटी</a> के किसी सदस्य को फ़ोन करें।</li>
 </ul>
 """),
         }
@@ -570,7 +579,7 @@ def content(lang):
   <li><strong>ਸੜਕ ਰਾਹੀਂ:</strong> ਪਟਿਆਲਾ ਤੋਂ ਲਗਭਗ 27 ਕਿਲੋਮੀਟਰ ਦੱਖਣ-ਪੱਛਮ ਵੱਲ, ਸਟੇਟ ਹਾਈਵੇ 10 ਉੱਤੇ।</li>
   <li><strong>ਰੇਲ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਵੱਡਾ ਰੇਲਵੇ ਸਟੇਸ਼ਨ ਪਟਿਆਲਾ ਹੈ।</li>
   <li><strong>ਹਵਾਈ ਰਾਹੀਂ:</strong> ਸਭ ਤੋਂ ਨੇੜਲਾ ਹਵਾਈ ਅੱਡਾ ਚੰਡੀਗੜ੍ਹ ਹੈ, ਲਗਭਗ 95 ਕਿਲੋਮੀਟਰ ਦੂਰ।</li>
-  <li><strong>ਸਮਾਣਾ ਦੇ ਅੰਦਰ:</strong> ਦਰਗਾਹ ਆਮ ਤੌਰ ਤੇ ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ ਦੇ ਨਾਂ ਨਾਲ ਜਾਣੀ ਜਾਂਦੀ ਹੈ, ਇਸ ਲਈ ਇਸੇ ਨਾਂ ਨਾਲ ਪੁੱਛਣਾ ਸੌਖਾ ਰਹਿੰਦਾ ਹੈ। ਰਸਤੇ ਵਿੱਚ ਮਦਦ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="committee.html">ਕਮੇਟੀ</a> ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</li>
+  <li><strong>ਸਮਾਣਾ ਦੇ ਅੰਦਰ:</strong> ਦਰਗਾਹ ਆਮ ਤੌਰ ਤੇ ਪੰਜ ਪੀਰ ਮਜ਼ਾਰ ਦੇ ਨਾਂ ਨਾਲ ਜਾਣੀ ਜਾਂਦੀ ਹੈ, ਇਸ ਲਈ ਇਸੇ ਨਾਂ ਨਾਲ ਪੁੱਛਣਾ ਸੌਖਾ ਰਹਿੰਦਾ ਹੈ। ਰਸਤੇ ਵਿੱਚ ਮਦਦ ਲਈ ਕਿਰਪਾ ਕਰਕੇ <a href="contact.html">ਕਮੇਟੀ</a> ਦੇ ਕਿਸੇ ਮੈਂਬਰ ਨੂੰ ਫ਼ੋਨ ਕਰੋ।</li>
 </ul>
 """),
         }
@@ -589,7 +598,7 @@ HOME_TEXT = {
                   ("Built", "Ramadan 967 AH (about 1560 CE), as recorded in its inscription"),
                   ("Administered by", "Punjab Waqf Board")],
         "msg_intro": "A message to all devotees and visitors from the Chairman of the managing committee.",
-        "msg_link": "Meet the committee",
+        "msg_link": "Contact us",
         "news": "News",
         "gallery": "Gallery", "gallery_close": "Close", "gallery_prev": "Previous photo", "gallery_next": "Next photo",
         "message": "Message from the Chairman",
@@ -603,7 +612,7 @@ HOME_TEXT = {
                   ("निर्माण", "रमज़ान 967 हिजरी (लगभग 1560 ई.), शिलालेख के अनुसार"),
                   ("प्रबंधन", "पंजाब वक़्फ़ बोर्ड")],
         "msg_intro": "प्रबंधक कमेटी के चेयरमैन की ओर से सभी श्रद्धालुओं और ज़ायरीन के लिए संदेश।",
-        "msg_link": "कमेटी से मिलें",
+        "msg_link": "संपर्क करें",
         "news": "समाचार",
         "gallery": "गैलरी", "gallery_close": "बंद करें", "gallery_prev": "पिछली फ़ोटो", "gallery_next": "अगली फ़ोटो",
         "message": "चेयरमैन का संदेश",
@@ -617,7 +626,7 @@ HOME_TEXT = {
                   ("ਉਸਾਰੀ", "ਰਮਜ਼ਾਨ 967 ਹਿਜਰੀ (ਲਗਭਗ 1560 ਈ.), ਸ਼ਿਲਾਲੇਖ ਅਨੁਸਾਰ"),
                   ("ਪ੍ਰਬੰਧ", "ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ")],
         "msg_intro": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦੇ ਚੇਅਰਮੈਨ ਵੱਲੋਂ ਸਾਰੇ ਸ਼ਰਧਾਲੂਆਂ ਅਤੇ ਜ਼ਾਇਰੀਨ ਲਈ ਸੁਨੇਹਾ।",
-        "msg_link": "ਕਮੇਟੀ ਨੂੰ ਮਿਲੋ",
+        "msg_link": "ਸੰਪਰਕ ਕਰੋ",
         "news": "ਖ਼ਬਰਾਂ",
         "gallery": "ਗੈਲਰੀ", "gallery_close": "ਬੰਦ ਕਰੋ", "gallery_prev": "ਪਿਛਲੀ ਫ਼ੋਟੋ", "gallery_next": "ਅਗਲੀ ਫ਼ੋਟੋ",
         "message": "ਚੇਅਰਮੈਨ ਦਾ ਸੁਨੇਹਾ",
@@ -631,7 +640,7 @@ HOME_TEXT = {
                   ("تعمیر", "رمضان ۹۶۷ھ (تقریباً ۱۵۶۰ء)، کتبے کے مطابق"),
                   ("انتظام", "پنجاب وقف بورڈ")],
         "msg_intro": "انتظامی کمیٹی کے چیئرمین کی جانب سے تمام عقیدت مندوں اور زائرین کے نام پیغام۔",
-        "msg_link": "کمیٹی سے ملیں",
+        "msg_link": "رابطہ کریں",
         "news": "خبریں",
         "gallery": "گیلری", "gallery_close": "بند کریں", "gallery_prev": "پچھلی تصویر", "gallery_next": "اگلی تصویر",
         "message": "چیئرمین کا پیغام",
@@ -774,7 +783,7 @@ def home_sections(lang):
       <p class="msg-name">{chair[lang][0]}</p>
       <p class="msg-role">{chair[lang][1]}</p>
       <p>{T['msg_intro']}</p>
-      <a class="btn btn-outline" href="committee.html">{T['msg_link']}</a>
+      <a class="btn btn-outline" href="contact.html">{T['msg_link']}</a>
     </div>
   </div>
 </section>
@@ -914,9 +923,8 @@ def contact_committee(lang, body):
     committee_ph = {"en": "name of the managing committee", "hi": "प्रबंधक कमेटी का नाम",
                     "pa": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦਾ ਨਾਂ", "ur": "انتظامی کمیٹی کا نام"}[lang]
     phone_ph = {"en": "phone number", "hi": "फ़ोन नंबर", "pa": "ਫ਼ੋਨ ਨੰਬਰ", "ur": "فون نمبر"}[lang]
-    committee_label = dict(zip(PAGES, LANGS[lang]["nav"]))["committee"]
     phones = "<br>".join(f"{m[lang][0]} ({m[lang][1]}): {phone_link(m)}" for m in COMMITTEE)
-    body = body.replace(ph(lang, committee_ph), f'{ABOUT[lang][7]} · <a href="committee.html">{committee_label}</a>')
+    body = body.replace(ph(lang, committee_ph), ABOUT[lang][7])
     return body.replace(ph(lang, phone_ph), phones)
 
 
