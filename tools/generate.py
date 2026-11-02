@@ -843,7 +843,9 @@ def home_hero(lang, body):
     facts = "".join(f"<div><dt>{k}</dt><dd>{v}</dd></div>" for k, v in T["facts"])
     glance = f'<aside class="glance"><h3>{T["glance"]}</h3><dl>{facts}</dl></aside>'
     w = re.search(r"<section>(.*?)</section>", body, re.S)
-    welcome = f'<section class="welcome band"><div class="welcome-grid"><div class="welcome-text">{w.group(1)}</div>{glance}</div></section>'
+    # The Welcome heading sits centred above both columns, like the other home headings.
+    h = re.match(r"\s*(<h2>.*?</h2>)(.*)", w.group(1), re.S)
+    welcome = f'<section class="welcome band">{h.group(1)}<div class="welcome-grid"><div class="welcome-text">{h.group(2)}</div>{glance}</div></section>'
     body = body[:w.start()] + welcome + body[w.end():]
     return hero, body
 

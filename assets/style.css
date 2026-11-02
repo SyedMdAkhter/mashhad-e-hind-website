@@ -141,23 +141,21 @@ html[lang="ur"] .hero .eyebrow, html[lang="hi"] .hero .eyebrow, html[lang="pa"] 
 .info-value { color: var(--green); font-weight: 700; }
 
 /* ---------- Section headings on the home page ---------- */
-.welcome h2, .news > h2, .gallery > h2, .message > h2 { text-align: center; }
-.welcome h2::after, .news > h2::after, .gallery > h2::after, .message > h2::after {
+.welcome > h2, .news > h2, .gallery > h2, .message > h2 { text-align: center; }
+.welcome > h2::after, .news > h2::after, .gallery > h2::after, .message > h2::after {
   content: ""; display: block; width: 120px; height: 14px; margin: .4rem auto 0;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='14' viewBox='0 0 120 14'%3E%3Cg fill='none' stroke='%23b8913f' stroke-width='1.5'%3E%3Cpath d='M0 7h46M74 7h46'/%3E%3Cpath d='M60 1l3 4 4 2-4 2-3 4-3-4-4-2 4-2z' fill='%23b8913f'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;
 }
 /* Home sections are full-width horizontal bands, stacked one under another.
    A tinted band reaches the screen edges without causing sideways scrolling. */
 .band { padding-block: 1rem 2.5rem; }
-.band > h2:first-child, .welcome-text > h2:first-child { margin-top: 2rem; }
+.band > h2:first-child { margin-top: 2rem; }
 .band-tint { background: var(--band); box-shadow: 0 0 0 100vmax var(--band); clip-path: inset(0 -100vmax); margin-top: 2rem; }
 
 .welcome-grid { display: grid; gap: 1.5rem 2.5rem; align-items: start; }
 @media (min-width: 860px) { .welcome-grid { grid-template-columns: 1.6fr 1fr; } }
-.welcome .welcome-text h2 { text-align: start; }
-.welcome .welcome-text h2::after { margin-inline: 0; }
 .glance { background: var(--surface); border: 1px solid var(--border); border-top: 3px solid var(--gold); border-radius: var(--radius); padding: 1.2rem 1.4rem; box-shadow: var(--shadow); }
-@media (min-width: 860px) { .glance { margin-top: 2.6rem; } }
+@media (min-width: 860px) { .glance { margin-top: 1rem; } }
 .glance h3 { margin: 0 0 .6rem; color: var(--green); font-size: 1.15rem; }
 .glance dl { margin: 0; }
 .glance dl > div { padding: .55rem 0; border-top: 1px solid var(--border); }
