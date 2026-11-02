@@ -690,19 +690,30 @@ def gallery_section(lang):
         return ""
     T = HOME_TEXT[lang]
     up = "../" if LANGS[lang]["prefix"] else ""
-    figures = []
-    for photo in GALLERY:
+    total = len(GALLERY)
+    slides, thumbs = [], []
+    for n, photo in enumerate(GALLERY):
         caption = html.escape(photo.get(lang) or photo["en"])
-        w, h = photo["size"]
-        # Optional "focus" picks which part of the photo the square-ish grid tile keeps.
-        focus = f' style="object-position: {photo["focus"]}"' if "focus" in photo else ""
-        figures.append(
-            f'<figure><a href="{up}assets/gallery/{photo["id"]}-1600.jpg" data-caption="{caption}">'
-            f'<img src="{up}assets/gallery/{photo["id"]}-600.jpg" alt="{caption}" width="{w}" height="{h}" loading="lazy" decoding="async"{focus}></a>'
+        base = f'{up}assets/gallery/{photo["id"]}'
+        lazy = "" if n == 0 else ' loading="lazy"'
+        slides.append(
+            f'<figure class="slide" aria-roledescription="slide" aria-label="{n + 1} / {total}">'
+            f'<a href="{base}-1600.jpg" data-caption="{caption}">'
+            f'<img src="{base}-1600.jpg" srcset="{base}-600.jpg 600w, {base}-1600.jpg 1600w" sizes="(max-width: 1150px) 100vw, 1100px" alt="{caption}"{lazy} decoding="async"></a>'
             f'<figcaption>{caption}</figcaption></figure>')
+        # Optional "focus" picks which part of a tall photo the small thumbnail keeps.
+        focus = f' style="object-position: {photo["focus"]}"' if "focus" in photo else ""
+        current = ' aria-current="true"' if n == 0 else ""
+        thumbs.append(f'<button type="button" aria-label="{n + 1} / {total}"{current}><img src="{base}-600.jpg" alt="" loading="lazy"{focus}></button>')
     return f"""<section class="gallery band">
   <h2>{T['gallery']}</h2>
-  <div class="gallery-grid">{"".join(figures)}</div>
+  <div class="slider" aria-roledescription="carousel" aria-label="{T['gallery']}">
+    <div class="slides" tabindex="0">{"".join(slides)}</div>
+    <button type="button" class="slide-btn slide-prev" aria-label="{T['gallery_prev']}">‹</button>
+    <button type="button" class="slide-btn slide-next" aria-label="{T['gallery_next']}">›</button>
+  </div>
+  <p class="slide-count" aria-live="polite">1 / {total}</p>
+  <div class="thumbs">{"".join(thumbs)}</div>
   <dialog class="lightbox" aria-label="{T['gallery']}">
     <img alt="">
     <p class="lightbox-caption"></p>
@@ -710,7 +721,15 @@ def gallery_section(lang):
     <button type="button" class="lb-prev" aria-label="{T['gallery_prev']}">‹</button>
     <button type="button" class="lb-next" aria-label="{T['gallery_next']}">›</button>
   </dialog>
-  <script>(function(){{var s=document.currentScript.parentNode,d=s.querySelector('dialog'),im=d.querySelector('img'),cap=d.querySelector('.lightbox-caption'),links=[].slice.call(s.querySelectorAll('.gallery-grid a')),i=0;
+  <script>(function(){{var s=document.currentScript.parentNode,track=s.querySelector('.slides'),slides=[].slice.call(track.children),thumbs=[].slice.call(s.querySelectorAll('.thumbs button')),count=s.querySelector('.slide-count'),cur=0;
+function mark(n){{cur=n;count.textContent=(n+1)+' / '+slides.length;thumbs.forEach(function(t,k){{if(k===n)t.setAttribute('aria-current','true');else t.removeAttribute('aria-current')}})}}
+function go(n){{n=(n+slides.length)%slides.length;mark(n);track.scrollTo({{left:slides[n].offsetLeft-slides[0].offsetLeft,behavior:'smooth'}})}}
+function sync(){{var n=Math.round(Math.abs(track.scrollLeft)/track.clientWidth);if(n!==cur)mark(n)}}
+var tm;track.addEventListener('scroll',function(){{clearTimeout(tm);tm=setTimeout(sync,80)}});
+s.querySelector('.slide-prev').onclick=function(){{go(cur-1)}};
+s.querySelector('.slide-next').onclick=function(){{go(cur+1)}};
+thumbs.forEach(function(t,k){{t.onclick=function(){{go(k)}}}});
+var d=s.querySelector('dialog'),im=d.querySelector('img'),cap=d.querySelector('.lightbox-caption'),links=slides.map(function(f){{return f.querySelector('a')}}),i=0;
 if(!d.showModal)return;
 function show(n){{i=(n+links.length)%links.length;im.src=links[i].href;im.alt=cap.textContent=links[i].dataset.caption}}
 links.forEach(function(a,n){{a.addEventListener('click',function(e){{e.preventDefault();show(n);d.showModal()}})}});
@@ -718,6 +737,7 @@ d.querySelector('.lb-close').onclick=function(){{d.close()}};
 d.querySelector('.lb-prev').onclick=function(){{show(i-1)}};
 d.querySelector('.lb-next').onclick=function(){{show(i+1)}};
 d.addEventListener('click',function(e){{if(e.target===d)d.close()}});
+d.addEventListener('close',function(){{go(i)}});
 d.addEventListener('keydown',function(e){{var rtl=document.dir==='rtl';if(e.key==='ArrowRight')show(rtl?i-1:i+1);if(e.key==='ArrowLeft')show(rtl?i+1:i-1)}});
 }})();</script>
 </section>
