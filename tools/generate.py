@@ -6,6 +6,7 @@ serves, and they can be edited by hand. If you edit content here instead, run
 `python3 tools/generate.py` from the repository root to rewrite the pages.
 """
 import hashlib
+import html
 import re
 from pathlib import Path
 
@@ -590,6 +591,7 @@ HOME_TEXT = {
         "msg_intro": "A message to all devotees and visitors from the Chairman of the managing committee.",
         "msg_link": "Meet the committee",
         "news": "News",
+        "gallery": "Gallery", "gallery_close": "Close", "gallery_prev": "Previous photo", "gallery_next": "Next photo",
         "message": "Message from the Chairman",
         "video_fallback": "Your browser cannot play this video.",
         "chairman": "Adv. Zaigam Abbas, Chairman, Dargah-e-Aliya Mashhad-e-Hind, Samana",
@@ -603,6 +605,7 @@ HOME_TEXT = {
         "msg_intro": "प्रबंधक कमेटी के चेयरमैन की ओर से सभी श्रद्धालुओं और ज़ायरीन के लिए संदेश।",
         "msg_link": "कमेटी से मिलें",
         "news": "समाचार",
+        "gallery": "गैलरी", "gallery_close": "बंद करें", "gallery_prev": "पिछली फ़ोटो", "gallery_next": "अगली फ़ोटो",
         "message": "चेयरमैन का संदेश",
         "video_fallback": "आपका ब्राउज़र यह वीडियो नहीं चला सकता।",
         "chairman": "एडवोकेट ज़ैग़म अब्बास, चेयरमैन, दरगाह-ए-आलिया मशहद-ए-हिंद, समाना",
@@ -616,6 +619,7 @@ HOME_TEXT = {
         "msg_intro": "ਪ੍ਰਬੰਧਕ ਕਮੇਟੀ ਦੇ ਚੇਅਰਮੈਨ ਵੱਲੋਂ ਸਾਰੇ ਸ਼ਰਧਾਲੂਆਂ ਅਤੇ ਜ਼ਾਇਰੀਨ ਲਈ ਸੁਨੇਹਾ।",
         "msg_link": "ਕਮੇਟੀ ਨੂੰ ਮਿਲੋ",
         "news": "ਖ਼ਬਰਾਂ",
+        "gallery": "ਗੈਲਰੀ", "gallery_close": "ਬੰਦ ਕਰੋ", "gallery_prev": "ਪਿਛਲੀ ਫ਼ੋਟੋ", "gallery_next": "ਅਗਲੀ ਫ਼ੋਟੋ",
         "message": "ਚੇਅਰਮੈਨ ਦਾ ਸੁਨੇਹਾ",
         "video_fallback": "ਤੁਹਾਡਾ ਬ੍ਰਾਊਜ਼ਰ ਇਹ ਵੀਡੀਓ ਨਹੀਂ ਚਲਾ ਸਕਦਾ।",
         "chairman": "ਐਡਵੋਕੇਟ ਜ਼ੈਗ਼ਮ ਅੱਬਾਸ, ਚੇਅਰਮੈਨ, ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ",
@@ -629,6 +633,7 @@ HOME_TEXT = {
         "msg_intro": "انتظامی کمیٹی کے چیئرمین کی جانب سے تمام عقیدت مندوں اور زائرین کے نام پیغام۔",
         "msg_link": "کمیٹی سے ملیں",
         "news": "خبریں",
+        "gallery": "گیلری", "gallery_close": "بند کریں", "gallery_prev": "پچھلی تصویر", "gallery_next": "اگلی تصویر",
         "message": "چیئرمین کا پیغام",
         "video_fallback": "آپ کا براؤزر یہ ویڈیو نہیں چلا سکتا۔",
         "chairman": "ایڈووکیٹ ضیغم عباس، چیئرمین، درگاہِ عالیہ مشہدِ ہند، سمانہ",
@@ -650,6 +655,52 @@ NEWS = [
 ]
 
 
+# Gallery photos, newest first. Add one with tools/add_photo.py, which resizes the
+# original and prints an entry to paste here. Missing languages fall back to English.
+GALLERY = [
+    {"id": "poster-release-2026-10", "size": (600, 450), "en": "Punjab Finance Minister Shri Harpal Singh Cheema and Adv. Shamshad Ali, Member, Punjab Waqf Board, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.",
+     "hi": "पंजाब के वित्त मंत्री श्री हरपाल सिंह चीमा और पंजाब वक़्फ़ बोर्ड के सदस्य एडवोकेट शमशाद अली दरगाह-ए-आलिया मशहद-ए-हिंद, समाना का आधिकारिक पोस्टर जारी करते हुए।",
+     "pa": "ਪੰਜਾਬ ਦੇ ਵਿੱਤ ਮੰਤਰੀ ਸ੍ਰੀ ਹਰਪਾਲ ਸਿੰਘ ਚੀਮਾ ਅਤੇ ਪੰਜਾਬ ਵਕਫ਼ ਬੋਰਡ ਦੇ ਮੈਂਬਰ ਐਡਵੋਕੇਟ ਸ਼ਮਸ਼ਾਦ ਅਲੀ ਦਰਗਾਹ-ਏ-ਆਲੀਆ ਮਸ਼ਹਦ-ਏ-ਹਿੰਦ, ਸਮਾਣਾ ਦਾ ਅਧਿਕਾਰਤ ਪੋਸਟਰ ਜਾਰੀ ਕਰਦੇ ਹੋਏ।",
+     "ur": "پنجاب کے وزیرِ خزانہ شری ہرپال سنگھ چیمہ اور پنجاب وقف بورڈ کے رکن ایڈووکیٹ شمشاد علی درگاہِ عالیہ مشہدِ ہند، سمانہ کا سرکاری پوسٹر جاری کرتے ہوئے۔"},
+]
+
+
+def gallery_section(lang):
+    if not GALLERY:
+        return ""
+    T = HOME_TEXT[lang]
+    up = "../" if LANGS[lang]["prefix"] else ""
+    figures = []
+    for photo in GALLERY:
+        caption = html.escape(photo.get(lang) or photo["en"])
+        w, h = photo["size"]
+        figures.append(
+            f'<figure><a href="{up}assets/gallery/{photo["id"]}-1600.jpg" data-caption="{caption}">'
+            f'<img src="{up}assets/gallery/{photo["id"]}-600.jpg" alt="{caption}" width="{w}" height="{h}" loading="lazy" decoding="async"></a>'
+            f'<figcaption>{caption}</figcaption></figure>')
+    return f"""<section class="gallery band">
+  <h2>{T['gallery']}</h2>
+  <div class="gallery-grid">{"".join(figures)}</div>
+  <dialog class="lightbox" aria-label="{T['gallery']}">
+    <img alt="">
+    <p class="lightbox-caption"></p>
+    <button type="button" class="lb-close" aria-label="{T['gallery_close']}">×</button>
+    <button type="button" class="lb-prev" aria-label="{T['gallery_prev']}">‹</button>
+    <button type="button" class="lb-next" aria-label="{T['gallery_next']}">›</button>
+  </dialog>
+  <script>(function(){{var s=document.currentScript.parentNode,d=s.querySelector('dialog'),im=d.querySelector('img'),cap=d.querySelector('.lightbox-caption'),links=[].slice.call(s.querySelectorAll('.gallery-grid a')),i=0;
+if(!d.showModal)return;
+function show(n){{i=(n+links.length)%links.length;im.src=links[i].href;im.alt=cap.textContent=links[i].dataset.caption}}
+links.forEach(function(a,n){{a.addEventListener('click',function(e){{e.preventDefault();show(n);d.showModal()}})}});
+d.querySelector('.lb-close').onclick=function(){{d.close()}};
+d.querySelector('.lb-prev').onclick=function(){{show(i-1)}};
+d.querySelector('.lb-next').onclick=function(){{show(i+1)}};
+d.addEventListener('click',function(e){{if(e.target===d)d.close()}});
+d.addEventListener('keydown',function(e){{var rtl=document.dir==='rtl';if(e.key==='ArrowRight')show(rtl?i-1:i+1);if(e.key==='ArrowLeft')show(rtl?i+1:i-1)}});
+}})();</script>
+</section>
+"""
+
 def home_sections(lang):
     T = HOME_TEXT[lang]
     up = "../" if LANGS[lang]["prefix"] else ""
@@ -667,7 +718,7 @@ def home_sections(lang):
   <h2>{T['news']}</h2>
   {"".join(items)}
 </section>
-<section class="message band">
+{gallery_section(lang)}<section class="message band">
   <h2>{T['message']}</h2>
   <div class="message-grid">
     <figure>

@@ -22,7 +22,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&family=Amiri:wght@400;700&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=4e84aa41">
+<link rel="stylesheet" href="assets/style.css?v=e88e36d1">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -78,6 +78,27 @@
 <section class="news band band-tint">
   <h2>News</h2>
   <article class="news-item"><div class="news-poster"><a href="assets/news/majalis-2026-poster.jpg" target="_blank" rel="noopener"><img src="assets/news/majalis-2026-poster.jpg" alt="Salana Majalis, Juloos-e-Aza wa Mehfil" loading="lazy"></a></div><div class="news-body"><h3>Salana Majalis, Juloos-e-Aza wa Mehfil</h3><p>21 and 22 November 2026, Samana, Punjab. All devotees of the Ahl al-Bayt are humbly requested to attend.</p><div class="news-more"><a href="assets/news/majalis-2026-banner.jpg" target="_blank" rel="noopener"><img src="assets/news/majalis-2026-banner.jpg" alt="Salana Majalis, Juloos-e-Aza wa Mehfil" loading="lazy"></a></div></div></article>
+</section>
+<section class="gallery band">
+  <h2>Gallery</h2>
+  <div class="gallery-grid"><figure><a href="assets/gallery/poster-release-2026-10-1600.jpg" data-caption="Punjab Finance Minister Shri Harpal Singh Cheema and Adv. Shamshad Ali, Member, Punjab Waqf Board, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana."><img src="assets/gallery/poster-release-2026-10-600.jpg" alt="Punjab Finance Minister Shri Harpal Singh Cheema and Adv. Shamshad Ali, Member, Punjab Waqf Board, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana." width="600" height="450" loading="lazy" decoding="async"></a><figcaption>Punjab Finance Minister Shri Harpal Singh Cheema and Adv. Shamshad Ali, Member, Punjab Waqf Board, releasing the official poster of Dargah-e-Aliya Mashhad-e-Hind, Samana.</figcaption></figure></div>
+  <dialog class="lightbox" aria-label="Gallery">
+    <img alt="">
+    <p class="lightbox-caption"></p>
+    <button type="button" class="lb-close" aria-label="Close">×</button>
+    <button type="button" class="lb-prev" aria-label="Previous photo">‹</button>
+    <button type="button" class="lb-next" aria-label="Next photo">›</button>
+  </dialog>
+  <script>(function(){var s=document.currentScript.parentNode,d=s.querySelector('dialog'),im=d.querySelector('img'),cap=d.querySelector('.lightbox-caption'),links=[].slice.call(s.querySelectorAll('.gallery-grid a')),i=0;
+if(!d.showModal)return;
+function show(n){i=(n+links.length)%links.length;im.src=links[i].href;im.alt=cap.textContent=links[i].dataset.caption}
+links.forEach(function(a,n){a.addEventListener('click',function(e){e.preventDefault();show(n);d.showModal()})});
+d.querySelector('.lb-close').onclick=function(){d.close()};
+d.querySelector('.lb-prev').onclick=function(){show(i-1)};
+d.querySelector('.lb-next').onclick=function(){show(i+1)};
+d.addEventListener('click',function(e){if(e.target===d)d.close()});
+d.addEventListener('keydown',function(e){var rtl=document.dir==='rtl';if(e.key==='ArrowRight')show(rtl?i-1:i+1);if(e.key==='ArrowLeft')show(rtl?i+1:i-1)});
+})();</script>
 </section>
 <section class="message band">
   <h2>Message from the Chairman</h2>
